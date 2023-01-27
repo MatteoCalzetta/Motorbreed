@@ -12,7 +12,7 @@
     <properties>
         <sonar.organization>brucomela</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <maven.compiler.release>14</maven.compiler.release>
+        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
 
