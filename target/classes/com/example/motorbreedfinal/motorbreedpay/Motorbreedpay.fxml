@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="470.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+        <VBox layoutY="4.0" prefHeight="470.0" prefWidth="506.0" styleClass="white-background">
+            <children>
+                <HBox prefHeight="66.0" prefWidth="506.0" style="-fx-background-color: #CCCCCC;">
+                    <children>
+                  <ImageView fitHeight="65.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons_and_pics/MotorPaymentLogo.png" />
+                     </image>
+                  </ImageView>
+                          <Label contentDisplay="CENTER" prefHeight="66.0" prefWidth="283.0" text="  MotorbreedPay" textFill="#028eff">
+                              <font>
+                                  <Font name="Berlin Sans FB" size="30.0" />
+                              </font>
+                              <padding>
+                                  <Insets left="50.0" />
+                              </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                          </Label>
+                    </children>
+               <VBox.margin>
+                  <Insets top="-5.0" />
+               </VBox.margin>
+                </HBox>
+                <HBox prefHeight="338.0" prefWidth="526.0">
+                    <VBox.margin>
+                        <Insets top="50.0" />
+                    </VBox.margin>
+                    <children>
+                        <VBox prefHeight="338.0" prefWidth="477.0">
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                            <children>
+                        <HBox alignment="CENTER" prefHeight="18.0" prefWidth="590.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="342.0" text="First Name" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="559.0">
+                           <children>
+                              <TextField fx:id="tfFirstName" prefHeight="26.0" prefWidth="346.0" promptText="first name" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="18.0" prefWidth="598.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="342.0" text="Last Name" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="548.0">
+                           <children>
+                              <TextField fx:id="tfLastName" pickOnBounds="false" prefHeight="26.0" prefWidth="346.0" promptText="last name" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                                      <Label fx:id="lblPrice" prefHeight="37.0" prefWidth="243.0" text="   Payment: 4400,90 $">
+                                          <font>
+                                              <Font name="Berlin Sans FB" size="24.0" />
+                                          </font>
+                                      </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="40.0" />
+                           </VBox.margin>
+                        </HBox>
+                                <VBox prefHeight="121.0" prefWidth="584.0">
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <children>
+                              <HBox alignment="CENTER" prefHeight="18.0" prefWidth="563.0">
+                                 <children>
+                                              <Label prefHeight="30.0" prefWidth="358.0" text="Card Number" />
+                                 </children>
+                              </HBox>
+                                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="537.0">
+                                            <children>
+                                                <TextField fx:id="tfCard" prefHeight="26.0" prefWidth="356.0" promptText="XXXX-XXXX-XXXX-XXXX" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="378.0">
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" top="5.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="32.0" prefWidth="567.0">
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                            <children>
+                                                <Button fx:id="btnBuy" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" style="-fx-background-color: #028eff;" text="Buy now">
+                                                    <font>
+                                                        <Font name="Berlin Sans FB" size="16.0" />
+                                                    </font>
+                                       <styleClass>
+                                          <String fx:value="oval-layout" />
+                                          <String fx:value="buttonBuy" />
+                                       </styleClass>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+   </children>
+</Pane>

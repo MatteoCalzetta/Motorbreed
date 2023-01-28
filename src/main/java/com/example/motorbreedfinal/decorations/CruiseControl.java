@@ -12,7 +12,6 @@ public class CruiseControl extends VehicleDecorator {
         super(vehicle);
         this.setPrice(600);
         this.setIndex(0);
-
     }
 
     public void setPrice(int Price) {
