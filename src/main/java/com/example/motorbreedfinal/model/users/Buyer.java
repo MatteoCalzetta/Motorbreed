@@ -10,8 +10,9 @@ public class Buyer extends Account {
     public boolean addToFavourites(Ad ad) {
         return true;
     }
-    public boolean addToOrders(Ad ad) {
-        return true;
+    public void addToOrders(Ad ad) {
+        orders.add(ad);
+        notifyObservers();
     }
 
     public List<Ad> getFavourites() {

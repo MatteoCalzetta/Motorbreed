@@ -6,9 +6,10 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-public class MotorbreedPayControllerG{
+public class MotorbreedPayControllerG {
 
     @FXML
     private Button btnBuy;
@@ -24,23 +25,32 @@ public class MotorbreedPayControllerG{
 
     @FXML
     private TextField tfLastName;
+    @FXML
+    private Label lblOrderId;
+    @FXML
+    private Label lblCardError;
 
     private String firstname;
     private String lastname;
     private float expense;
 
-    public MotorbreedPayControllerG(String firstName, String lastName, float expense){
-        firstname = firstName;
-        lastname = lastName;
-        this.expense = expense;
+    @FXML
+    public void buyNow(ActionEvent event){
+        String idAd = lblOrderId.getText().substring(29, lblOrderId.getText().length());
+        if(tfCard.getText().length() > 11){
+            MotorbreedPayController motorbreedPayController = new MotorbreedPayController();
+            motorbreedPayController.isPaymentValid(idAd);
+        } else {
+            lblCardError.setVisible(true);
+        }
+        ((Stage)((Node)event.getSource()).getScene().getWindow()).close();
     }
 
     @FXML
-    public void initialize(){
-        tfFirstName.setText(firstname);
-        tfLastName.setText(lastname);
-        lblPrice.setText("Payment: "+ expense +"€");
+    void enableDisableError(KeyEvent event) {
+        lblCardError.setVisible(false);
     }
+
 
     @FXML
     public void close(ActionEvent event){
@@ -48,6 +58,11 @@ public class MotorbreedPayControllerG{
     }
 
 
-
+    public void setData(String firstName, String lastName, float expense, String idAd) {
+        tfFirstName.setText(firstName);
+        tfLastName.setText(lastName);
+        lblPrice.setText("Payment: "+ expense +"€");
+        lblOrderId.setText(lblOrderId.getText() + idAd);
+    }
 }
 

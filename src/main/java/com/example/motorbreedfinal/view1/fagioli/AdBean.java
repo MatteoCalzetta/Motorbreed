@@ -14,7 +14,7 @@ public class AdBean {
     private String location;
     private Date insertionDate;
     private boolean priceCertification;
-
+    private String seller;
     private InputStream imageStream;
 
     List<Ad> ads;
@@ -86,6 +86,18 @@ public class AdBean {
 
     public InputStream getImageStream() {
         return imageStream;
+    }
+
+    public void setPriceCertification(boolean priceCertification) {
+        this.priceCertification = priceCertification;
+    }
+
+    public String getSeller() {
+        return seller;
+    }
+
+    public void setSeller(String seller) {
+        this.seller = seller;
     }
 
     public boolean Validation() {

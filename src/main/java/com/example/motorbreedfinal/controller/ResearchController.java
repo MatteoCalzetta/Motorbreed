@@ -1,10 +1,12 @@
 package com.example.motorbreedfinal.controller;
 
 import com.example.motorbreedfinal.controller.boundary.EmailBoundary;
+import com.example.motorbreedfinal.controller.boundary.PaymentBoundary;
 import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
+import com.example.motorbreedfinal.view1.ResultsPageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.*;
 
 import java.util.List;
@@ -19,7 +21,6 @@ public class ResearchController {
         }
         return instance;
     }
-
     private ResearchController(){}
 
     ResearchDAO researchDAO = new ResearchDAO();
@@ -66,4 +67,20 @@ public class ResearchController {
         emailBoundary.sendEmail(emailBean.getFromEmail(), emailBean.getPassword(), emailBean.getToEmail(), emailBean.getDescription());
     }
 
+    public void payment(AccountBean accountBean, AdBean adBean){
+        PaymentBoundary paymentBoundary = new PaymentBoundary();
+        paymentBoundary.payment(accountBean, adBean);
+    }
+
+    public void paymentIsValid(String idAd) {
+        ResearchDAO researchDAO = new ResearchDAO();
+        Ad ad = researchDAO.findAdById(idAd, LoggedUser.getInstance().getBuyer().getIdAccount());
+        LoggedUser.getInstance().getBuyer().addToOrders(ad);
+        System.out.println(LoggedUser.getInstance().getBuyer().getOrders());
+    }
+
+    public List<Ad> getBuyerOrders() {
+        List <Ad> ads = researchDAO.findBuyerOrders(LoggedUser.getInstance().getBuyer().getIdAccount());
+        return ads;
+    }
 }

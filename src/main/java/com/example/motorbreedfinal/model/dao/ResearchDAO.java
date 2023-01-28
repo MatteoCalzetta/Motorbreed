@@ -94,6 +94,36 @@ public class ResearchDAO {
         return ads;
     }
 
+    public Ad findAdById(String idAd, String idBuyer){
+        System.out.println("l'idAd e l'idBuyer in researchDAO sono " + idAd + " " + idBuyer);
+        Statement stmt = null;
+        Connection conn = null;
+        Ad ad = new Ad();
+
+        try {
+            conn = Connector.getInstance().getConnection();
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            String insertStatement = String.format("INSERT into buyer_order (idBuyer, idAd) VALUES ('%s','%s')", idBuyer, idAd);
+            stmt.executeUpdate(insertStatement);
+            String updateStatement = String.format("UPDATE ad SET sold = '1' WHERE idAd = '%s'", idAd);
+            stmt.executeUpdate(updateStatement);
+            ResultSet rs = Query.findAdById(stmt, idAd);
+            while (rs.next()) {
+                ad = extractAd(conn, rs);
+            }
+        } catch (SQLException | FailedResearchException | IOException se) {
+            se.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e); //auto generata è da fare
+            }
+        }
+        return ad;
+    }
+
     public List<Ad> findBuyerOrders(String userId) {
         Statement stmt = null;
         Connection conn = null;
@@ -127,9 +157,6 @@ public class ResearchDAO {
         ad.setInsertionDate(rs.getString(5));
         ad.setNumberOfClicks(rs.getInt(6));
         Blob bl = rs.getBlob(8);
-
-
-
 
         if(bl != null) {
             InputStream inputStream = bl.getBinaryStream();

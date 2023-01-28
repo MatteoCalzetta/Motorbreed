@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="470.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="470.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motorbreedfinal.motorbreedpay.MotorbreedPayControllerG">
    <children>
         <VBox layoutY="4.0" prefHeight="470.0" prefWidth="506.0" styleClass="white-background">
             <children>
@@ -69,6 +69,7 @@
                               <TextField fx:id="tfLastName" pickOnBounds="false" prefHeight="26.0" prefWidth="346.0" promptText="last name" />
                            </children>
                         </HBox>
+                        <Label fx:id="lblOrderId" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="475.0" text="your univoque order id is  : " />
                         <HBox alignment="CENTER">
                            <children>
                                       <Label fx:id="lblPrice" prefHeight="37.0" prefWidth="243.0" text="   Payment: 4400,90 $">
@@ -93,7 +94,7 @@
                               </HBox>
                                         <HBox alignment="CENTER" prefHeight="26.0" prefWidth="537.0">
                                             <children>
-                                                <TextField fx:id="tfCard" prefHeight="26.0" prefWidth="356.0" promptText="XXXX-XXXX-XXXX-XXXX" />
+                                                <TextField fx:id="tfCard" onAction="#enableDisableError" prefHeight="26.0" prefWidth="356.0" promptText="XXXX-XXXX-XXXX-XXXX" />
                                             </children>
                                         </HBox>
                                         <HBox alignment="CENTER" prefHeight="26.0" prefWidth="378.0">
@@ -106,7 +107,7 @@
                                                 <Insets top="10.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Button fx:id="btnBuy" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" style="-fx-background-color: #028eff;" text="Buy now">
+                                                <Button fx:id="btnBuy" mnemonicParsing="false" onAction="#buyNow" prefHeight="63.0" prefWidth="187.0" style="-fx-background-color: #028eff;" text="Buy now">
                                                     <font>
                                                         <Font name="Berlin Sans FB" size="16.0" />
                                                     </font>

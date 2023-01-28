@@ -11,8 +11,7 @@ public abstract class AccountSubject {
     public static void attach(AccountObserver observer){
         observers.add(observer);
 
-    }
-    public static void attach(BuyerObserver observer){
+    }public static void attach(BuyerObserver observer){
         orderObservers.add(observer);
     }
     public void notifyObservers(){

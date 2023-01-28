@@ -1,5 +1,7 @@
 package com.example.motorbreedfinal.view1;
 
+import com.example.motorbreedfinal.controller.ResearchController;
+import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import javafx.event.ActionEvent;
@@ -49,6 +51,7 @@ public class BuyerUserPageControllerG {
 
     @FXML
     void setOrders(ActionEvent event) {
+        LoggedUser.getInstance().getBuyer().setOrders(ResearchController.getInstance().getBuyerOrders());
         if (!LoggedUser.getInstance().getBuyer().getOrders().isEmpty()) {
             FXMLLoader loader = FxmlLoader.setPage("ResultsPage");
             AdBean adBean = new AdBean();

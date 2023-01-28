@@ -25,7 +25,7 @@ public class Query {
     }
 
     public static ResultSet findAdsByBaseFilters(Statement stmt, String brand, String startingPrice, String maxPrice, String startingMileage, String maxMileage) throws SQLException {
-        String selectedStatement = "SELECT * FROM ad WHERE true = true ";
+        String selectedStatement = "SELECT * FROM ad WHERE sold = '0' ";
 
         if(!startingPrice.isEmpty()){
             selectedStatement += " AND cost > " + startingPrice;
@@ -45,12 +45,11 @@ public class Query {
             selectedStatement += " AND mileage < " + maxMileage;
         }
         selectedStatement += ")";
-        System.out.println(selectedStatement);
         return stmt.executeQuery(selectedStatement);
     }
 
     public static ResultSet findAdsByAdvancedFilters(Statement stmt, String brand, String model, String fuelType, String productionYear, String startingHP, String maxHP, String transmission, String startingPrice, String maxPrice, String startingMileage, String maxMileage, String decorations) throws SQLException {
-        String selectedStatement = "SELECT * FROM ad WHERE true = true ";
+        String selectedStatement = "SELECT * FROM ad WHERE sold = '0' ";
 
         if(!startingPrice.isEmpty()){
             selectedStatement += " AND cost > " + startingPrice;
@@ -98,7 +97,6 @@ public class Query {
         }
 
         selectedStatement += ")";
-        System.out.println(selectedStatement);
         return stmt.executeQuery(selectedStatement);
     }
 
@@ -109,7 +107,6 @@ public class Query {
 
     public static ResultSet findSellerById(Statement stmt, String userId) throws  SQLException{
         String selectStatement = "SELECT * FROM user WHERE userid = " + userId;
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -126,7 +123,6 @@ public class Query {
 
     public static ResultSet findFavoriteAds(Statement stmt, String userId) throws  SQLException{
         String selectStatement = String.format("SELECT * FROM AD WHERE sold = 0 AND idAd IN (SELECT idAd FROM buyer_favorites WHERE idBuyer = '%s')", userId);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -138,13 +134,11 @@ public class Query {
 
     public static ResultSet findBuyerOrders(Statement stmt, String userId) throws SQLException {
         String selectStatement = String.format("SELECT * FROM AD WHERE sold = 1 AND idAd IN (SELECT idAd FROM buyer_order WHERE idBuyer = '%s')", userId);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static void insertAd(Statement stmt, int cost, String description, String location, String insertionDate, int carId, int sellerId, boolean priceCertification, InputStream imageStream) throws  SQLException{
         String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, image, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')", cost, description, location, insertionDate, 0, Boolean.compare(priceCertification, true)+1, imageStream, 0, carId, sellerId);
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
@@ -170,12 +164,24 @@ public class Query {
 
     public static void remoteFavorites(Statement stmt, String idAd, String idBuyer) throws SQLException {
         String deleteStatement = String.format("DELETE FROM buyer_favorites WHERE idBuyer = '%s' AND idAd = '%s';", idBuyer, idAd);
-        System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
     }
 
     public static void updateEmail(Statement stmt, String newEmail, String oldEmail) throws SQLException {
         String updateStatement = String.format("UPDATE user SET email = '%s' WHERE email = '%s'", newEmail, oldEmail);
+        stmt.executeUpdate(updateStatement);
+    }
+
+    public static ResultSet findAdById(Statement stmt, String idAd) throws SQLException {
+        System.out.println("l'idAD nella query è "+idAd);
+        String selectStatement = String.format("SELECT * FROM AD WHERE idAd = '%s'", idAd);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void addOrder(Statement stmt, String idAd, String idBuyer) throws SQLException {
+        String insertStatement = String.format("INSERT into buyer_order (idBuyer, idAd) VALUES ('%s' '%s')", idBuyer, idAd);
+        stmt.executeUpdate(insertStatement);
+        String updateStatement = String.format("UPDATE ad SET sold = '1' WHERE idAd = '%s'", idAd);
         stmt.executeUpdate(updateStatement);
     }
 }

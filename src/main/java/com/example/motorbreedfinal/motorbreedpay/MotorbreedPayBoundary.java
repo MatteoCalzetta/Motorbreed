@@ -1,5 +1,6 @@
 package com.example.motorbreedfinal.motorbreedpay;
 
+import com.example.motorbreedfinal.controller.boundary.PaymentBoundary;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -11,17 +12,18 @@ public class MotorbreedPayBoundary implements MotorbreedPayInterface{
 
     private MotorbreedPayControllerG motorbreedPayControllerG = null;
 
+    private boolean validPayment = false;
+
     @Override
-    public void startTransaction(String firstName, String lastName, float expense) {
+    public void startTransaction(String firstName, String lastName, float expense, String idAd) {
         //facciamo partire la finta scene
-        motorbreedPayControllerG = new MotorbreedPayControllerG(firstName,lastName, expense);
 
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = MotorbreedPayBoundary.class.getResource("Motorbreedpay.fxml");
         loader.setLocation(fxmlLocation);
-        loader.setController(motorbreedPayControllerG);
+
 
         Scene scene = null;
         try {
@@ -30,16 +32,18 @@ public class MotorbreedPayBoundary implements MotorbreedPayInterface{
             e.printStackTrace();
         }
 
+        MotorbreedPayControllerG motorbreedPayControllerG = loader.getController();
+        motorbreedPayControllerG.setData(firstName, lastName, expense, idAd);
         stage.setTitle("MotorbreedPay");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
-
     }
 
     @Override
-    public int convalidPayment(){
-       return 1;
+    public void convalidPayment(String idAd){
+        PaymentBoundary paymentBoundary = new PaymentBoundary();
+        paymentBoundary.paymentIsValid(idAd);
     }
 
 }
