@@ -1,11 +1,11 @@
 package com.example.motorbreedfinal.view1;
 
-import com.example.motorbreedfinal.Controller.CustomizeProfileController;
-import com.example.motorbreedfinal.Model.Users.AccountObserver;
-import com.example.motorbreedfinal.Model.Users.AccountSubject;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.Model.exceptions.FailedProfileCustomizationException;
-import com.example.motorbreedfinal.view1.Fagioli.AccountBean;
+import com.example.motorbreedfinal.controller.CustomizeProfileController;
+import com.example.motorbreedfinal.model.users.AccountObserver;
+import com.example.motorbreedfinal.model.users.AccountSubject;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.model.exceptions.FailedProfileCustomizationException;
+import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

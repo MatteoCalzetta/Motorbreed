@@ -1,15 +1,15 @@
-package com.example.motorbreedfinal.Controller;
+package com.example.motorbreedfinal.controller;
 
-import com.example.motorbreedfinal.Model.DAO.LoginDao;
-import com.example.motorbreedfinal.Model.DAO.AccountDao;
-import com.example.motorbreedfinal.Model.DAO.ResearchDAO;
-import com.example.motorbreedfinal.Model.Users.Account;
-import com.example.motorbreedfinal.Model.Users.Buyer;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.Model.Users.Seller;
-import com.example.motorbreedfinal.Model.factories.UserFactory;
-import com.example.motorbreedfinal.view1.Fagioli.AccountHomepageBean;
-import com.example.motorbreedfinal.view1.Fagioli.LoginBean;
+import com.example.motorbreedfinal.model.dao.LoginDao;
+import com.example.motorbreedfinal.model.dao.AccountDao;
+import com.example.motorbreedfinal.model.dao.ResearchDAO;
+import com.example.motorbreedfinal.model.users.Account;
+import com.example.motorbreedfinal.model.users.Buyer;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.model.users.Seller;
+import com.example.motorbreedfinal.model.factories.UserFactory;
+import com.example.motorbreedfinal.view1.fagioli.AccountHomepageBean;
+import com.example.motorbreedfinal.view1.fagioli.LoginBean;
 
 import javax.security.auth.login.FailedLoginException;
 import java.io.IOException;

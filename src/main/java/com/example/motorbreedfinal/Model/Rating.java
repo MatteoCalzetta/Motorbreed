@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Model;
+package com.example.motorbreedfinal.model;
 
 public class Rating {
     private int rate;

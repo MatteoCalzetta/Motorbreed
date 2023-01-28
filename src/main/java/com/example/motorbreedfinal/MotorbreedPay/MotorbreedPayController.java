@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.MotorbreedPay;
+package com.example.motorbreedfinal.motorbreedpay;
 
 public class MotorbreedPayController {
 }

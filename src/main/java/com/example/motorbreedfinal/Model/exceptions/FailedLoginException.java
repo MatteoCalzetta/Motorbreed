@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Model.exceptions;
+package com.example.motorbreedfinal.model.exceptions;
 
 import java.io.Serial;
 

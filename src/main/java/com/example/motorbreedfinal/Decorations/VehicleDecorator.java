@@ -1,6 +1,6 @@
-package com.example.motorbreedfinal.Decorations;
+package com.example.motorbreedfinal.decorations;
 
-import com.example.motorbreedfinal.Model.Vehicle;
+import com.example.motorbreedfinal.model.Vehicle;
 
 public abstract class VehicleDecorator extends Vehicle {
     private Vehicle vehicle;

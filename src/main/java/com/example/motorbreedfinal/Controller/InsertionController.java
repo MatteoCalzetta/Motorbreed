@@ -1,16 +1,16 @@
-package com.example.motorbreedfinal.Controller;
+package com.example.motorbreedfinal.controller;
 
-import com.example.motorbreedfinal.Decorations.DecorateCar;
-import com.example.motorbreedfinal.Evaluator.EvaluatorController;
-import com.example.motorbreedfinal.Model.Ad;
-import com.example.motorbreedfinal.Model.DAO.InsertionDAO;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.Model.Vehicle;
-import com.example.motorbreedfinal.Model.exceptions.FailedAdInsertionException;
+import com.example.motorbreedfinal.decorations.DecorateCar;
+import com.example.motorbreedfinal.evaluator.EvaluatorController;
+import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.dao.InsertionDAO;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.model.Vehicle;
+import com.example.motorbreedfinal.model.exceptions.FailedAdInsertionException;
 import com.example.motorbreedfinal.view1.DescriptionpageControllerG;
-import com.example.motorbreedfinal.view1.Fagioli.AdBean;
-import com.example.motorbreedfinal.view1.Fagioli.CarBean;
-import com.example.motorbreedfinal.view1.Fagioli.DescriptionpageBean;
+import com.example.motorbreedfinal.view1.fagioli.AdBean;
+import com.example.motorbreedfinal.view1.fagioli.CarBean;
+import com.example.motorbreedfinal.view1.fagioli.DescriptionpageBean;
 import com.example.motorbreedfinal.view1.FxmlLoader;
 
 import java.io.InputStream;

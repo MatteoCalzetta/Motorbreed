@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Evaluator;
+package com.example.motorbreedfinal.evaluator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

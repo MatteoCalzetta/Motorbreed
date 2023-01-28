@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.MotorbreedPay;
+package com.example.motorbreedfinal.motorbreedpay;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

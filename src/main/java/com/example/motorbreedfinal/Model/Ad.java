@@ -1,6 +1,6 @@
-package com.example.motorbreedfinal.Model;
+package com.example.motorbreedfinal.model;
 
-import com.example.motorbreedfinal.Model.Users.Seller;
+import com.example.motorbreedfinal.model.users.Seller;
 import javafx.scene.image.Image;
 
 

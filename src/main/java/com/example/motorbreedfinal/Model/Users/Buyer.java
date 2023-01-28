@@ -1,6 +1,6 @@
-package com.example.motorbreedfinal.Model.Users;
+package com.example.motorbreedfinal.model.users;
 
-import com.example.motorbreedfinal.Model.Ad;
+import com.example.motorbreedfinal.model.Ad;
 
 import java.util.List;
 

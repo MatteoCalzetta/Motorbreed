@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Evaluator;
+package com.example.motorbreedfinal.evaluator;
 
 public class EvaluatorBean {
 

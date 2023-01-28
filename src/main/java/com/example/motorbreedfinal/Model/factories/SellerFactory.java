@@ -1,9 +1,8 @@
-package com.example.motorbreedfinal.Model.factories;
+package com.example.motorbreedfinal.model.factories;
 
-import com.example.motorbreedfinal.Model.Users.Account;
-import com.example.motorbreedfinal.Model.DAO.SellerDao;
-import com.example.motorbreedfinal.Model.DAO.AccountDao;
-import com.example.motorbreedfinal.Model.Users.Seller;
+import com.example.motorbreedfinal.model.dao.SellerDao;
+import com.example.motorbreedfinal.model.dao.AccountDao;
+import com.example.motorbreedfinal.model.users.Seller;
 
 public class SellerFactory extends UserFactory {
 

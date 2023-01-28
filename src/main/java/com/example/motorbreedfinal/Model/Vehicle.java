@@ -1,6 +1,4 @@
-package com.example.motorbreedfinal.Model;
-
-import java.util.Date;
+package com.example.motorbreedfinal.model;
 
 // Vehicle in Decorator è l interfaccia comune
 

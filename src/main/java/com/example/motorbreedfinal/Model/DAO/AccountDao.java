@@ -1,8 +1,8 @@
-package com.example.motorbreedfinal.Model.DAO;
+package com.example.motorbreedfinal.model.dao;
 
-import com.example.motorbreedfinal.Model.Service.Connector;
-import com.example.motorbreedfinal.Model.Service.Query;
-import com.example.motorbreedfinal.Model.Users.Account;
+import com.example.motorbreedfinal.model.service.Connector;
+import com.example.motorbreedfinal.model.service.Query;
+import com.example.motorbreedfinal.model.users.Account;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

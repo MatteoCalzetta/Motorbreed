@@ -1,11 +1,11 @@
 package com.example.motorbreedfinal.view1;
 
-import com.example.motorbreedfinal.Controller.ResearchController;
-import com.example.motorbreedfinal.Model.Users.Buyer;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.Model.exceptions.FailedResearchException;
-import com.example.motorbreedfinal.view1.Fagioli.AdBean;
-import com.example.motorbreedfinal.view1.Fagioli.AdvancedResearchBean;
+import com.example.motorbreedfinal.controller.ResearchController;
+import com.example.motorbreedfinal.model.users.Buyer;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
+import com.example.motorbreedfinal.view1.fagioli.AdBean;
+import com.example.motorbreedfinal.view1.fagioli.AdvancedResearchBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

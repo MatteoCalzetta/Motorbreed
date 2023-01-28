@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.DAO;
+package com.example.motorbreedfinal.dao;
 
 public class LoginDao {
 

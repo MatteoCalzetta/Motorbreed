@@ -1,7 +1,7 @@
-package com.example.motorbreedfinal.Evaluator;
+package com.example.motorbreedfinal.evaluator;
 
-import com.example.motorbreedfinal.Controller.InsertionController;
-import com.example.motorbreedfinal.Model.Vehicle;
+import com.example.motorbreedfinal.controller.InsertionController;
+import com.example.motorbreedfinal.model.Vehicle;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

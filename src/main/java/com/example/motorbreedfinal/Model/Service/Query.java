@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Model.Service;
+package com.example.motorbreedfinal.model.service;
 
 import java.io.InputStream;
 import java.sql.ResultSet;

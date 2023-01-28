@@ -1,9 +1,8 @@
-package com.example.motorbreedfinal.Model.DAO;
+package com.example.motorbreedfinal.model.dao;
 
-import com.example.motorbreedfinal.Model.Car;
-import com.example.motorbreedfinal.Model.Service.Query;
-import com.example.motorbreedfinal.Model.Users.Seller;
-import com.example.motorbreedfinal.Model.exceptions.FailedResearchException;
+import com.example.motorbreedfinal.model.service.Query;
+import com.example.motorbreedfinal.model.users.Seller;
+import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

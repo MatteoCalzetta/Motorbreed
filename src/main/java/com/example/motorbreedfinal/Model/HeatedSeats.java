@@ -1,6 +1,6 @@
-package com.example.motorbreedfinal.Model;
+package com.example.motorbreedfinal.model;
 
-import com.example.motorbreedfinal.Decorations.VehicleDecorator;
+import com.example.motorbreedfinal.decorations.VehicleDecorator;
 
 public class HeatedSeats extends VehicleDecorator {
     private String name = "heatedSeats Optional";

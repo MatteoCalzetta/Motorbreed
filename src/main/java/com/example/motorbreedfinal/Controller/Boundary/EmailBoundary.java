@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Controller.Boundary;
+package com.example.motorbreedfinal.controller.boundary;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

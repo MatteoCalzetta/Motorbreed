@@ -1,8 +1,8 @@
-package com.example.motorbreedfinal.Controller;
+package com.example.motorbreedfinal.controller;
 
-import com.example.motorbreedfinal.Model.DAO.RegisterDao;
-import com.example.motorbreedfinal.Model.exceptions.FailedRegistrationException;
-import com.example.motorbreedfinal.view1.Fagioli.RegistrationBean;
+import com.example.motorbreedfinal.model.dao.RegisterDao;
+import com.example.motorbreedfinal.model.exceptions.FailedRegistrationException;
+import com.example.motorbreedfinal.view1.fagioli.RegistrationBean;
 
 public class RegistrationController {
 

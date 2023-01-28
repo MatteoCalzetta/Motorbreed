@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Tools;
+package com.example.motorbreedfinal.tools;
 
 import com.example.motorbreedfinal.view1.HomepageControllerG;
 import javafx.fxml.FXMLLoader;

@@ -1,7 +1,7 @@
 package com.example.motorbreedfinal.view1;
 
-import com.example.motorbreedfinal.Controller.InsertionController;
-import com.example.motorbreedfinal.view1.Fagioli.CarBean;
+import com.example.motorbreedfinal.controller.InsertionController;
+import com.example.motorbreedfinal.view1.fagioli.CarBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

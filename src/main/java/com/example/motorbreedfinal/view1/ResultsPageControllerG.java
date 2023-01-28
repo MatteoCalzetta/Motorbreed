@@ -1,14 +1,14 @@
 package com.example.motorbreedfinal.view1;
 
-import com.example.motorbreedfinal.Controller.ResearchController;
-import com.example.motorbreedfinal.Model.Ad;
-import com.example.motorbreedfinal.Model.Users.AccountObserver;
-import com.example.motorbreedfinal.Model.Users.AccountSubject;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.MotorbreedPay.MotorbreedPayBoundary;
-import com.example.motorbreedfinal.view1.Fagioli.AdBean;
-import com.example.motorbreedfinal.view1.Fagioli.EmailBean;
-import com.example.motorbreedfinal.view1.Fagioli.FavouritesBean;
+import com.example.motorbreedfinal.controller.ResearchController;
+import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.users.AccountObserver;
+import com.example.motorbreedfinal.model.users.AccountSubject;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.motorbreedpay.MotorbreedPayBoundary;
+import com.example.motorbreedfinal.view1.fagioli.AdBean;
+import com.example.motorbreedfinal.view1.fagioli.EmailBean;
+import com.example.motorbreedfinal.view1.fagioli.FavouritesBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -165,19 +165,19 @@ public class ResultsPageControllerG implements AccountObserver {
         lblProductionDate.setText(ad.getCar().getProductionYear());
         lblFuel.setText(ad.getCar().getFuelType());
         lblIndex.setText(index+1 + " of " + ads.size());
-        if("1".equals(ad.getCar().getDecorations().charAt(0))){
+        if(ad.getCar().getDecorations().charAt(0) == '1'){
             cbHeatedSeats.setSelected(true);
         }
-        if("1".equals(ad.getCar().getDecorations().charAt(1))){
+        if(ad.getCar().getDecorations().charAt(1) == '1'){
             cbParkingSensors.setSelected(true);
         }
-        if("1".equals(ad.getCar().getDecorations().charAt(2))){
+        if(ad.getCar().getDecorations().charAt(2) == '1'){
             cbLed.setSelected(true);
         }
-        if("1".equals(ad.getCar().getDecorations().charAt(3))){
+        if(ad.getCar().getDecorations().charAt(3) == '1'){
             cbCruiseControl.setSelected(true);
         }
-        if("1".equals(ad.getCar().getDecorations().charAt(4))){
+        if(ad.getCar().getDecorations().charAt(4) == '1'){
             cbKeyless.setSelected(true);
         }
     }

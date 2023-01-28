@@ -1,11 +1,11 @@
-package com.example.motorbreedfinal.Controller;
+package com.example.motorbreedfinal.controller;
 
-import com.example.motorbreedfinal.Controller.Boundary.EmailBoundary;
-import com.example.motorbreedfinal.Model.Ad;
-import com.example.motorbreedfinal.Model.DAO.ResearchDAO;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.Model.exceptions.FailedResearchException;
-import com.example.motorbreedfinal.view1.Fagioli.*;
+import com.example.motorbreedfinal.controller.boundary.EmailBoundary;
+import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.dao.ResearchDAO;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
+import com.example.motorbreedfinal.view1.fagioli.*;
 
 import java.util.List;
 

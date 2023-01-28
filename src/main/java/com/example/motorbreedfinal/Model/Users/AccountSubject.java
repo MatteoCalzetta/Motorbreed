@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Model.Users;
+package com.example.motorbreedfinal.model.users;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.example.motorbreedfinal.Model.DAO;
+package com.example.motorbreedfinal.model.dao;
 
-import com.example.motorbreedfinal.Model.Service.Connector;
-import com.example.motorbreedfinal.Model.Service.Query;
+import com.example.motorbreedfinal.model.service.Connector;
+import com.example.motorbreedfinal.model.service.Query;
 
 import javax.security.auth.login.FailedLoginException;
 import java.sql.Connection;

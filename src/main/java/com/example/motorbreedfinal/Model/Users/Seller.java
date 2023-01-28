@@ -1,8 +1,7 @@
-package com.example.motorbreedfinal.Model.Users;
+package com.example.motorbreedfinal.model.users;
 
-import com.example.motorbreedfinal.Model.Ad;
-import com.example.motorbreedfinal.Model.Rating;
-import com.example.motorbreedfinal.Model.Users.Account;
+import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.Rating;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.example.motorbreedfinal.Model.factories;
+package com.example.motorbreedfinal.model.factories;
 
-import com.example.motorbreedfinal.Model.Users.Account;
-import com.example.motorbreedfinal.Model.DAO.AccountDao;
+import com.example.motorbreedfinal.model.users.Account;
+import com.example.motorbreedfinal.model.dao.AccountDao;
 
 public abstract class UserFactory {
 

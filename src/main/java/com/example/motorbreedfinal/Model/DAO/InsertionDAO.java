@@ -1,10 +1,10 @@
-package com.example.motorbreedfinal.Model.DAO;
+package com.example.motorbreedfinal.model.dao;
 
-import com.example.motorbreedfinal.Model.Ad;
-import com.example.motorbreedfinal.Model.Car;
-import com.example.motorbreedfinal.Model.Service.Connector;
-import com.example.motorbreedfinal.Model.Service.Query;
-import com.example.motorbreedfinal.Model.exceptions.FailedAdInsertionException;
+import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.Car;
+import com.example.motorbreedfinal.model.service.Connector;
+import com.example.motorbreedfinal.model.service.Query;
+import com.example.motorbreedfinal.model.exceptions.FailedAdInsertionException;
 
 import java.io.InputStream;
 import java.sql.Connection;

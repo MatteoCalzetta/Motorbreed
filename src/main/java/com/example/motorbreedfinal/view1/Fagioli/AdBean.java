@@ -1,6 +1,6 @@
-package com.example.motorbreedfinal.view1.Fagioli;
+package com.example.motorbreedfinal.view1.fagioli;
 
-import com.example.motorbreedfinal.Model.Ad;
+import com.example.motorbreedfinal.model.Ad;
 
 import java.io.InputStream;
 import java.util.Date;

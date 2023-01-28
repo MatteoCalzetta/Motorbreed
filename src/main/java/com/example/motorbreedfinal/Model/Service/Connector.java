@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Model.Service;
+package com.example.motorbreedfinal.model.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

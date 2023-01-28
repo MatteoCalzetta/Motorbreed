@@ -1,8 +1,8 @@
 package com.example.motorbreedfinal.view1;
 
-import com.example.motorbreedfinal.Controller.RegistrationController;
-import com.example.motorbreedfinal.Model.exceptions.FailedRegistrationException;
-import com.example.motorbreedfinal.view1.Fagioli.RegistrationBean;
+import com.example.motorbreedfinal.controller.RegistrationController;
+import com.example.motorbreedfinal.model.exceptions.FailedRegistrationException;
+import com.example.motorbreedfinal.view1.fagioli.RegistrationBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

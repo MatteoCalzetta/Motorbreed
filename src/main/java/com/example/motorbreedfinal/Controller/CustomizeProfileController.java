@@ -1,9 +1,9 @@
-package com.example.motorbreedfinal.Controller;
+package com.example.motorbreedfinal.controller;
 
-import com.example.motorbreedfinal.Model.DAO.CustomizeProfileDAO;
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.Model.exceptions.FailedProfileCustomizationException;
-import com.example.motorbreedfinal.view1.Fagioli.AccountBean;
+import com.example.motorbreedfinal.model.dao.CustomizeProfileDAO;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.model.exceptions.FailedProfileCustomizationException;
+import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 
 import java.sql.SQLException;
 

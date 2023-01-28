@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.Model.Users;
+package com.example.motorbreedfinal.model.users;
 
 public class LoggedUser {
 

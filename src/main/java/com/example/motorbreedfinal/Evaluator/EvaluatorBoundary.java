@@ -1,10 +1,6 @@
-package com.example.motorbreedfinal.Evaluator;
+package com.example.motorbreedfinal.evaluator;
 
-import com.example.motorbreedfinal.Evaluator.EvaluatorBoundary;
-import com.example.motorbreedfinal.MotorbreedPay.MotorbreedPayBoundary;
-import com.example.motorbreedfinal.MotorbreedPay.MotorbreedPayControllerG;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 

@@ -1,4 +1,4 @@
-package com.example.motorbreedfinal.view1.Fagioli;
+package com.example.motorbreedfinal.view1.fagioli;
 
 public class AccountBean {
 

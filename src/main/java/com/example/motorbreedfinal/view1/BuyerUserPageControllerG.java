@@ -1,7 +1,7 @@
 package com.example.motorbreedfinal.view1;
 
-import com.example.motorbreedfinal.Model.Users.LoggedUser;
-import com.example.motorbreedfinal.view1.Fagioli.AdBean;
+import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
