@@ -18,7 +18,6 @@ public class PaymentBoundary {
 
 
     public void paymentIsValid(String idAd){
-        System.out.println("l'idAd nella payment boundary è "+ idAd);
         ResearchController.getInstance().paymentIsValid(idAd);
     }
 

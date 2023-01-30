@@ -51,5 +51,13 @@ public class LoggedUser {
         return instance;
     }
 
-
+    @Override
+    public String toString() {
+        return "LoggedUser{" +
+                "account=" + account +
+                ", buyer=" + buyer +
+                ", seller=" + seller +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }

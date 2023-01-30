@@ -20,7 +20,7 @@ public class Query {
     }
 
     public static ResultSet isEmailExisting(Statement stmt, String email) throws  SQLException{
-        String selectStatement = "SELECT * FROM user WHERE email = " + email;
+        String selectStatement = String.format("SELECT * FROM user WHERE email = '%s'", email);
         return stmt.executeQuery(selectStatement);
     }
 
