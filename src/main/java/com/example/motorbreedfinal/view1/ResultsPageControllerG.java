@@ -277,7 +277,6 @@ public class ResultsPageControllerG implements AccountObserver {
         EmailBean emailBean = new EmailBean();
         emailBean.setPassword(pfPassword.getText());
         sendEmail(emailBean);
-
     }
 
     @FXML

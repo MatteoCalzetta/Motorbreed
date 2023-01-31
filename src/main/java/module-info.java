@@ -9,8 +9,10 @@ module com.example.motorbreedfinal {
 
 
     exports com.example.motorbreedfinal.view1;
+    exports com.example.motorbreedfinal.view2;
     exports com.example.motorbreedfinal.view1.fagioli;
     opens com.example.motorbreedfinal.view1 to javafx.fxml;
+    opens com.example.motorbreedfinal.view2 to javafx.fxml;
     opens com.example.motorbreedfinal.evaluator to javafx.fxml;
     opens com.example.motorbreedfinal.motorbreedpay to javafx.fxml;
 
