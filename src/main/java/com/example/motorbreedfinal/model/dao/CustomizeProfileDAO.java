@@ -1,5 +1,6 @@
 package com.example.motorbreedfinal.model.dao;
 
+import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.service.Connector;
 import com.example.motorbreedfinal.model.service.Query;
 import com.example.motorbreedfinal.model.exceptions.FailedProfileCustomizationException;
@@ -73,5 +74,31 @@ public class CustomizeProfileDAO {
 
         }
 
+    }
+
+    public void modifyAd(Ad ad){
+        Statement stmt=null;
+        Connection conn=null;
+
+        try {
+            conn= Connector.getInstance().getConnection();
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Query.updateAd(stmt,Integer.parseInt(ad.getCar().getIdCar()), ad.getSeller().getIdAccount(), ad.getCost(), ad.getIdAd(), ad.getLocation(), ad.getDescription(),ad.getImage(), ad.getNumberOfClicks(),
+                    ad.getCar().getBrand(), ad.isPriceCertificated(), ad.getCar().getModel(), ad.getInsertionDate(), ad.getCar().getMileage(), ad.getCar().getTransmission(),
+                    ad.getCar().getFuelType(), ad.getCar().getProductionYear(), ad.getCar().getImmatricolationYear(), ad.getCar().getHorsepower(), ad.getCar().getLicencePlate(),ad.getCar().isInsurance(), ad.getCar().getDecorations());
+
+
+        } catch (SQLException e) {
+            e.getMessage();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+
+        }
     }
 }

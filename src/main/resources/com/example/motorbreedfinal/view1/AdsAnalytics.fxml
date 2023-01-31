@@ -134,12 +134,12 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Label layoutX="877.0" layoutY="429.0" prefHeight="53.0" prefWidth="189.0" text="Average rating:">
+            <Label layoutX="877.0" layoutY="429.0" prefHeight="53.0" prefWidth="189.0" text="Average rating:" visible="false">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Rating focusTraversable="false" layoutX="877.0" layoutY="482.0" partialRating="true" />
+            <Rating focusTraversable="false" layoutX="877.0" layoutY="482.0" partialRating="true" visible="false" />
             </children>
         </AnchorPane>
     </children>

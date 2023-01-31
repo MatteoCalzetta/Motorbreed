@@ -1,9 +1,10 @@
 package com.example.motorbreedfinal.model.service;
 
+import javafx.scene.image.Image;
+
+import java.io.IOException;
 import java.io.InputStream;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Query {
 
@@ -100,6 +101,11 @@ public class Query {
         return stmt.executeQuery(selectedStatement);
     }
 
+    public static ResultSet findSellerAds(Statement stmt, String userId) throws SQLException {
+        String selectStatement = "SELECT * FROM ad WHERE sold = '0' AND idseller = "+ userId;
+        return stmt.executeQuery(selectStatement);
+    }
+
     public static ResultSet findCarById(Statement stmt, String carId) throws  SQLException{
         String selectStatement = "SELECT * FROM car WHERE idcar = " + carId;
         return stmt.executeQuery(selectStatement);
@@ -137,9 +143,10 @@ public class Query {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void insertAd(Statement stmt, int cost, String description, String location, String insertionDate, int carId, int sellerId, boolean priceCertification, InputStream imageStream) throws  SQLException{
-        String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, image, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')", cost, description, location, insertionDate, 0, Boolean.compare(priceCertification, true)+1, imageStream, 0, carId, sellerId);
+    public static void insertAd(Statement stmt, int cost, String description, String location, String insertionDate, int carId, int sellerId, boolean priceCertification) throws  SQLException{
+        String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s')", cost, description, location, insertionDate, 0, Boolean.compare(priceCertification, true)+1, 0, carId, sellerId);
         stmt.executeUpdate(insertStatement);
+
     }
 
     public static ResultSet getCarId(Statement stmt) throws SQLException {
@@ -147,8 +154,8 @@ public class Query {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void insertCar(Statement stmt, String carId, String licencePlate, String transmission, String immatricolationYear, String brand, String model, String mileage, String productionYear, String horsepower, String fuelType, String decorations) throws  SQLException{
-        String insertStatement= String.format("INSERT INTO car (idcar, licencePlate, transmission,  immatricolationYear, brand, model, mileage, productionYear, horsePower, fuelType, decorations) VALUES ('%s', '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')", carId, licencePlate, transmission,immatricolationYear, brand,model, mileage,productionYear, horsepower, fuelType,decorations);
+    public static void insertCar(Statement stmt, String carId, String licencePlate, String transmission, boolean insurance, String immatricolationYear, String brand, String model, String mileage, String productionYear, String horsepower, String fuelType, String decorations) throws  SQLException{
+        String insertStatement= String.format("INSERT INTO car (idcar, licencePlate, transmission, insurance, immatricolationYear, brand, model, mileage, productionYear, horsePower, fuelType, decorations) VALUES ('%s', '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')", carId, licencePlate, transmission, Boolean.compare(insurance, true)+1,immatricolationYear, brand,model, mileage,productionYear, horsepower, fuelType,decorations);
         stmt.executeUpdate(insertStatement);
     }
 
@@ -183,6 +190,41 @@ public class Query {
         stmt.executeUpdate(insertStatement);
         String updateStatement = String.format("UPDATE ad SET sold = '1' WHERE idAd = '%s'", idAd);
         stmt.executeUpdate(updateStatement);
+    }
+
+    public static void insertImage(Connection conn, InputStream imageStream, int IdAd) throws SQLException {
+        try(PreparedStatement pstmt = conn.prepareStatement("UPDATE ad SET image = ? WHERE idAd = ?")){
+            try{
+
+                pstmt.setBlob(1, imageStream);
+                pstmt.setInt(2, IdAd);
+
+                pstmt.execute();
+
+                imageStream.close();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
+
+    public static ResultSet findIdAd(Statement stmt, String licencePlate) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM ad WHERE idCar IN (SELECT idCar FROM car WHERE licencePlate = '%s')", licencePlate);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void updateAd(Statement stmt, int idCar, String idSeller, int cost, String idAd, String location, String description, Image image, int numberOfClicks, String brand, boolean priceCertificated, String model, String insertionDate, int mileage, String transmission, String fuelType, String productionYear, String immatricolationYear, int horsepower, String licencePlate, boolean insurance, String decorations) throws SQLException {
+        String updateStatement = String.format("UPDATE car SET licencePlate = '%s', transmission = '%s', insurance = '%s', immatricolationYear = '%s', brand = '%s', model = '%s', mileage = '%s', productionYear = '%s', horsePower = '%s', fuelType = '%s', decorations = '%s' WHERE idcar = '%s'", licencePlate, transmission, Boolean.compare(insurance, true)+1, immatricolationYear, brand, model, mileage, productionYear, horsepower, fuelType, decorations, idCar);
+
+    stmt.executeUpdate(updateStatement);
+
+        updateStatement = String.format("UPDATE ad SET Cost = '%s', Description = '%s', Location = '%s', InsertionDate = '%s', numberofclicks = '%s', certification = '%s', image = '%s', sold = '%s', idcar = '%s', idseller = '%s' WHERE idAd = '%s'", cost, description, location, insertionDate, numberOfClicks, Boolean.compare(priceCertificated, true)+1, image, 0, idCar, idSeller,idAd);
+
+    stmt.executeUpdate(updateStatement);
     }
 }
 

@@ -21,8 +21,14 @@ public class InsertionDAO {
         try {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            System.out.println("il car id prima di fare insert ad è " + ad.getCar().getIdCar());
-            Query.insertAd(stmt, ad.getCost(), ad.getDescription(), ad.getLocation(), ad.getInsertionDate(), Integer.parseInt(ad.getCar().getIdCar()), Integer.parseInt(ad.getSeller().getIdAccount()), ad.isPriceCertificated(), imageStream);
+            //System.out.println("il car id prima di fare insert ad è " + ad.getCar().getIdCar());
+            Query.insertAd(stmt, ad.getCost(), ad.getDescription(), ad.getLocation(), ad.getInsertionDate(), Integer.parseInt(ad.getCar().getIdCar()), Integer.parseInt(ad.getSeller().getIdAccount()), ad.isPriceCertificated());
+
+            ResultSet rs = Query.findIdAd(stmt, ad.getCar().getLicencePlate());
+            rs.next();
+            int idAd = rs.getInt(1);
+
+            Query.insertImage(conn, imageStream, idAd);
 
         }catch (SQLException e){
             throw new FailedAdInsertionException(e.getMessage());
@@ -35,6 +41,8 @@ public class InsertionDAO {
         }
     }
 
+
+
     public void insertCar(Car car) throws FailedAdInsertionException, SQLException {
         Statement stmt =null;
         Connection conn =null;
@@ -44,7 +52,7 @@ public class InsertionDAO {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            Query.insertCar(stmt, car.getIdCar(), car.getLicencePlate(), car.getTransmission(), car.getImmatricolationYear(), car.getBrand(),car.getModel(), String.valueOf(car.getMileage()), car.getProductionYear(), String.valueOf(car.getHorsepower()), car.getFuelType(), car.getDecorations());
+            Query.insertCar(stmt, car.getIdCar(), car.getLicencePlate(), car.getTransmission(), car.isInsurance(), car.getImmatricolationYear(), car.getBrand(),car.getModel(), String.valueOf(car.getMileage()), car.getProductionYear(), String.valueOf(car.getHorsepower()), car.getFuelType(), car.getDecorations());
 
         }catch (SQLException e){
             throw new FailedAdInsertionException(e.getMessage());

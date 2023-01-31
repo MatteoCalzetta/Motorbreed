@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motorbreedfinal.view1.ModifyAdControllerG">
+    <children>
+        <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;">
+            <children>
+                <ImageView fitHeight="711.0" fitWidth="171.0" layoutX="1109.0" layoutY="-1.0">
+                    <image>
+                        <Image url="@../Icons_and_pics/black.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="726.0" fitWidth="171.0" layoutY="-3.0">
+                    <image>
+                        <Image url="@../Icons_and_pics/black.png" />
+                    </image>
+                </ImageView>
+                <Rectangle fx:id="background" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="734.0" layoutX="171.0" layoutY="-11.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
+            <Label fx:id="oneOfLabel" layoutX="624.0" layoutY="668.0" style="-fx-border-color: #028eff;" text="1 of 20">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="previousButton" layoutX="192.0" layoutY="667.0" mnemonicParsing="false" onAction="#previousAd" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Previous" />
+            <Button fx:id="nextButton" layoutX="999.0" layoutY="667.0" mnemonicParsing="false" onAction="#nextAd" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Next" />
+            <ImageView fx:id="imageView" fitHeight="195.0" fitWidth="355.0" layoutX="325.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/2023-dodge-challenger-black-ghost.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="589.0" layoutY="117.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="589.0" layoutY="199.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="confirmButton" disable="true" layoutX="968.0" layoutY="103.0" mnemonicParsing="false" onAction="#confirmChanges" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Confirm changes" visible="false" />
+            <Button fx:id="homepageButton" layoutX="187.0" layoutY="20.0" mnemonicParsing="false" onAction="#goToHomepage" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="back to Homepage" />
+            <Label layoutX="192.0" layoutY="549.0" text="Optionals">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="parkingSensorsBox" disable="true" layoutX="365.0" layoutY="601.0" mnemonicParsing="false" text="Parking sensors">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="LedBox" disable="true" layoutX="578.0" layoutY="601.0" mnemonicParsing="false" text="LED headlights">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="CruiseBox" disable="true" focusTraversable="false" layoutX="768.0" layoutY="601.0" mnemonicParsing="false" text="Cruise control">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="keyBox" disable="true" layoutX="940.0" layoutY="601.0" mnemonicParsing="false" text="Keyless system">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="heatedSeatsBox" disable="true" layoutX="192.0" layoutY="601.0" mnemonicParsing="false" text="Heated Seats">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="232.0" layoutY="251.0" text="Price:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="833.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/64665.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="233.0" layoutY="397.0" text="HorsePower:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="563.0" layoutY="397.0" text="Mileage:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="icon" fitHeight="37.0" fitWidth="37.0" layoutX="383.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/1545949.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="certificationLabel" layoutX="434.0" layoutY="251.0" text="Certified">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="874.0" layoutY="397.0" text="Insertion date:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="614.0" layoutY="251.0" text="Seller: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="sellerLabel" layoutX="672.0" layoutY="251.0" text="Luigi Talamo">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="489.0" text="Transmission:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="564.0" layoutY="489.0" text="Production year:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="880.0" layoutY="489.0" text="Fuel type:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="233.0" layoutY="319.0" text="Brand:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="566.0" layoutY="319.0" text="Model:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="187.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/transmission.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="477.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/1000_F_268139327_vLfMSgtCLFCHbc2E4pwbMFN6Xti8wdYi-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="833.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/2933839.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="187.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/922340.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="63.0" layoutX="820.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/361-3614560_the-front-page-of-bxx-product-category-information-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="58.0" layoutX="177.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/images.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="187.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/5893015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="568.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons_and_pics/370829-200-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Pane disable="true" layoutX="381.0" layoutY="17.0" prefHeight="686.0" prefWidth="519.0" style="-fx-background-color: white; -fx-border-color: #028eff;" visible="false">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Contact the seller via email">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="47.0" text="Your message:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="479.0" layoutY="14.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="26.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="X" />
+                  <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="89.0" prefHeight="215.0" prefWidth="489.0" style="-fx-border-color: #028eff;" text="Hello,I am interested in the vehicle you have for sale. Is it still available?Sincerely" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="322.0" text="Your name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="15.0" layoutY="357.0" prefHeight="37.0" prefWidth="489.0" style="-fx-border-color: #028eff; -fx-background-color: white;" />
+                  <Label layoutX="15.0" layoutY="411.0" text="Your email:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="15.0" layoutY="446.0" prefHeight="37.0" prefWidth="489.0" style="-fx-border-color: #028eff; -fx-background-color: white;" />
+                  <Label layoutX="14.0" layoutY="501.0" text="Your phone number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="14.0" layoutY="536.0" prefHeight="37.0" prefWidth="489.0" style="-fx-border-color: #028eff; -fx-background-color: white;" />
+                  <Button layoutX="14.0" layoutY="613.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="489.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Send email to Seller">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Button fx:id="editButton" layoutX="708.0" layoutY="20.0" mnemonicParsing="false" onAction="#editAd" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Edit Advertisement" />
+            <TextField fx:id="priceTF" editable="false" focusTraversable="false" layoutX="277.0" layoutY="245.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: white;" text="20.000€">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="brandTF" editable="false" focusTraversable="false" layoutX="285.0" layoutY="313.0" prefHeight="39.0" prefWidth="208.0" style="-fx-background-color: white;" text="Dodge">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="hpTF" editable="false" focusTraversable="false" layoutX="335.0" layoutY="391.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: white;" text="400">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="transmissionTF" editable="false" focusTraversable="false" layoutX="338.0" layoutY="483.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: white;" text="Manual">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="modelTF" editable="false" focusTraversable="false" layoutX="622.0" layoutY="313.0" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: white;" text="Challenger">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mileageTF" editable="false" focusTraversable="false" layoutX="631.0" layoutY="391.0" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: white;" text="20.000km">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="pYearTF" editable="false" focusTraversable="false" layoutX="696.0" layoutY="483.0" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: white;" text="2019">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="fuelTF" editable="false" focusTraversable="false" layoutX="957.0" layoutY="483.0" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: white;" text="Hybrid-Gas">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="locationTF" editable="false" focusTraversable="false" layoutX="875.0" layoutY="245.0" prefHeight="39.0" prefWidth="208.0" style="-fx-background-color: white;" text="Roma - RM - IT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="875.0" layoutY="319.0" text="Matriculation year:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="matriculationYearTF" editable="false" focusTraversable="false" layoutX="1028.0" layoutY="313.0" prefHeight="39.0" prefWidth="67.0" style="-fx-background-color: white;" text="2020">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="insertionDateTF" editable="false" focusTraversable="false" layoutX="990.0" layoutY="391.0" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: white;" text="2020">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="changePicButton" layoutX="708.0" layoutY="185.0" mnemonicParsing="false" onAction="#changePic" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Change Image" />
+            <Button fx:id="deleteAdButton" disable="true" layoutX="968.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteAd" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Delete Ad" visible="false" />
+            <Pane fx:id="descPane" disable="true" layoutX="456.0" layoutY="167.0" prefHeight="389.0" prefWidth="394.0" style="-fx-background-color: black; -fx-border-color: #028eff;" visible="false">
+               <children>
+                  <Label layoutX="8.0" layoutY="4.0" style="-fx-text-fill: white;" text="Car description:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="closePaneButton" layoutX="362.0" layoutY="5.0" mnemonicParsing="false" onAction="#closedescPane" prefHeight="20.0" prefWidth="26.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: #028eff;" text="X" />
+                  <TextField fx:id="descriptionTF" alignment="TOP_LEFT" editable="false" layoutX="6.0" layoutY="35.0" prefHeight="348.0" prefWidth="382.0" promptText="AAA" style="-fx-background-color: white; -fx-border-color: #028eff;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Button fx:id="readDesc" layoutX="708.0" layoutY="103.0" mnemonicParsing="false" onAction="#readDesc" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Read Description" />
+            <CheckBox fx:id="insuranceCheckBox" disable="true" layoutX="968.0" layoutY="187.0" mnemonicParsing="false" text="Insurance">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

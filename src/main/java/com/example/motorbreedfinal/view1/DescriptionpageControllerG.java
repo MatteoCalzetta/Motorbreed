@@ -14,13 +14,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.logging.Logger;
 
 public class DescriptionpageControllerG {
 
@@ -91,23 +93,29 @@ public class DescriptionpageControllerG {
 
     @FXML
     void uploadImage(ActionEvent event) {
-
         FileChooser fc = new FileChooser();
         inputStream = null;
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.jpg,*.png,*.jpeg","*.jpg","*.png", "*.jpeg"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.jpg,*.png,*.jpeg", "*.jpg", "*.png", "*.jpeg"));
         File file = fc.showOpenDialog(null);
-        if(file!=null){
+        if (file != null) {
             String imagePath = file.getAbsolutePath();
             try {
                 inputStream = new FileInputStream(imagePath);
+                System.out.println(inputStream);
+                Image cover = new Image(inputStream);
+                uploadImageView.setImage(cover);
             } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
+            } finally {
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
             }
-
-            Image cover = new Image(inputStream);
-            uploadImageView.setImage(cover);
         }
-
     }
 
     @FXML
@@ -131,7 +139,7 @@ public class DescriptionpageControllerG {
                 }
             } else if (!sellerPriceTF.getText().isEmpty() && proposedPriceTF.getText().isEmpty()) {
                 adBean = new AdBean(out, descriptionTF.getText()
-                        , adLocationTF.getText(), Integer.parseInt(sellerPriceTF.getText().substring(0, proposedPriceTF.getText().length()-1)), false,inputStream);
+                        , adLocationTF.getText(), Integer.parseInt(sellerPriceTF.getText().substring(0, sellerPriceTF.getText().length()-1)), false,inputStream);
 
                 if(adBean.Validation()){
                     insertionController.insertAd(adBean);

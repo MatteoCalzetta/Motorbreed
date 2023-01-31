@@ -17,6 +17,9 @@ public class AdBean {
     private String seller;
     private InputStream imageStream;
 
+    private int numberOfClicks;
+
+
     List<Ad> ads;
 
     public AdBean() {
@@ -105,5 +108,13 @@ public class AdBean {
             return true;
         }
         return false;
+    }
+
+    public void setNumberOfClicks(int numberClicks) {
+        this.numberOfClicks = numberClicks;
+    }
+
+    public int getnumberOfClicks() {
+        return this.numberOfClicks;
     }
 }

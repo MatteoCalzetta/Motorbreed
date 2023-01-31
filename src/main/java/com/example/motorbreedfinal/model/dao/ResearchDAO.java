@@ -156,11 +156,17 @@ public class ResearchDAO {
         ad.setLocation(rs.getString(4));
         ad.setInsertionDate(rs.getString(5));
         ad.setNumberOfClicks(rs.getInt(6));
+        if(rs.getInt(7) == 1){
+            ad.setPriceCertification(true);
+        }else ad.setPriceCertification(false);
+
         Blob bl = rs.getBlob(8);
 
         if(bl != null) {
             InputStream inputStream = bl.getBinaryStream();
+
             Image image = new Image(inputStream);
+
             ad.setImage(image);
         }
         ad.setCar(carDAO.findCarById(conn, rs.getString(10)));
@@ -191,5 +197,30 @@ public class ResearchDAO {
                 throw new RuntimeException(e); //auto generata è da fare
             }
         }
+    }
+
+    public List<Ad> findSellerAds(String userId){
+        Statement stmt = null;
+        Connection conn = null;
+        List<Ad> ads = new ArrayList<>();
+
+        try {
+            conn = Connector.getInstance().getConnection();
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Query.findSellerAds(stmt, userId);
+            while (rs.next()) {
+                ads.add(extractAd(conn, rs));
+            }
+        } catch (SQLException | FailedResearchException | IOException se) {
+            se.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e); //auto generata è da fare
+            }
+        }
+        return ads;
     }
 }

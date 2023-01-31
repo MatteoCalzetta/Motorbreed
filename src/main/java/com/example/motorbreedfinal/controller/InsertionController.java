@@ -44,6 +44,7 @@ public class InsertionController extends DecorateCar {
         ad.getCar().setLicencePlate(carBean.getLicencePlate());
         ad.getCar().setTransmission(carBean.getTransmission());
         ad.getCar().setCarDecorations(vehicle.getDecorations());
+        ad.getCar().setInsurance(carBean.isInsurance());
 
         vehicle.setStatus(ad.getCar());
 
@@ -85,11 +86,14 @@ public class InsertionController extends DecorateCar {
             insertionDAO.insertCar(ad.getCar());
         }catch (FailedAdInsertionException | SQLException e){
             this.descriptionControlllerG.showFailedInsertion();
+            System.out.println(e.getMessage());
+
         }
         try{
             insertionDAO.insertAd(ad, ad.getSeller().getIdAccount(), imageStream);
         } catch (FailedAdInsertionException e) {
             this.descriptionControlllerG.showFailedInsertion();
+            System.out.println(e.getMessage());
         }
 
         FxmlLoader.setPage("SellerHomepage");

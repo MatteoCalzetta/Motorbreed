@@ -17,6 +17,14 @@ public class Seller extends Account {
         return false;
     }
 
+    public List<Ad> getAdList() {
+        return adList;
+    }
+
+    public void setAdList(List<Ad> adList) {
+        this.adList = adList;
+    }
+
     @Override
     public String toString() {
         return "Seller{" +

@@ -89,6 +89,9 @@ public class InsertpageControllerG {
     private Label transmissionLabel;
 
     @FXML
+    private CheckBox insuranceCheckBox;
+
+    @FXML
     private TextField transmissionTextField;
 
     @FXML
@@ -120,6 +123,7 @@ public class InsertpageControllerG {
         carBean.setTransmission(transmissionTextField.getText());
         carBean.setImmatricolationDate(immatricolationDateTextField.getText());
         carBean.setProductionYear(productionYearTextField.getText());
+        carBean.setInsurance(insuranceCheckBox.isSelected());
 
         decorationsArray[0] = cruiseControlCheckBox.isSelected();
         decorationsArray[1] = keylessSystemCheckBox.isSelected();

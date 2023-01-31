@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 public class CarBean {
 
+    private boolean insurance;
     private String brand;
     private String model;
     private int mileage;
@@ -12,6 +13,14 @@ public class CarBean {
     private String fuelType;
     private String transmission;
     private String licencePlate;
+
+    public boolean isInsurance() {
+        return insurance;
+    }
+
+    public void setInsurance(boolean insurance) {
+        this.insurance = insurance;
+    }
 
     public String getBrand() {
         return brand;
