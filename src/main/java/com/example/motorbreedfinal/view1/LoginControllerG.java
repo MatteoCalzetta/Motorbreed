@@ -74,7 +74,7 @@ public class LoginControllerG {
 
             } catch (FailedLoginException e) {
                 showErrorMessage(e.getMessage());
-            } catch (SQLException | IOException e) {
+            } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
 
