@@ -4,7 +4,6 @@ import com.example.motorbreedfinal.controller.CustomizeProfileController;
 import com.example.motorbreedfinal.model.users.AccountObserver;
 import com.example.motorbreedfinal.model.users.AccountSubject;
 import com.example.motorbreedfinal.model.users.LoggedUser;
-import com.example.motorbreedfinal.view1.BuyerHomepageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;
 
@@ -81,7 +80,7 @@ public class AccountSettingsControllerG2 implements AccountObserver {
                     }
                     break;
             }
-        } catch (IOException | SQLException e){
+        } catch (IOException e){
             //erore
         }
     }
