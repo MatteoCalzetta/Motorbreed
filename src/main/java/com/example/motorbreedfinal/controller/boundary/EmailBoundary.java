@@ -24,9 +24,7 @@ public class EmailBoundary{
             msg.setText(body, "UTF-8");
 
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
-            System.out.println("Message is ready");
             Transport.send(msg);
-            System.out.println("EMail Sent Successfully!!");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,7 +36,6 @@ public class EmailBoundary{
             final String password = psw; // correct password
             final String toEmail = email2;
 
-            System.out.println("TLSEmail Start");
             Properties props = new Properties();
             props.put("mail.smtp.host", "smtp.office365.com"); //SMTP Host
             props.put("mail.smtp.port", "587"); //TLS Port
@@ -48,6 +45,7 @@ public class EmailBoundary{
             //create Authenticator object to pass in Session.getInstance argument
             Authenticator auth = new Authenticator() {
                 //override the getPasswordAuthentication method
+                @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(fromEmail, password);
                 }
