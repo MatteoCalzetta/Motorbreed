@@ -6,7 +6,7 @@ public abstract class Vehicle {
     protected String brand;
 
     protected String model;
-    protected int Mileage;
+    protected int mileage;
     protected String productionYear;
 
     protected int horsepower;
@@ -40,11 +40,11 @@ public abstract class Vehicle {
     }
 
     public int getMileage() {
-        return Mileage;
+        return mileage;
     }
 
     public void setMileage(int mileage) {
-        Mileage = mileage;
+        this.mileage = mileage;
     }
 
     public String getProductionYear() {
@@ -87,8 +87,8 @@ public abstract class Vehicle {
         this.brand = tempVehicle.getBrand();
         this.model = tempVehicle.getModel();
         this.fuelType = tempVehicle.getFuelType();
-        this.horsepower = tempVehicle.getHorsepower();;
+        this.horsepower = tempVehicle.getHorsepower();
         this.productionYear = tempVehicle.getProductionYear();
-        this.Mileage = tempVehicle.getMileage();
+        this.mileage = tempVehicle.getMileage();
     }
 }

@@ -6,9 +6,7 @@ import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
-import com.example.motorbreedfinal.view1.ResultsPageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.*;
-
 import java.util.List;
 
 public class ResearchController {
@@ -45,18 +43,6 @@ public class ResearchController {
         adBean.setAds(ads);
         return adBean;
     }
-
-    public AdBean favorites() throws FailedResearchException {
-        List<Ad> ads = null;
-        AccountBean accountBean = new AccountBean();
-        accountBean.setUserId(LoggedUser.getInstance().getBuyer().getIdAccount());
-        System.out.println(LoggedUser.getInstance().getBuyer().getIdAccount());
-        ads = researchDAO.findFavoriteAds(accountBean.getUserId());
-        AdBean adBean = new AdBean();
-        adBean.setAds(ads);
-        return adBean;
-    }
-
     public void addFavorites(FavouritesBean favouritesBean) {
         ResearchDAO researchDAO = new ResearchDAO();
         researchDAO.addFavourites(favouritesBean.getIdAd(),favouritesBean.getIdBuyer());
@@ -73,7 +59,6 @@ public class ResearchController {
     }
 
     public void paymentIsValid(String idAd) {
-        ResearchDAO researchDAO = new ResearchDAO();
         Ad ad = researchDAO.findAdById(idAd, LoggedUser.getInstance().getBuyer().getIdAccount());
         LoggedUser.getInstance().getBuyer().addToOrders(ad);
         System.out.println(LoggedUser.getInstance().getBuyer().getOrders());

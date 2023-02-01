@@ -174,7 +174,7 @@ public class ModifyAdControllerG {
         idCar = Integer.parseInt(adBean.getAds().get(index).getCar().getIdCar());
         licencePlate = adBean.getAds().get(index).getCar().getLicencePlate();
 
-        if(!adBean.getAds().get(index).isPriceCertification()){
+        if(!adBean.getAds().get(index).isPriceCertificated()){
             this.icon.setVisible(false);
             this.certificationLabel.setVisible(false);
         }else {

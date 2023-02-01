@@ -25,10 +25,6 @@ public class Ad {
         this.image = image;
     }
 
-    public boolean isPriceCertification() {
-        return priceCertification;
-    }
-
     public String getIdAd() {
         return idAd;
     }

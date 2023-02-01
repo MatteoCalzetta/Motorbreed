@@ -75,7 +75,7 @@ public class Car extends Vehicle{
                 ", decorations='" + decorations + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", Mileage=" + Mileage +
+                ", Mileage=" + mileage +
                 ", productionYear='" + productionYear + '\'' +
                 ", horsepower=" + horsepower +
                 ", fuelType='" + fuelType + '\'' +
