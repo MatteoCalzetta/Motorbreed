@@ -86,14 +86,11 @@ public class InsertionController extends DecorateCar {
             insertionDAO.insertCar(ad.getCar());
         }catch (FailedAdInsertionException | SQLException e){
             this.descriptionControlllerG.showFailedInsertion();
-            System.out.println(e.getMessage());
-
         }
         try{
             insertionDAO.insertAd(ad, ad.getSeller().getIdAccount(), imageStream);
         } catch (FailedAdInsertionException e) {
             this.descriptionControlllerG.showFailedInsertion();
-            System.out.println(e.getMessage());
         }
 
         FxmlLoader.setPage("SellerHomepage");

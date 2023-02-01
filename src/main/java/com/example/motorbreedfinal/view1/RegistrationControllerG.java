@@ -96,7 +96,7 @@ public class RegistrationControllerG {
         if(registrationBean.Validation() && registrationBean.checkPasswords()){
             try{
                 RegistrationController registrationController = new RegistrationController();
-                registrationController.Registration(registrationBean);
+                registrationController.registration(registrationBean);
                 FxmlLoader.setPage("LoginPage");
             } catch (FailedRegistrationException e){
                 lblErrorEmail.setText(e.getMessage());

@@ -57,7 +57,7 @@ public class LoginControllerG {
         if(loginBean.Validation()){
 
             try {
-                accountHomepageBean = loginController.Login(loginBean);
+                accountHomepageBean = loginController.login(loginBean);
 
                 if (accountHomepageBean.getRole().equals("Seller")) {
                     SellerHomepageControllerG sellerHomepageControllerG;

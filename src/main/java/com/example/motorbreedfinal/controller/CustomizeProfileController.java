@@ -9,19 +9,27 @@ import java.sql.SQLException;
 
 public class CustomizeProfileController {
 
-    public void changeFirstName(AccountBean accountBean) throws SQLException {
+    public void changeFirstName(AccountBean accountBean) {
         CustomizeProfileDAO customizeProfileDAO = new CustomizeProfileDAO();
-        customizeProfileDAO.changeFirstname(accountBean.getFirstName(), LoggedUser.getInstance().getAccount().getEmail());
+        try {
+            customizeProfileDAO.changeFirstname(accountBean.getFirstName(), LoggedUser.getInstance().getAccount().getEmail());
+        } catch (SQLException e) {
+            //to-do
+        }
         LoggedUser.getInstance().getAccount().changeCredentials("firstname", accountBean.getFirstName());
     }
 
-    public void changeLastName(AccountBean accountBean) throws SQLException {
+    public void changeLastName(AccountBean accountBean){
         CustomizeProfileDAO customizeProfileDAO = new CustomizeProfileDAO();
-        customizeProfileDAO.changeLastname(accountBean.getLastName(), LoggedUser.getInstance().getAccount().getEmail());
+        try {
+            customizeProfileDAO.changeLastname(accountBean.getLastName(), LoggedUser.getInstance().getAccount().getEmail());
+        } catch (SQLException e) {
+            //to-do
+        }
         LoggedUser.getInstance().getAccount().changeCredentials("lastname", accountBean.getLastName());
     }
 
-    public void changeEmail(AccountBean accountBean) throws FailedProfileCustomizationException, SQLException {
+    public void changeEmail(AccountBean accountBean) throws FailedProfileCustomizationException{
         CustomizeProfileDAO customizeProfileDAO = new CustomizeProfileDAO();
         customizeProfileDAO.changeEmail(accountBean.getEmail(), LoggedUser.getInstance().getAccount().getEmail());
         LoggedUser.getInstance().getAccount().changeCredentials("email", accountBean.getEmail());

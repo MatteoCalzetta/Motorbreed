@@ -8,7 +8,7 @@ public class RegistrationController {
 
     RegisterDao registerDao = new RegisterDao();
 
-    public void Registration(RegistrationBean registrationBean) throws FailedRegistrationException{
+    public void registration(RegistrationBean registrationBean) throws FailedRegistrationException{
         registerDao.registerNewAccount(registrationBean.getFirstName(), registrationBean.getLastName(), registrationBean.getEmail(),
                                         registrationBean.getPassword(), registrationBean.getRole());
     }

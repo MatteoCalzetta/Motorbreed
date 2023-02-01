@@ -3,7 +3,6 @@ package com.example.motorbreedfinal.view2;
 import com.example.motorbreedfinal.controller.LoginController;
 import com.example.motorbreedfinal.controller.RegistrationController;
 import com.example.motorbreedfinal.model.exceptions.FailedRegistrationException;
-import com.example.motorbreedfinal.view1.FxmlLoader;
 import com.example.motorbreedfinal.view1.fagioli.AccountHomepageBean;
 import com.example.motorbreedfinal.view1.fagioli.LoginBean;
 import com.example.motorbreedfinal.view1.fagioli.RegistrationBean;
@@ -38,7 +37,7 @@ public class LoginControllerG2 {
         }
         if(loginBean.Validation()){
             try {
-                AccountHomepageBean accountHomepageBean = loginController.Login(loginBean);
+                AccountHomepageBean accountHomepageBean = loginController.login(loginBean);
                 LinePrinter.getInstance().clearConsole();
 
                 if (accountHomepageBean.getRole().equals("Seller")) {
@@ -105,7 +104,7 @@ public class LoginControllerG2 {
         if(registrationBean.Validation() && registrationBean.checkPasswords()){
             try{
                 RegistrationController registrationController = new RegistrationController();
-                registrationController.Registration(registrationBean);
+                registrationController.registration(registrationBean);
                 toPrint = "Registration succesful, now redirecting to login. . .";
                 LinePrinter.getInstance().print(toPrint);
                 getRole();

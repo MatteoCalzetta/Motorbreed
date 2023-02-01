@@ -12,15 +12,16 @@ import com.example.motorbreedfinal.view1.fagioli.AccountHomepageBean;
 import com.example.motorbreedfinal.view1.fagioli.LoginBean;
 
 import javax.security.auth.login.FailedLoginException;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginController {
+    public AccountHomepageBean login(LoginBean loginBean) throws FailedLoginException, SQLException {
 
-    private Account account;
-    private Seller seller;
-    private Buyer buyer;
-    public AccountHomepageBean Login(LoginBean loginBean) throws FailedLoginException, SQLException, IOException {
+        Account account;
+
+        Seller seller;
+
+        Buyer buyer;
 
         LoginDao loginDao = new LoginDao(); // creazione loginDao per trovare role
 
@@ -61,25 +62,5 @@ public class LoginController {
         accountHomepageBean.setRole(role);
 
         return accountHomepageBean;
-    }
-
-    public void buyerSignIn(){
-
-    }
-
-    public void sellerSignIn() {
-
-    }
-
-    public void facebookLogin(){
-
-    }
-
-    public void googleLogin() {
-
-    }
-
-    public Account getAccount() {
-        return this.account;
     }
 }

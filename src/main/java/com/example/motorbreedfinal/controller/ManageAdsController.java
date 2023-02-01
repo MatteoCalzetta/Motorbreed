@@ -5,7 +5,6 @@ import com.example.motorbreedfinal.model.dao.CustomizeProfileDAO;
 import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.users.Seller;
-import com.example.motorbreedfinal.view1.FxmlLoader;
 import com.example.motorbreedfinal.view1.ModifyAdControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
