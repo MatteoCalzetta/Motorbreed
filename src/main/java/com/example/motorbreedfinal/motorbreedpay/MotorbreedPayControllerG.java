@@ -29,11 +29,7 @@ public class MotorbreedPayControllerG {
     private Label lblOrderId;
     @FXML
     private Label lblCardError;
-
-    private String firstname;
-    private String lastname;
-    private float expense;
-
+    
     @FXML
     public void buyNow(ActionEvent event){
         String idAd = lblOrderId.getText().substring(29, lblOrderId.getText().length());

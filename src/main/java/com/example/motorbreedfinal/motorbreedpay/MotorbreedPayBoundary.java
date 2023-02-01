@@ -10,10 +10,6 @@ import java.net.URL;
 
 public class MotorbreedPayBoundary implements MotorbreedPayInterface{
 
-    private MotorbreedPayControllerG motorbreedPayControllerG = null;
-
-    private boolean validPayment = false;
-
     @Override
     public void startTransaction(String firstName, String lastName, float expense, String idAd) {
         //facciamo partire la finta scene
