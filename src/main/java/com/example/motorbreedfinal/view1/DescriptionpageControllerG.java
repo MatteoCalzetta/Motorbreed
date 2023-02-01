@@ -13,21 +13,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
-
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.logging.Logger;
-
 public class DescriptionpageControllerG {
 
     @FXML
-    private Button MotorbreedButton;
+    private Button motorbreedButton;
 
     @FXML
     private TextField adLocationTF;
@@ -75,12 +68,6 @@ public class DescriptionpageControllerG {
         paneError.setVisible(false);
         insertAdButton.setDisable(false);
     }
-
-    @FXML
-    void goBack(ActionEvent event) {
-
-    }
-
     @FXML
     void setInsertionPage(ActionEvent event) {
         FxmlLoader.setPage("InsertPage");
@@ -105,13 +92,13 @@ public class DescriptionpageControllerG {
                 Image cover = new Image(inputStream);
                 uploadImageView.setImage(cover);
             } catch (FileNotFoundException e) {
-                System.out.println(e.getMessage());
+                //towrite
             } finally {
                 if (inputStream != null) {
                     try {
                         inputStream.close();
                     } catch (IOException e) {
-                        System.out.println(e.getMessage());
+                        //towrite
                     }
                 }
             }
@@ -134,8 +121,6 @@ public class DescriptionpageControllerG {
 
                 if(adBean.Validation()){
                     insertionController.insertAd(adBean);
-                }else {
-                    System.out.println("not validation");
                 }
             } else if (!sellerPriceTF.getText().isEmpty() && proposedPriceTF.getText().isEmpty()) {
                 adBean = new AdBean(out, descriptionTF.getText()
@@ -143,10 +128,7 @@ public class DescriptionpageControllerG {
 
                 if(adBean.Validation()){
                     insertionController.insertAd(adBean);
-                }else {
-                    System.out.println("not validation");
                 }
-
 
             } else {
                 paneError.setVisible(true);

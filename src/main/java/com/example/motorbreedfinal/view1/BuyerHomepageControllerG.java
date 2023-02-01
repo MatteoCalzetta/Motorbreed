@@ -73,11 +73,8 @@ public class BuyerHomepageControllerG {
 
     @FXML
     void searchCar(ActionEvent event){
-        System.out.println(tfMinPrice.getText());
         ResearchBean researchBean = new ResearchBean(tfBrand.getText(), tfMinMileage.getText(), tfMaxMileage.getText(),
                 tfMinPrice.getText(), tfMaxPrice.getText());
-
-        System.out.println(researchBean.getStartingPrice());
 
         if(researchBean.isDataValid()){
             AdBean adBean = null;
