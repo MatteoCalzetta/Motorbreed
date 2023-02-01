@@ -119,7 +119,7 @@ public class LoginControllerG2 {
         toPrint = "LOGINPAGE\nPress 0 if you want to login, 1 if you want to register: ";
         LinePrinter.getInstance().print(toPrint);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String role = null;
+        String role = "";
         try {
             role = reader.readLine();
         } catch (IOException e) {

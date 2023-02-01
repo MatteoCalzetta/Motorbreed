@@ -22,7 +22,7 @@ public class BuyerHomepageControllerG2 {
         toPrint = "Welcome "+name+ " "+lastName + " to Homepage. Press 0 to buy a car or 1 to go to My profile: ";
         LinePrinter.getInstance().print(toPrint);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String choice = null;
+        String choice = "";
         try {
             choice = reader.readLine();
         } catch (IOException e) {
