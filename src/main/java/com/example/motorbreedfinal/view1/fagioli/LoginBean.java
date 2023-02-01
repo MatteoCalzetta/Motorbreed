@@ -28,19 +28,9 @@ public class LoginBean {
 
     public boolean Validation(){
         Pattern rfc2822 = Pattern.compile(
-                "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
+                "^[a-z0-9!#$%&'*+/=?^_`{|}-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
 
         return rfc2822.matcher(email).matches();
-
-        /*String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
-                            "[a-zA-Z0-9_+&*-]+)*@" +
-                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                            "A-Z]{2,7}$";
-
-        Pattern pat = Pattern.compile(emailRegex);
-        return(pat.matcher(email).matches());
-        //scrivere controllo sulla password (Una maiuscola, un numero ALMENO)*/
-
     }
 
 
