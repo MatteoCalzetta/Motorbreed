@@ -33,10 +33,49 @@ public class BuyerHomepageControllerG2 {
                 searchAd();
                 break;
             case("1"):
-                //myProfile();
+                myProfile();
                 break;
             default:
                 break;
+        }
+    }
+
+    public void myProfile() {
+        toPrint = "This is your profile page. Press 0 to see your favorite ads, 1 to see your past orders, 2 to view or modify your account data: ";
+        LinePrinter.getInstance().print(toPrint);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        try{
+            switch(reader.readLine()){
+                case "0":
+                    if(!LoggedUser.getInstance().getBuyer().getFavourites().isEmpty()){
+                        AdBean adBean = new AdBean();
+                        adBean.setAds(LoggedUser.getInstance().getBuyer().getFavourites());
+                        ResultsPageControllerG2 resultsPageControllerG2 = new ResultsPageControllerG2();
+                        resultsPageControllerG2.setAds(adBean);
+                    } else{
+                        toPrint = "Nothing in your favorites. Empty or the Ad are now sold!";
+                        LinePrinter.getInstance().print(toPrint);
+                        myProfile();
+                    }
+                    break;
+                case "1":
+                    if(!LoggedUser.getInstance().getBuyer().getOrders().isEmpty()){
+                        AdBean adBean = new AdBean();
+                        adBean.setAds(LoggedUser.getInstance().getBuyer().getOrders());
+                        ResultsPageControllerG2 resultsPageControllerG2 = new ResultsPageControllerG2();
+                        resultsPageControllerG2.setAds(adBean);
+                    } else{
+                        toPrint = "No orders have been made.";
+                        LinePrinter.getInstance().print(toPrint);
+                        myProfile();
+                    }
+                    break;
+                case "2":
+                    AccountSettingsControllerG2 accountSettingsControllerG2 = new AccountSettingsControllerG2();
+                    accountSettingsControllerG2.initialize();
+            }
+        } catch (IOException e){
+            //qualcosa è andato stuorrt
         }
     }
 

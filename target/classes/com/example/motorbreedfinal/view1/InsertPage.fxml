@@ -194,6 +194,7 @@
                   </DropShadow>
                </effect>
             </Pane>
+            <CheckBox fx:id="insuranceCheckBox" layoutX="658.0" layoutY="685.0" mnemonicParsing="false" text="Insurance" />
             </children>
         </AnchorPane>
     </children>
