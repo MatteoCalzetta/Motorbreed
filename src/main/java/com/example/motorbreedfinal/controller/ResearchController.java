@@ -44,7 +44,6 @@ public class ResearchController {
         return adBean;
     }
     public void addFavorites(FavouritesBean favouritesBean) {
-        ResearchDAO researchDAO = new ResearchDAO();
         researchDAO.addFavourites(favouritesBean.getIdAd(),favouritesBean.getIdBuyer());
     }
 
@@ -61,11 +60,9 @@ public class ResearchController {
     public void paymentIsValid(String idAd) {
         Ad ad = researchDAO.findAdById(idAd, LoggedUser.getInstance().getBuyer().getIdAccount());
         LoggedUser.getInstance().getBuyer().addToOrders(ad);
-        System.out.println(LoggedUser.getInstance().getBuyer().getOrders());
     }
 
     public List<Ad> getBuyerOrders() {
-        List <Ad> ads = researchDAO.findBuyerOrders(LoggedUser.getInstance().getBuyer().getIdAccount());
-        return ads;
+        return researchDAO.findBuyerOrders(LoggedUser.getInstance().getBuyer().getIdAccount());
     }
 }

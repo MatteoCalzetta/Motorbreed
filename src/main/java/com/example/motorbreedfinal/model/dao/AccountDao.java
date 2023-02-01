@@ -32,7 +32,7 @@ public abstract class AccountDao {
 
 
   } catch (SQLException e) {
-      throw new RuntimeException(e);
+      //not handled. to write
     } finally {
       if(stmt!=null){
         stmt.close();
