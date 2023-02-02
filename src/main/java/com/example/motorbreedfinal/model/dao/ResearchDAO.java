@@ -6,7 +6,6 @@ import com.example.motorbreedfinal.model.service.Query;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
 import javafx.scene.image.Image;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class ResearchDAO {
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
-        } catch (SQLException | IOException se) {
+        } catch (SQLException se) {
             se.printStackTrace();
             throw new FailedResearchException("An error during research occurred, wrong filters or no car corresponding to what you are searching for.");
         } finally {
@@ -37,7 +36,7 @@ public class ResearchDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return ads;
@@ -55,7 +54,7 @@ public class ResearchDAO {
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
-        } catch (SQLException | IOException se) {
+        } catch (SQLException se) {
             se.printStackTrace();
             throw new FailedResearchException("An error during research occurred, wrong filters or no car corresponding to what you are searching for.");
         } finally {
@@ -63,7 +62,7 @@ public class ResearchDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return ads;
@@ -81,21 +80,20 @@ public class ResearchDAO {
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
-        } catch (SQLException | FailedResearchException | IOException se) {
+        } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return ads;
     }
 
     public Ad findAdById(String idAd, String idBuyer){
-        System.out.println("l'idAd e l'idBuyer in researchDAO sono " + idAd + " " + idBuyer);
         Statement stmt = null;
         Connection conn = null;
         Ad ad = new Ad();
@@ -111,14 +109,14 @@ public class ResearchDAO {
             while (rs.next()) {
                 ad = extractAd(conn, rs);
             }
-        } catch (SQLException | FailedResearchException | IOException se) {
+        } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return ad;
@@ -136,19 +134,19 @@ public class ResearchDAO {
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
-        } catch (SQLException | FailedResearchException | IOException se) {
+        } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return ads;
     }
-    private Ad extractAd(Connection conn, ResultSet rs) throws SQLException, FailedResearchException, IOException {
+    private Ad extractAd(Connection conn, ResultSet rs) throws SQLException, FailedResearchException{
         Ad ad = new Ad();
         ad.setIdAd(rs.getString(1));
         ad.setCost(rs.getInt(2));
@@ -156,10 +154,8 @@ public class ResearchDAO {
         ad.setLocation(rs.getString(4));
         ad.setInsertionDate(rs.getString(5));
         ad.setNumberOfClicks(rs.getInt(6));
-        if(rs.getInt(7) == 1){
-            ad.setPriceCertification(true);
-        }else ad.setPriceCertification(false);
-
+        ad.setPriceCertification(rs.getInt(7) == 1);
+        
         Blob bl = rs.getBlob(8);
 
         if(bl != null) {
@@ -194,7 +190,7 @@ public class ResearchDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
     }
@@ -211,14 +207,14 @@ public class ResearchDAO {
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
-        } catch (SQLException | FailedResearchException | IOException se) {
+        } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return ads;
