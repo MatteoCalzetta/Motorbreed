@@ -168,8 +168,6 @@ public class ModifyAdControllerG2 {
 
             carBean = extractModel(carBean);
 
-            System.out.println(carBean.getModel() + carBean.getBrand());
-
             toPrint = "Do you want to modify Mileage? 1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 

@@ -108,22 +108,10 @@ public class BuyerHomepageControllerG2 {
                 toPrint = "wanna filter for mileage? 0 yes, anything no";
                 LinePrinter.getInstance().print(toPrint);
                 if (reader.readLine().equals("0")) {
-                    toPrint = "if you want a minimum mileage press 0, anything else to skip: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    if(reader.readLine().equals("0")) {
-                        toPrint = "insert minimum mileage: ";
-                        LinePrinter.getInstance().print(toPrint);
-                        minMileage = reader.readLine();
-                    }
-                    }
-                    toPrint = "if you want a maximum mileage press 0, anything else to skip: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    if (reader.readLine().equals("0")) {
-                        toPrint = "insert maximum mileage: ";
-                        LinePrinter.getInstance().print(toPrint);
-                        maxMileage = reader.readLine();
-                    }
-
+                    minMileage = getValue("if you want a minimum mileage press 0, anything else to skip: ", reader, "insert minimum mileage: ", minMileage);
+                }
+                maxMileage = getValue("if you want a maximum mileage press 0, anything else to skip: ", reader, "insert maximum mileage: ", maxMileage);
+                break;
             case "1":
                 advancedResearch();
                 break;
@@ -147,13 +135,7 @@ public class BuyerHomepageControllerG2 {
     }
 
     private String getMinPrice(String minPrice, BufferedReader reader) throws IOException {
-        toPrint = "if you want a minimum price press 0, anything else to skip: ";
-        LinePrinter.getInstance().print(toPrint);
-        if (reader.readLine().equals("0")) {
-            toPrint = "insert minimum price: ";
-            LinePrinter.getInstance().print(toPrint);
-            minPrice = reader.readLine();
-        }
+        minPrice = getValue("if you want a minimum price press 0, anything else to skip: ", reader, "insert minimum price: ", minPrice);
         return minPrice;
     }
 
@@ -175,100 +157,34 @@ public class BuyerHomepageControllerG2 {
         LinePrinter.getInstance().print(toPrint);
         toPrint = " 0 to insert brand (mandatory), anything else to skip advanced research ";
         LinePrinter.getInstance().print(toPrint);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             if (reader.readLine().equals("0")) {
                 toPrint = "Brand: ";
                 LinePrinter.getInstance().print(toPrint);
                 brand = reader.readLine();
 
-                toPrint = " 0 to insert model, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Model: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    model = reader.readLine();
-                }
+                model = getValue(" 0 to insert model, anything to skip: ", reader, "Model: ", model);
 
-                toPrint = " 0 to insert fuel type, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Fuel type: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    fuelType = reader.readLine();
-                }
+                fuelType = getValue(" 0 to insert fuel type, anything to skip: ", reader, "Fuel type: ", fuelType);
 
-                toPrint = " 0 to insert production year, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Production year: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    productionYear = reader.readLine();
-                }
+                productionYear = getValue(" 0 to insert production year, anything to skip: ", reader, "Production year: ", productionYear);
 
-                toPrint = " 0 to insert starting horse power, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Starting hp: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    startingHP = reader.readLine();
-                }
+                startingHP = getValue(" 0 to insert starting horse power, anything to skip: ", reader, "Starting hp: ", startingHP);
 
-                toPrint = " 0 to insert max horse power, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Max hp: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    maxHP = reader.readLine();
-                }
+                maxHP = getValue(" 0 to insert max horse power, anything to skip: ", reader, "Max hp: ", maxHP);
 
-                toPrint = " 0 to insert transmission, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Transmission: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    transmission = reader.readLine();
-                }
+                transmission = getValue(" 0 to insert transmission, anything to skip: ", reader, "Transmission: ", transmission);
 
-                toPrint = " 0 to insert minimum price, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Min price: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    minPrice = reader.readLine();
-                }
+                minPrice = getValue(" 0 to insert minimum price, anything to skip: ", reader, "Min price: ", minPrice);
 
-                toPrint = " 0 to insert maximum price, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Max price: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    maxPrice = reader.readLine();
-                }
+                maxPrice = getValue(" 0 to insert maximum price, anything to skip: ", reader, "Max price: ", maxPrice);
 
-                toPrint = " 0 to insert minumum mileage, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Min mileage: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    minMileage = reader.readLine();
-                }
+                minMileage = getValue(" 0 to insert minumum mileage, anything to skip: ", reader, "Min mileage: ", minMileage);
 
-                toPrint = " 0 to insert maximum mileage, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Max mileage: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    maxMileage = reader.readLine();
-                }
+                maxMileage = getValue(" 0 to insert maximum mileage, anything to skip: ", reader, "Max mileage: ", maxMileage);
 
-                toPrint = " 0 to insert transmission, anything to skip: ";
-                LinePrinter.getInstance().print(toPrint);
-                if (reader.readLine().equals("0")) {
-                    toPrint = "Transmission: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    transmission = reader.readLine();
-                }
+                transmission = getValue(" 0 to insert transmission, anything to skip: ", reader, "Transmission: ", transmission);
 
                 toPrint = " 0 if car has cruise control, 1 if doesn't have";
                 LinePrinter.getInstance().print(toPrint);
@@ -327,6 +243,17 @@ public class BuyerHomepageControllerG2 {
                 toPrint = "Something went wrong. closing app";
                 ErrorPrinter.getInstance().print(toPrint);
         }
+    }
+
+    private String getValue(String toPrint, BufferedReader reader, String toPrint1, String model) throws IOException {
+        toPrint = toPrint;
+        LinePrinter.getInstance().print(toPrint);
+        if (reader.readLine().equals("0")) {
+            toPrint = toPrint1;
+            LinePrinter.getInstance().print(toPrint);
+            model = reader.readLine();
+        }
+        return model;
     }
 
     private static void research(AdvancedResearchBean advancedResearchBean) throws FailedResearchException {
