@@ -9,6 +9,6 @@ public class DescriptionpageBean {
     }
 
     public void setEvaluatedPrice(String evaluatedPrice){
-        this.evaluatedPrice = evaluatedPrice;//+"€";
+        this.evaluatedPrice = evaluatedPrice;
     }
 }

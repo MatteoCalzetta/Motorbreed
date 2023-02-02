@@ -40,7 +40,7 @@
                         <Font name="System Bold Italic" size="17.0" />
                     </font>
                 </Label>
-                <Button fx:id="buttonRegister" disable="true" layoutX="961.0" layoutY="651.0" mnemonicParsing="false" onAction="#Registration" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Sign in" textFill="WHITE">
+                <Button fx:id="buttonRegister" disable="true" layoutX="961.0" layoutY="651.0" mnemonicParsing="false" onAction="#registration" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Sign in" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>

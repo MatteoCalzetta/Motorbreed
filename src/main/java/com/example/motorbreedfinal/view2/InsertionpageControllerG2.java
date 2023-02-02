@@ -22,14 +22,11 @@ public class InsertionpageControllerG2 {
 
         CarBean carBean = createCarbean();
 
-        if(carBean.validate()){
-
-        }else {
+        if(!carBean.validate()){
             toPrint = "Insertion failed . . . repeating steps";
             LinePrinter.getInstance().print(toPrint);
             insertCar();
         }
-
         InsertionController insertionController = new InsertionController();
         insertionController.insertCar(carBean);
         int evaluatedPrice = insertionController.startEvaluation();

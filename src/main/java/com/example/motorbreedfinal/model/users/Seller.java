@@ -9,10 +9,6 @@ import java.util.List;
 public class Seller extends Account {
     private List<Ad> adList;
 
-    public boolean addAdvertisement(Ad ad) {
-        return false;
-    }
-
     public List<Ad> getAdList() {
         return adList;
     }

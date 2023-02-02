@@ -40,7 +40,7 @@ public class EmailBean {
         this.password = password;
     }
 
-    public boolean Validation() {
+    public boolean validation() {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +

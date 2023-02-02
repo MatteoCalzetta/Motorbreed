@@ -26,12 +26,6 @@ public class SellerUserpageControllerG {
     ManageAdsController manageAdsController;
 
     FXMLLoader fxmlLoader;
-
-    @FXML
-    void analizeAds(ActionEvent event) {
-
-    }
-
     @FXML
     void openMyAds(ActionEvent event) {
         manageAdsController = new ManageAdsController();

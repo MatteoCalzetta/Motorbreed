@@ -1,7 +1,5 @@
 package com.example.motorbreedfinal.view2;
 
-
-import com.example.motorbreedfinal.view2.utility.LinePrinter;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

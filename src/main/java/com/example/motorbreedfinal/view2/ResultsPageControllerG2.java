@@ -134,7 +134,7 @@ public class ResultsPageControllerG2 implements AccountObserver {
             emailBean.setToEmail(ads.get(index).getSeller().getEmail());
             emailBean.setDescription(body);
             emailBean.setPassword(password);
-            if(emailBean.Validation()){
+            if(emailBean.validation()){
                 ResearchController.getInstance().sendEmail(emailBean);
                 toPrint = "Email sent succesfully! going back to the ad";
                 LinePrinter.getInstance().print(toPrint);

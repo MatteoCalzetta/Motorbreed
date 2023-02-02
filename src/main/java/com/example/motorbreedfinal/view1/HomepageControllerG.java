@@ -14,9 +14,8 @@ public class HomepageControllerG {
     @FXML
     private Label labelLoggedUser;
 
-    @FXML private Button SellerLoginbtn;
     @FXML
-    void setLoginPage() throws IOException {
+    void setLoginPage() {
         FxmlLoader.setPage("LoginPage");
     }
 

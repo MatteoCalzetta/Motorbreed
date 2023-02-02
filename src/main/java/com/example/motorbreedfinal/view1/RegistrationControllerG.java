@@ -84,7 +84,7 @@ public class RegistrationControllerG {
     private Label lblRole;
 
     @FXML
-    void Registration(ActionEvent event) {
+    void registration(ActionEvent event) {
         RegistrationBean registrationBean = new RegistrationBean();
         registrationBean.setEmail(tfEmail.getText());
         registrationBean.setPassword(pfPassword.getText());

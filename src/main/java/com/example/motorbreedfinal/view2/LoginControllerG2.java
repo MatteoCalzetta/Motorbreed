@@ -69,7 +69,6 @@ public class LoginControllerG2 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             registrationBean.setEmail(reader.readLine());
-            System.out.println(registrationBean.getEmail());
             toPrint = "Insert password: ";
             LinePrinter.getInstance().print(toPrint);
             registrationBean.setPassword(reader.readLine());

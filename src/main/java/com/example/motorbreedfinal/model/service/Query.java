@@ -192,8 +192,8 @@ public class Query {
     }
 
     public static void insertImage(Connection conn, InputStream imageStream, int idAd) throws SQLException {
-        try(PreparedStatement pstmt = conn.prepareStatement("UPDATE ad SET image = ? WHERE idAd = ?")){
-            try{
+        try (PreparedStatement pstmt = conn.prepareStatement("UPDATE ad SET image = ? WHERE idAd = ?")) {
+            try {
 
                 pstmt.setBlob(1, imageStream);
                 pstmt.setInt(2, idAd);
@@ -201,9 +201,7 @@ public class Query {
                 pstmt.execute();
 
                 imageStream.close();
-            } catch (SQLException e) {
-                //System.out.println(e.getMessage());
-            } catch (IOException e) {
+            } catch (SQLException | IOException e) {
                 //not handled
             }
         }

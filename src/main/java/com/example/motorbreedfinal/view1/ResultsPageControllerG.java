@@ -150,8 +150,6 @@ public class ResultsPageControllerG implements AccountObserver {
         lblSeller.setText(ad.getSeller().getFirstName() + ad.getSeller().getLastName());
         lblDescription.setText(ad.getDescription());
         lblLocation.setText(ad.getLocation());
-        //carImage.setImage(ad.getImage());
-        //rtngRating.setRating(ad.getSeller().);
         lblBrand.setText(ad.getCar().getBrand());
         lblModel.setText(ad.getCar().getModel());
         lblHP.setText(String.valueOf(ad.getCar().getHorsepower()));
@@ -264,7 +262,7 @@ public class ResultsPageControllerG implements AccountObserver {
         emailBean.setFromEmail(tfEmail.getText());
         emailBean.setToEmail(ads.get(index).getSeller().getEmail());
         emailBean.setDescription(tfMessageEmail.getText());
-        if(emailBean.Validation()){
+        if(emailBean.validation()){
             ResearchController.getInstance().sendEmail(emailBean);
             paneEmail.setVisible(false);
         }

@@ -44,7 +44,7 @@ public class LoginControllerG {
 
     AccountHomepageBean accountHomepageBean;
     @FXML
-    void setHomepage(ActionEvent event) throws IOException {
+    void setHomepage(ActionEvent event) {
         FxmlLoader.setPage("Homepage");
     } // operazione usata al termine del caso d'uso
 
@@ -75,7 +75,7 @@ public class LoginControllerG {
             } catch (FailedLoginException e) {
                 showErrorMessage(e.getMessage());
             } catch (SQLException e) {
-                //throw new RuntimeException(e);
+                //not handled
             }
 
         } else{
