@@ -81,7 +81,6 @@ public class DescriptionpageControllerG {
     @FXML
     void uploadImage(ActionEvent event) {
         FileChooser fc = new FileChooser();
-        inputStream = null;
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.jpg,*.png,*.jpeg", "*.jpg", "*.png", "*.jpeg"));
         File file = fc.showOpenDialog(null);
         if (file != null) {
@@ -89,10 +88,8 @@ public class DescriptionpageControllerG {
             try (FileInputStream inputStream = new FileInputStream(imagePath)) {
                 Image cover = new Image(inputStream);
                 uploadImageView.setImage(cover);
-            } catch (FileNotFoundException e) {
-                // Handle the exception
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                // Handle the exception
             } finally {
                 if (inputStream != null) {
                     try {

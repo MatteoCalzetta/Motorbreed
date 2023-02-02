@@ -2,7 +2,6 @@ package com.example.motorbreedfinal.model.service;
 
 import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.Car;
-import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.io.InputStream;
