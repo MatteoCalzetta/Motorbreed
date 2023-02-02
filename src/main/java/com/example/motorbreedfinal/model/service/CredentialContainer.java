@@ -2,6 +2,10 @@ package com.example.motorbreedfinal.model.service;
 
 public class CredentialContainer {
 
+    private CredentialContainer(){
+
+    }
+
     private static final String PASS = "5headLmao";
 
     private static final String PASS1 = "root1234";
