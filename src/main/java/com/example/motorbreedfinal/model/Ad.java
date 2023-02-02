@@ -33,27 +33,27 @@ public class Ad {
         this.idAd = idAd;
     }
 
-    public int getCost() {
+    public int getAdCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setAdCost(int cost) {
         this.cost = cost;
     }
 
-    public String getDescription() {
+    public String getAdDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setAdDescription(String description) {
         this.description = description;
     }
 
-    public String getLocation() {
+    public String getAdLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setAdLocation(String location) {
         this.location = location;
     }
 

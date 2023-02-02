@@ -86,8 +86,8 @@ public class ModifyAdControllerG2 {
             toPrint = toPrint.concat(" false ");
         }
 
-        toPrint = "Price : " + adBean.getAds().get(index).getCost() + "| Location  :" + adBean.getAds().get(index).getLocation() +
-                    "| Description : " + adBean.getAds().get(index).getDescription() +
+        toPrint = "Price : " + adBean.getAds().get(index).getAdCost() + "| Location  :" + adBean.getAds().get(index).getAdLocation() +
+                    "| Description : " + adBean.getAds().get(index).getAdDescription() +
                 "| InsertionDate : " + adBean.getAds().get(index).getInsertionDate().substring(0, adBean.getAds().get(index).getInsertionDate().length()-18)+
         "| Certification :";
 
@@ -99,7 +99,7 @@ public class ModifyAdControllerG2 {
 
         LinePrinter.getInstance().print(toPrint);
 
-        previousPrice = adBean.getAds().get(index).getCost();
+        previousPrice = adBean.getAds().get(index).getAdCost();
         idAd = Integer.parseInt(adBean.getAds().get(index).getIdAd());
         numberClicks = adBean.getAds().get(index).getNumberOfClicks();
         idCar = Integer.parseInt(adBean.getAds().get(index).getCar().getIdCar());
@@ -299,7 +299,7 @@ public class ModifyAdControllerG2 {
                 adBean.setCost(Integer.parseInt(reader.readLine()));
 
             }else {
-                adBean.setCost(myAdbean.getAds().get(index).getCost());
+                adBean.setCost(myAdbean.getAds().get(index).getAdCost());
             }
 
             adBean.setPriceCertification(false);
@@ -331,7 +331,7 @@ public class ModifyAdControllerG2 {
 
             adBean.setLocation(reader.readLine());
         }else {
-            adBean.setLocation(myAdbean.getAds().get(index).getLocation());
+            adBean.setLocation(myAdbean.getAds().get(index).getAdLocation());
         }
         return adBean;
     }
@@ -343,7 +343,7 @@ public class ModifyAdControllerG2 {
 
             adBean.setDescription(reader.readLine());
         }else {
-            adBean.setDescription(myAdbean.getAds().get(index).getDescription());
+            adBean.setDescription(myAdbean.getAds().get(index).getAdDescription());
         }
         return adBean;
     }

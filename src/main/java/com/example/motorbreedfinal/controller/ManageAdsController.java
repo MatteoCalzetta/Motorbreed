@@ -61,9 +61,9 @@ public class ManageAdsController {
     public void modifyAd(AdBean adBean, CarBean carBean, int idCar, String decorations) {
         Ad ad = new Ad();
         ad.setPriceCertification(adBean.isPriceCertification());
-        ad.setDescription(adBean.getDescription());
-        ad.setCost(adBean.getCost());
-        ad.setLocation(adBean.getLocation());
+        ad.setAdDescription(adBean.getDescription());
+        ad.setAdCost(adBean.getCost());
+        ad.setAdLocation(adBean.getLocation());
         ad.setSeller(LoggedUser.getInstance().getSeller());
         ad.setInsertionDate(adBean.getInsertionDate().toString());
         ad.setNumberOfClicks(adBean.getnumberOfClicks());

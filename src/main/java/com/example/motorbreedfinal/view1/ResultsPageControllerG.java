@@ -146,10 +146,10 @@ public class ResultsPageControllerG implements AccountObserver {
             this.index = 0;
         }
         Ad ad = ads.get(this.index);
-        lblPrice.setText(String.valueOf(ad.getCost()));
+        lblPrice.setText(String.valueOf(ad.getAdCost()));
         lblSeller.setText(ad.getSeller().getFirstName() + ad.getSeller().getLastName());
-        lblDescription.setText(ad.getDescription());
-        lblLocation.setText(ad.getLocation());
+        lblDescription.setText(ad.getAdDescription());
+        lblLocation.setText(ad.getAdLocation());
         lblBrand.setText(ad.getCar().getBrand());
         lblModel.setText(ad.getCar().getModel());
         lblHP.setText(String.valueOf(ad.getCar().getHorsepower()));
@@ -208,7 +208,7 @@ public class ResultsPageControllerG implements AccountObserver {
         accountBean.setEmail(LoggedUser.getInstance().getBuyer().getEmail());
         AdBean adBean = new AdBean();
         adBean.setIdAd(ads.get(this.index).getIdAd());
-        adBean.setCost(ads.get(this.index).getCost());
+        adBean.setCost(ads.get(this.index).getAdCost());
         adBean.setSeller(ads.get(this.index).getSeller().getFirstName() + ads.get(this.index).getSeller().getLastName());
         ResearchController.getInstance().payment(accountBean, adBean);
     }

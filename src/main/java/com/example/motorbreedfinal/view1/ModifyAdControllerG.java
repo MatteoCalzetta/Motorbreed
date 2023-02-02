@@ -149,7 +149,7 @@ public class ModifyAdControllerG {
     public void showAd(AdBean adBean, int index){
         myAdbean = adBean;
 
-        this.priceTF.setText((adBean.getAds().get(index).getCost())+" €");
+        this.priceTF.setText((adBean.getAds().get(index).getAdCost())+" €");
         this.transmissionTF.setText(adBean.getAds().get(index).getCar().getTransmission());
         this.brandTF.setText(adBean.getAds().get(index).getCar().getBrand());
         this.modelTF.setText(adBean.getAds().get(index).getCar().getModel());
@@ -160,9 +160,9 @@ public class ModifyAdControllerG {
         this.mileageTF.setText((adBean.getAds().get(index).getCar().getMileage())+" km");
         this.matriculationYearTF.setText(adBean.getAds().get(index).getCar().getImmatricolationYear());
         this.insertionDateTF.setText(adBean.getAds().get(index).getInsertionDate());
-        this.descriptionTF.setText(adBean.getAds().get(index).getDescription());
+        this.descriptionTF.setText(adBean.getAds().get(index).getAdDescription());
         this.oneOfLabel.setText(index+1 + " of " + adBean.getAds().toArray().length);
-        previousPrice = adBean.getAds().get(index).getCost();
+        previousPrice = adBean.getAds().get(index).getAdCost();
         idAd = Integer.parseInt(adBean.getAds().get(index).getIdAd());
         numberClicks = adBean.getAds().get(index).getNumberOfClicks();
         idCar = Integer.parseInt(adBean.getAds().get(index).getCar().getIdCar());

@@ -39,9 +39,9 @@ public class ResultsPageControllerG2 implements AccountObserver {
         toPrint = "Ad "+ (this.index+1) +" of "+ ads.size() + "\n";
         toPrint += "Brand = " + ad.getCar().getBrand();
         toPrint += ", model = " + ad.getCar().getModel();
-        toPrint += ", price = " + ad.getCost() + "€";
+        toPrint += ", price = " + ad.getAdCost() + "€";
         toPrint += ", seller is "+ ad.getSeller().getFirstName() + " " + ad.getSeller().getLastName();
-        toPrint += ", location = " + ad.getLocation();
+        toPrint += ", location = " + ad.getAdLocation();
         toPrint += ", mileage = "+ad.getCar().getMileage();
         toPrint += ", horsepower = "+ad.getCar().getHorsepower();
         toPrint += ", fuel type = "+ad.getCar().getFuelType();
@@ -84,7 +84,7 @@ public class ResultsPageControllerG2 implements AccountObserver {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         switch(reader.readLine()){
             case "0":
-                toPrint = ad.getDescription();
+                toPrint = ad.getAdDescription();
                 LinePrinter.getInstance().print(toPrint);
                 displayAd();
                 break;
@@ -99,7 +99,7 @@ public class ResultsPageControllerG2 implements AccountObserver {
                 accountBean.setEmail(LoggedUser.getInstance().getBuyer().getEmail());
                 AdBean adBean = new AdBean();
                 adBean.setIdAd(ads.get(this.index).getIdAd());
-                adBean.setCost(ads.get(this.index).getCost());
+                adBean.setCost(ads.get(this.index).getAdCost());
                 adBean.setSeller(ads.get(this.index).getSeller().getFirstName() + ads.get(this.index).getSeller().getLastName());
                 ResearchController.getInstance().payment(accountBean, adBean);
                 break;

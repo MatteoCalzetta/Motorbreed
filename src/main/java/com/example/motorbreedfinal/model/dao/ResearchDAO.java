@@ -132,9 +132,9 @@ public class ResearchDAO {
     private Ad extractAd(Connection conn, ResultSet rs) throws SQLException, FailedResearchException{
         Ad ad = new Ad();
         ad.setIdAd(rs.getString(1));
-        ad.setCost(rs.getInt(2));
-        ad.setDescription(rs.getString(3));
-        ad.setLocation(rs.getString(4));
+        ad.setAdCost(rs.getInt(2));
+        ad.setAdDescription(rs.getString(3));
+        ad.setAdLocation(rs.getString(4));
         ad.setInsertionDate(rs.getString(5));
         ad.setNumberOfClicks(rs.getInt(6));
         ad.setPriceCertification(rs.getInt(7) == 1);

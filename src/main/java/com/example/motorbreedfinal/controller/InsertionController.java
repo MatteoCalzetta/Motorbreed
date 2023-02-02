@@ -73,9 +73,9 @@ public class InsertionController{
 
     public void insertAd(AdBean adBean) {
         ad.setSeller(LoggedUser.getInstance().getSeller());
-        ad.setCost(adBean.getCost());
-        ad.setDescription(adBean.getDescription());
-        ad.setLocation(adBean.getLocation());
+        ad.setAdCost(adBean.getCost());
+        ad.setAdDescription(adBean.getDescription());
+        ad.setAdLocation(adBean.getLocation());
         ad.setInsertionDate(adBean.getInsertionDate().toString());
         ad.setNumberOfClicks(0);
         ad.setPriceCertification(adBean.isPriceCertification());
