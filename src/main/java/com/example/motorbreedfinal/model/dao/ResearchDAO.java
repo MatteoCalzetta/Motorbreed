@@ -1,6 +1,7 @@
 package com.example.motorbreedfinal.model.dao;
 
 import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.Car;
 import com.example.motorbreedfinal.model.service.Connector;
 import com.example.motorbreedfinal.model.service.Query;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
@@ -42,7 +43,7 @@ public class ResearchDAO {
         return ads;
     }
 
-    public List<Ad> findAdsByAdvancedFilter(String brand, String model, String fuelType, String productionYear, String startingHP, String maxHP, String transmission, String startingPrice, String maxPrice, String startingMileage, String maxMileage, String decorations) throws FailedResearchException {
+    public List<Ad> findAdsByAdvancedFilter(Car car, String maxHP, String startingPrice, String maxPrice, String maxMileage ) throws FailedResearchException {
         Statement stmt = null;
         Connection conn = null;
         List<Ad> ads = new ArrayList<>();
@@ -50,7 +51,7 @@ public class ResearchDAO {
         try {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Query.findAdsByAdvancedFilters(stmt, brand, model, fuelType, productionYear, startingHP, maxHP, transmission, startingPrice, maxPrice, startingMileage, maxMileage, decorations);
+            ResultSet rs = Query.findAdsByAdvancedFilters(stmt, car.getBrand(), car.getModel(), car.getFuelType(), car.getProductionYear(), String.valueOf(car.getHorsepower()), maxHP, car.getTransmission(), startingPrice, maxPrice, String.valueOf(car.getMileage()), maxMileage, car.getDecorations());
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }

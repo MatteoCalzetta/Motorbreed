@@ -3,6 +3,7 @@ package com.example.motorbreedfinal.controller;
 import com.example.motorbreedfinal.controller.boundary.EmailBoundary;
 import com.example.motorbreedfinal.controller.boundary.PaymentBoundary;
 import com.example.motorbreedfinal.model.Ad;
+import com.example.motorbreedfinal.model.Car;
 import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
@@ -34,10 +35,21 @@ public class ResearchController {
 
     public AdBean advancedResearch(AdvancedResearchBean advancedResearchBean) throws FailedResearchException {
         List<Ad> ads = null;
-        ads = researchDAO.findAdsByAdvancedFilter(advancedResearchBean.getBrand(), advancedResearchBean.getModel(), advancedResearchBean.getFuelType(),
-                advancedResearchBean.getProductionYear(), advancedResearchBean.getStartingHP(), advancedResearchBean.getMaxHP(),
-                advancedResearchBean.getTransmission(), advancedResearchBean.getStartingPrice(), advancedResearchBean.getMaxPrice(),
-                advancedResearchBean.getStartingMileage(), advancedResearchBean.getMaxMileage(), advancedResearchBean.getDecorations());
+
+        Car car = new Car();
+
+        car.setBrand(advancedResearchBean.getBrand());
+        car.setModel(advancedResearchBean.getModel());
+        car.setFuelType(advancedResearchBean.getFuelType());
+        car.setProductionYear(advancedResearchBean.getProductionYear());
+        car.setHorsepower(Integer.parseInt(advancedResearchBean.getStartingHP()));
+        car.setTransmission(advancedResearchBean.getTransmission());
+        car.setMileage(Integer.parseInt(advancedResearchBean.getStartingMileage()));
+        car.setDecorations(advancedResearchBean.getDecorations());
+
+        ads = researchDAO.findAdsByAdvancedFilter(car, advancedResearchBean.getMaxHP(),
+                advancedResearchBean.getStartingPrice(), advancedResearchBean.getMaxPrice(),
+                advancedResearchBean.getMaxMileage());
 
         AdBean adBean = new AdBean();
         adBean.setAds(ads);
