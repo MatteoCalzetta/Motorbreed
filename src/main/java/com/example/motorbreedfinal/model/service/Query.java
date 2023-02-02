@@ -155,8 +155,8 @@ public class Query {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void insertCar(Statement stmt, String carId, String licencePlate, String transmission, boolean insurance, String immatricolationYear, String brand, String model, String mileage, String productionYear, String horsepower, String fuelType, String decorations) throws  SQLException{
-        String insertStatement= String.format("INSERT INTO car (idcar, licencePlate, transmission, insurance, immatricolationYear, brand, model, mileage, productionYear, horsePower, fuelType, decorations) VALUES ('%s', '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')", carId, licencePlate, transmission, Boolean.compare(insurance, true)+1,immatricolationYear, brand,model, mileage,productionYear, horsepower, fuelType,decorations);
+    public static void insertCar(Statement stmt, Car car) throws  SQLException{
+        String insertStatement= String.format("INSERT INTO car (idcar, licencePlate, transmission, insurance, immatricolationYear, brand, model, mileage, productionYear, horsePower, fuelType, decorations) VALUES ('%s', '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')", car.getIdCar(), car.getLicencePlate(), car.getTransmission(), Boolean.compare(car.isInsurance(), true)+1,car.getImmatricolationYear(), car.getBrand(),car.getModel(), car.getMileage(), car.getProductionYear(), car.getHorsepower(), car.getFuelType(), car.getDecorations());
         stmt.executeUpdate(insertStatement);
     }
 

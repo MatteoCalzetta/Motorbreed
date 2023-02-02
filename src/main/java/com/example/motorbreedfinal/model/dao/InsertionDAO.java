@@ -49,7 +49,7 @@ public class InsertionDAO {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            Query.insertCar(stmt, car.getIdCar(), car.getLicencePlate(), car.getTransmission(), car.isInsurance(), car.getImmatricolationYear(), car.getBrand(),car.getModel(), String.valueOf(car.getMileage()), car.getProductionYear(), String.valueOf(car.getHorsepower()), car.getFuelType(), car.getDecorations());
+            Query.insertCar(stmt, car);
 
         }catch (SQLException e){
             throw new FailedAdInsertionException(e.getMessage());
