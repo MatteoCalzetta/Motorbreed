@@ -32,6 +32,59 @@ public class EvaluatorController {
 
     }
 
+
+    private int evaluateBrandModel(Vehicle vehicle){
+        int startingPrice = 0;
+
+        switch (vehicle.getBrand()) {
+            case "Fiat" -> {
+                startingPrice = 10000;
+                if ((vehicle.getModel().equals("Panda")) || vehicle.getModel().equals("Punto")) {
+                    startingPrice += 4700;
+                }
+            }
+            case "Mercedes" -> {
+                startingPrice = 25000;
+                if (vehicle.getModel().equals("C class")) {
+
+                    startingPrice += 25000;
+
+                } else if (vehicle.getModel().equals("B class")) {
+
+                    startingPrice += 1000;
+                }
+            }
+            case "BMW" -> {
+                startingPrice = 30000;
+                if (vehicle.getModel().equals("iX M60")) {
+
+                    startingPrice += 100000;
+
+                } else if (vehicle.getModel().equals("X4")) {
+                    startingPrice += 32000;
+                }
+            }
+            case "Alfa Romeo" -> {
+                startingPrice = 10000;
+                if (vehicle.getModel().equals("Mito")) {
+
+                    startingPrice += 3500;
+
+                } else if (vehicle.getModel().equals("Giulia")) {
+                    startingPrice += 35000;
+                }
+            }
+
+            default -> {
+                finalPrice = 0;
+                myVehicle = vehicle;
+                showResult();
+                return finalPrice;
+            }
+        }
+        return startingPrice;
+    }
+
     public int calculatePrice(Vehicle vehicle) {
 
         int startingPrice = 0;
@@ -56,53 +109,7 @@ public class EvaluatorController {
 
             if (models.contains(vehicle.getModel())) {
 
-                switch (vehicle.getBrand()) {
-                    case "Fiat" -> {
-                        startingPrice = 10000;
-                        if ((vehicle.getModel().equals("Panda")) || vehicle.getModel().equals("Punto")) {
-                            startingPrice += 4700;
-                        }
-                    }
-                    case "Mercedes" -> {
-                        startingPrice = 25000;
-                        if (vehicle.getModel().equals("C class")) {
-
-                            startingPrice += 25000;
-
-                        } else if (vehicle.getModel().equals("B class")) {
-
-                            startingPrice += 1000;
-                        }
-                    }
-                    case "BMW" -> {
-                        startingPrice = 30000;
-                        if (vehicle.getModel().equals("iX M60")) {
-
-                            startingPrice += 100000;
-
-                        } else if (vehicle.getModel().equals("X4")) {
-                            startingPrice += 32000;
-                        }
-                    }
-                    case "Alfa Romeo" -> {
-                        startingPrice = 10000;
-                        if (vehicle.getModel().equals("Mito")) {
-
-                            startingPrice += 3500;
-
-                        } else if (vehicle.getModel().equals("Giulia")) {
-                            startingPrice += 35000;
-                        }
-                    }
-
-                    default -> {
-                        finalPrice = 0;
-                        myVehicle = vehicle;
-                        showResult();
-                        return finalPrice;
-                    }
-                }
-
+                startingPrice = evaluateBrandModel(vehicle);
 
                 if (vehicle.getMileage() != 0) {
                     startingPrice -= (int) (startingPrice * 0.000003* vehicle.getMileage());
