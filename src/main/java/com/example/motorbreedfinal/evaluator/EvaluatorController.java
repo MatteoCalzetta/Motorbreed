@@ -85,6 +85,18 @@ public class EvaluatorController {
         return startingPrice;
     }
 
+    private int evaluateFuelType(Vehicle vehicle, int startingPrice){
+
+        if (vehicle.getFuelType().equals("Hybrid-Gas")) {
+            startingPrice += 1400;
+
+        } else if (vehicle.getFuelType().equals("Electric")) {
+            startingPrice *= 1.25;
+        }
+
+        return startingPrice;
+    }
+
     public int calculatePrice(Vehicle vehicle) {
 
         int startingPrice = 0;
@@ -124,13 +136,7 @@ public class EvaluatorController {
 
                 startingPrice += 10 * vehicle.getHorsepower();
 
-
-                if (vehicle.getFuelType().equals("Hybrid-Gas")) {
-                    startingPrice += 1400;
-
-                } else if (vehicle.getFuelType().equals("Electric")) {
-                    startingPrice *= 1.25;
-                }
+                startingPrice = evaluateFuelType(vehicle, startingPrice);
 
                 finalPrice = startingPrice + vehicle.getCarAdditionalPrice();
 
