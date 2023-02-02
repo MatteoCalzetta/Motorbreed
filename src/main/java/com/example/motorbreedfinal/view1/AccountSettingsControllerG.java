@@ -12,10 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
-
-import java.sql.SQLException;
 
 public class AccountSettingsControllerG implements AccountObserver {
 
@@ -106,19 +103,13 @@ public class AccountSettingsControllerG implements AccountObserver {
     @FXML
     private TextField tfNewPassword;
 
-
-    @FXML
-    void enableDisableSave(KeyEvent event) {
-
-    }
-
     @FXML
     void goBack(ActionEvent event) {
         FxmlLoader.setPage(LoggedUser.getInstance().getRole() + "UserPage");
     }
 
     @FXML
-    void save(ActionEvent event) throws SQLException, FailedProfileCustomizationException {
+    void save(ActionEvent event) throws FailedProfileCustomizationException {
         AccountBean accountBean = new AccountBean();
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
 

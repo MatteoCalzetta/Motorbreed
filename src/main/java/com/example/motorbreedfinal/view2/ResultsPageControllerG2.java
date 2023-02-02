@@ -5,6 +5,7 @@ import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.users.AccountObserver;
 import com.example.motorbreedfinal.model.users.AccountSubject;
 import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.view1.BuyerHomepageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.EmailBean;
@@ -119,7 +120,8 @@ public class ResultsPageControllerG2 implements AccountObserver {
     }
 
     private void openEmail() {
-        String body, password;
+        String body;
+        String password;
         toPrint = "Insert message to send: ";
         LinePrinter.getInstance().print(toPrint);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -142,13 +144,10 @@ public class ResultsPageControllerG2 implements AccountObserver {
             else{
                 toPrint = "there was an error sending your email. press 0 to start again or anything to go back to the ad: ";
                 LinePrinter.getInstance().print(toPrint);
-                switch(reader.readLine()){
-                    case "0":
-                        openEmail();
-                        break;
-                    default:
-                        displayAd();
-                        break;
+                if(reader.readLine().equals("0")) {
+                    openEmail();
+                } else {
+                    displayAd();
                 }
             }
         } catch (IOException e) {
@@ -166,6 +165,7 @@ public class ResultsPageControllerG2 implements AccountObserver {
     public void update() {
         toPrint = "Order bought successfully! Going back to my orders page. . .";
         LinePrinter.getInstance().print(toPrint);
-        //todo chiamare controller userpage che non ho
+        BuyerHomepageControllerG2 buyerHomepageControllerG2 = new BuyerHomepageControllerG2();
+        buyerHomepageControllerG2.myProfile();
     }
 }

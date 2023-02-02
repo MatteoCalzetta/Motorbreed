@@ -7,8 +7,8 @@ import java.util.List;
 public class Buyer extends Account {
     private List<Ad> favourites;
     private List<Ad> orders;
-    public boolean addToFavourites(Ad ad) {
-        return true;
+    public void addToFavourites(Ad ad) {
+        favourites.add(ad);
     }
     public void addToOrders(Ad ad) {
         orders.add(ad);

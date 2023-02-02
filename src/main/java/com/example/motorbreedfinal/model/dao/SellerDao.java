@@ -11,16 +11,6 @@ import java.sql.Statement;
 
 public class SellerDao extends AccountDao {
 
-
-    private void retrieveSellerRatings() {
-    }
-
-    private void retrieveSellerAds() {
-    }
-
-    private void retrieveSellerInfo() {
-    }
-
     public Seller findSellerById(Connection conn, String idSeller) throws FailedResearchException {
         Statement stmt = null;
         Seller seller = null;
@@ -37,7 +27,7 @@ public class SellerDao extends AccountDao {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return seller;

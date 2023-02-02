@@ -1,12 +1,10 @@
 package com.example.motorbreedfinal.view1;
 
 import com.example.motorbreedfinal.controller.ResearchController;
-import com.example.motorbreedfinal.controller.boundary.PaymentBoundary;
 import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.users.AccountObserver;
 import com.example.motorbreedfinal.model.users.AccountSubject;
 import com.example.motorbreedfinal.model.users.LoggedUser;
-import com.example.motorbreedfinal.motorbreedpay.MotorbreedPayBoundary;
 import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.EmailBean;
@@ -22,9 +20,6 @@ import javafx.scene.shape.Rectangle;
 import org.controlsfx.control.Rating;
 
 import java.util.List;
-
-import static java.lang.Integer.parseInt;
-
 public class ResultsPageControllerG implements AccountObserver {
 
 
@@ -155,8 +150,8 @@ public class ResultsPageControllerG implements AccountObserver {
         lblSeller.setText(ad.getSeller().getFirstName() + ad.getSeller().getLastName());
         lblDescription.setText(ad.getDescription());
         lblLocation.setText(ad.getLocation());
-        //TODO carImage.setImage(ad.getImage());
-        //TODO rtngRating.setRating(ad.getSeller().);
+        //carImage.setImage(ad.getImage());
+        //rtngRating.setRating(ad.getSeller().);
         lblBrand.setText(ad.getCar().getBrand());
         lblModel.setText(ad.getCar().getModel());
         lblHP.setText(String.valueOf(ad.getCar().getHorsepower()));
@@ -166,31 +161,12 @@ public class ResultsPageControllerG implements AccountObserver {
         lblProductionDate.setText(ad.getCar().getProductionYear());
         lblFuel.setText(ad.getCar().getFuelType());
         lblIndex.setText(index+1 + " of " + ads.size());
-        if(ad.getCar().getDecorations().charAt(0) == '1'){
-            cbHeatedSeats.setSelected(true);
-        } else{
-            cbHeatedSeats.setSelected(false);
-        }
-        if(ad.getCar().getDecorations().charAt(1) == '1'){
-            cbParkingSensors.setSelected(true);
-        } else{
-            cbParkingSensors.setSelected(false);
-        }
-        if(ad.getCar().getDecorations().charAt(2) == '1'){
-            cbLed.setSelected(true);
-        } else{
-            cbLed.setSelected(false);
-        }
-        if(ad.getCar().getDecorations().charAt(3) == '1'){
-            cbCruiseControl.setSelected(true);
-        } else{
-            cbCruiseControl.setSelected(false);
-        }
-        if(ad.getCar().getDecorations().charAt(4) == '1'){
-            cbKeyless.setSelected(true);
-        } else{
-            cbKeyless.setSelected(false);
-        }
+
+        cbHeatedSeats.setSelected(ad.getCar().getDecorations().charAt(0) == '1');
+        cbParkingSensors.setSelected(ad.getCar().getDecorations().charAt(1) == '1');
+        cbLed.setSelected(ad.getCar().getDecorations().charAt(2) == '1');
+        cbCruiseControl.setSelected(ad.getCar().getDecorations().charAt(3) == '1');
+        cbKeyless.setSelected(ad.getCar().getDecorations().charAt(4) == '1');
     }
 
 
@@ -259,7 +235,6 @@ public class ResultsPageControllerG implements AccountObserver {
 
     @Override
     public void update() {
-        System.out.println("ordine aggiunto");
         FxmlLoader.setPage("BuyerUserPage");
     }
 
@@ -267,9 +242,10 @@ public class ResultsPageControllerG implements AccountObserver {
     public void addFavorites(MouseEvent event){
         FavouritesBean favouritesBean = new FavouritesBean();
         favouritesBean.setIdAd(ads.get(this.index).getIdAd());
+        AdBean adBean = new AdBean();
+        adBean.setAds((List<Ad>) ads.get(index));
         favouritesBean.setIdBuyer(LoggedUser.getInstance().getBuyer().getIdAccount());
-        System.out.println(favouritesBean.getIdAd() + favouritesBean.getIdBuyer());
-        ResearchController.getInstance().addFavorites(favouritesBean);
+        ResearchController.getInstance().addFavorites(favouritesBean, adBean);
     }
 
     @FXML

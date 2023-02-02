@@ -11,26 +11,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
-import com.example.motorbreedfinal.controller.ManageAdsController;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
 public class ModifyAdControllerG {
     @FXML
-    private CheckBox CruiseBox;
+    private CheckBox cruiseBox;
 
     @FXML
-    private CheckBox LedBox;
+    private CheckBox ledBox;
 
     @FXML
     private Rectangle background;
@@ -184,7 +178,7 @@ public class ModifyAdControllerG {
 
 
         if(adBean.getAds().get(index).getCar().getDecorations().charAt(0) == '1') {
-            this.CruiseBox.setSelected(true);
+            this.cruiseBox.setSelected(true);
         }
         if(adBean.getAds().get(index).getCar().getDecorations().charAt(1) == '1') {
             this.keyBox.setSelected(true);
@@ -193,7 +187,7 @@ public class ModifyAdControllerG {
             this.heatedSeatsBox.setSelected(true);
         }
         if(adBean.getAds().get(index).getCar().getDecorations().charAt(3) =='1') {
-            this.LedBox.setSelected(true);
+            this.ledBox.setSelected(true);
         }
         if(adBean.getAds().get(index).getCar().getDecorations().charAt(4) == '1') {
             this.parkingSensorsBox.setSelected(true);
@@ -276,7 +270,7 @@ public class ModifyAdControllerG {
             carBean.setFuelType("");
         }
 
-        if(this.CruiseBox.isSelected()){
+        if(this.cruiseBox.isSelected()){
             decorations = decorations.concat("1");
         }else {
             decorations =decorations.concat("0");
@@ -291,7 +285,7 @@ public class ModifyAdControllerG {
         }else {
             decorations =decorations.concat("0");
         }
-        if(this.LedBox.isSelected()){
+        if(this.ledBox.isSelected()){
             decorations = decorations.concat("1");
         }else {
             decorations =decorations.concat("0");
@@ -315,8 +309,8 @@ public class ModifyAdControllerG {
     @FXML
     void editAd(ActionEvent event) {
         this.keyBox.setDisable(false);
-        this.CruiseBox.setDisable(false);
-        this.LedBox.setDisable(false);
+        this.cruiseBox.setDisable(false);
+        this.ledBox.setDisable(false);
         this.heatedSeatsBox.setDisable(false);
         this.parkingSensorsBox.setDisable(false);
 
@@ -339,14 +333,14 @@ public class ModifyAdControllerG {
 
     void undoChanges(){
         this.keyBox.setDisable(true);
-        this.CruiseBox.setDisable(true);
-        this.LedBox.setDisable(true);
+        this.cruiseBox.setDisable(true);
+        this.ledBox.setDisable(true);
         this.heatedSeatsBox.setDisable(true);
         this.parkingSensorsBox.setDisable(true);
 
         this.keyBox.setSelected(false);
-        this.CruiseBox.setSelected(false);
-        this.LedBox.setSelected(false);
+        this.cruiseBox.setSelected(false);
+        this.ledBox.setSelected(false);
         this.heatedSeatsBox.setSelected(false);
         this.parkingSensorsBox.setSelected(false);
 
@@ -365,16 +359,6 @@ public class ModifyAdControllerG {
         this.confirmButton.setVisible(false);
 
         this.descriptionTF.setEditable(false);
-    }
-
-    @FXML
-    void changePic(ActionEvent event) {
-
-    }
-
-    @FXML
-    void deleteAd(ActionEvent event) {
-
     }
 
     @FXML

@@ -155,7 +155,7 @@ public class ResearchDAO {
         ad.setInsertionDate(rs.getString(5));
         ad.setNumberOfClicks(rs.getInt(6));
         ad.setPriceCertification(rs.getInt(7) == 1);
-        
+
         Blob bl = rs.getBlob(8);
 
         if(bl != null) {

@@ -43,8 +43,9 @@ public class ResearchController {
         adBean.setAds(ads);
         return adBean;
     }
-    public void addFavorites(FavouritesBean favouritesBean) {
+    public void addFavorites(FavouritesBean favouritesBean, AdBean adBean) {
         researchDAO.addFavourites(favouritesBean.getIdAd(),favouritesBean.getIdBuyer());
+        LoggedUser.getInstance().getBuyer().addToFavourites((Ad) adBean.getAds());
     }
 
     public void sendEmail(EmailBean emailBean){

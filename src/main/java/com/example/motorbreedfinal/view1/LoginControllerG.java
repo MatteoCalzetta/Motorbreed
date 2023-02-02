@@ -49,7 +49,7 @@ public class LoginControllerG {
     } // operazione usata al termine del caso d'uso
 
     @FXML
-    void Login() {
+    void login() {
         LoginBean loginBean = new LoginBean();              // settaggio parametri LoginBean
         loginBean.setEmail(tfEmail.getText());
         loginBean.setPassword(pfPassword.getText());
@@ -75,7 +75,7 @@ public class LoginControllerG {
             } catch (FailedLoginException e) {
                 showErrorMessage(e.getMessage());
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                //throw new RuntimeException(e);
             }
 
         } else{
@@ -108,7 +108,5 @@ public class LoginControllerG {
         btnLogin.setDisable(pfPassword.getText().length() <= 5 || tfEmail.getText().length() <= 5);
     }
 
-    public void failedLogin(){
-    }
 
 }

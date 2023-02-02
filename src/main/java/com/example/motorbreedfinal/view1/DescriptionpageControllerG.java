@@ -119,14 +119,14 @@ public class DescriptionpageControllerG {
                 adBean = new AdBean(out, descriptionTF.getText()
                         , adLocationTF.getText(), Integer.parseInt(proposedPriceTF.getText().substring(0, proposedPriceTF.getText().length()-1)), true, inputStream);
 
-                if(adBean.Validation()){
+                if(adBean.validation()){
                     insertionController.insertAd(adBean);
                 }
             } else if (!sellerPriceTF.getText().isEmpty() && proposedPriceTF.getText().isEmpty()) {
                 adBean = new AdBean(out, descriptionTF.getText()
                         , adLocationTF.getText(), Integer.parseInt(sellerPriceTF.getText().substring(0, sellerPriceTF.getText().length()-1)), false,inputStream);
 
-                if(adBean.Validation()){
+                if(adBean.validation()){
                     insertionController.insertAd(adBean);
                 }
 

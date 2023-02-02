@@ -103,11 +103,8 @@ public class AdBean {
         this.seller = seller;
     }
 
-    public boolean Validation() {
-        if(cost > 0 && imageStream != null){
-            return true;
-        }
-        return false;
+    public boolean validation() {
+        return (cost > 0 && imageStream != null);
     }
 
     public void setNumberOfClicks(int numberClicks) {

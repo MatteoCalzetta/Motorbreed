@@ -62,12 +62,12 @@
                   <Font size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="LedBox" disable="true" layoutX="578.0" layoutY="601.0" mnemonicParsing="false" text="LED headlights">
+            <CheckBox fx:id="ledBox" disable="true" layoutX="578.0" layoutY="601.0" mnemonicParsing="false" text="LED headlights">
                <font>
                   <Font size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="CruiseBox" disable="true" focusTraversable="false" layoutX="768.0" layoutY="601.0" mnemonicParsing="false" text="Cruise control">
+            <CheckBox fx:id="cruiseBox" disable="true" focusTraversable="false" layoutX="768.0" layoutY="601.0" mnemonicParsing="false" text="Cruise control">
                <font>
                   <Font size="18.0" />
                </font>

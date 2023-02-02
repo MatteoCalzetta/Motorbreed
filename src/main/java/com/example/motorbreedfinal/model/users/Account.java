@@ -50,10 +50,18 @@ public abstract class Account extends AccountSubject{
     }
 
     public void changeCredentials(String credential, String newCredential){
-        switch (credential) {
-            case "email" -> this.email = newCredential;
-            case "firstname" -> this.firstName = newCredential;
-            case "lastname" -> this.lastName = newCredential;
+        switch(credential){
+            case "email":
+                this.email = newCredential;
+                break;
+            case "firstname":
+                this.firstName = newCredential;
+                break;
+            case "lastname":
+                this.lastName = newCredential;
+                break;
+            default:
+                break;
         }
         notifyObservers();
     }
