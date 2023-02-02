@@ -20,8 +20,6 @@ public interface DecorateCar {
            vehicle = cruiseControl;
 
 
-
-
         }
         if(decorationsArray[1]) {
             KeylessSystem keylessSystem = new KeylessSystem(vehicle);

@@ -28,9 +28,10 @@ public class ParkingSensors extends VehicleDecorator {
         return this.price + input;
     }
 
-    private String applyDecorations(String preliminaryDecorations) {
+    private String applyParkingSensors(String preliminaryDecorations) {
         return preliminaryDecorations.substring(0, index) + '1'
-                + preliminaryDecorations.substring(index + 1);
+                + preliminaryDecorations.substring(inde
+                x + 1);
     }
 
     @Override
@@ -43,7 +44,7 @@ public class ParkingSensors extends VehicleDecorator {
     @Override
     public String setDecorations() {
         String preliminaryDecorations = super.setDecorations();
-        preliminaryDecorations = this.applyDecorations(preliminaryDecorations);
+        preliminaryDecorations = this.applyParkingSensors(preliminaryDecorations);
         return preliminaryDecorations;
     }
 }

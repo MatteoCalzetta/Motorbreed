@@ -29,7 +29,7 @@ public class CruiseControl extends VehicleDecorator {
         return this.price + input;
     }
 
-    private String applyDecorations(String preliminaryDecorations) {
+    private String applyCruiseControl(String preliminaryDecorations) {
         return preliminaryDecorations.substring(0, index) + '1'
                 + preliminaryDecorations.substring(index + 1);
     }
@@ -44,7 +44,7 @@ public class CruiseControl extends VehicleDecorator {
     @Override
     public String setDecorations() {
         String preliminaryDecorations = super.setDecorations();
-        preliminaryDecorations = this.applyDecorations(preliminaryDecorations);
+        preliminaryDecorations = this.applyCruiseControl(preliminaryDecorations);
         return preliminaryDecorations;
     }
 }

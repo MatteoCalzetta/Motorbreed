@@ -27,7 +27,7 @@ public class KeylessSystem extends VehicleDecorator {
         return this.price + input;
     }
 
-    private String applyDecorations(String preliminaryDecorations) {
+    private String applyKeylessSystem(String preliminaryDecorations) {
         return preliminaryDecorations.substring(0, index) + '1'
                 + preliminaryDecorations.substring(index + 1);
     }
@@ -42,7 +42,7 @@ public class KeylessSystem extends VehicleDecorator {
     @Override
     public String setDecorations() {
         String preliminaryDecorations = super.setDecorations();
-        preliminaryDecorations = this.applyDecorations(preliminaryDecorations);
+        preliminaryDecorations = this.applyKeylessSystem(preliminaryDecorations);
         return preliminaryDecorations;
     }
 }

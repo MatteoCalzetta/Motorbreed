@@ -28,7 +28,7 @@ public class HeatedSeats extends VehicleDecorator {
         return this.price + input;
     }
 
-    private String applyDecorations(String preliminaryDecorations) {
+    private String applyHeatedSeats(String preliminaryDecorations) {
         return preliminaryDecorations.substring(0, index) + '1'
                 + preliminaryDecorations.substring(index + 1);
     }
@@ -41,9 +41,10 @@ public class HeatedSeats extends VehicleDecorator {
     }
 
     @Override
+
     public String setDecorations() {
         String preliminaryDecorations = super.setDecorations();
-        preliminaryDecorations = this.applyDecorations(preliminaryDecorations);
+        preliminaryDecorations = this.applyHeatedSeats(preliminaryDecorations);
         return preliminaryDecorations;
     }
 }
