@@ -121,6 +121,10 @@ public class DescriptionpageControllerG {
 
                 if(adBean.validation()){
                     insertionController.insertAd(adBean);
+
+                    FxmlLoader.setPage("SellerHomepage");
+                }else {
+                    System.out.println("not validation");
                 }
             } else if (!sellerPriceTF.getText().isEmpty() && proposedPriceTF.getText().isEmpty()) {
                 adBean = new AdBean(out, descriptionTF.getText()
@@ -128,6 +132,10 @@ public class DescriptionpageControllerG {
 
                 if(adBean.validation()){
                     insertionController.insertAd(adBean);
+                    FxmlLoader.setPage("SellerHomepage");
+                }else {
+                    System.out.println("not validation");
+
                 }
 
             } else {

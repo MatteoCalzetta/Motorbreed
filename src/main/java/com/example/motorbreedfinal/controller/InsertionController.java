@@ -22,6 +22,8 @@ public class InsertionController extends DecorateCar {
 
     private DescriptionpageBean descriptionpageBean;
 
+    EvaluatorController evaluatorController = new EvaluatorController();
+
     private Ad ad;
 
     Vehicle vehicle;
@@ -50,11 +52,13 @@ public class InsertionController extends DecorateCar {
 
     }
 
-    public void startEvaluation() {
-        EvaluatorController evaluatorController = new EvaluatorController();
-        evaluatorController.calculatePrice(vehicle);
+    public int startEvaluation() {
+        evaluatorController = new EvaluatorController();
+        int evaluatedPrice = evaluatorController.calculatePrice(vehicle);
 
         evaluatorController.setInsertionController(this); // EvaluatorController in seguito deve chiamare InsertionController
+
+        return evaluatedPrice;
     }
 
     public void setDescriptionController(DescriptionpageControllerG descriptionpageControllerG) {
@@ -93,6 +97,6 @@ public class InsertionController extends DecorateCar {
             this.descriptionControlllerG.showFailedInsertion();
         }
 
-        FxmlLoader.setPage("SellerHomepage");
+
     }
 }

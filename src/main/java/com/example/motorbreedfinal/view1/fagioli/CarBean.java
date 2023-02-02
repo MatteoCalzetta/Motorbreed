@@ -128,6 +128,7 @@ public class CarBean {
     }
 
     private boolean[] decorationsArray = new boolean[5];
+
     private String immatricolationYear;
 
     private LocalDateTime dateTime = LocalDateTime.now();

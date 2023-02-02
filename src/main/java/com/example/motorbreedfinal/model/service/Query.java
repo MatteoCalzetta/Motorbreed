@@ -222,5 +222,7 @@ public class Query {
         updateStatement = String.format("UPDATE ad SET Cost = '%s', Description = '%s', Location = '%s', InsertionDate = '%s', numberofclicks = '%s', certification = '%s', image = '%s', sold = '%s', idcar = '%s', idseller = '%s' WHERE idAd = '%s'", cost, description, location, insertionDate, numberOfClicks, Boolean.compare(priceCertificated, true)+1, image, 0, idCar, idSeller,idAd);
         stmt.executeUpdate(updateStatement);
     }
+
+
 }
 

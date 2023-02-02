@@ -34,7 +34,7 @@ public class EvaluatorController {
 
     }
 
-    public void calculatePrice(Vehicle vehicle) {
+    public int calculatePrice(Vehicle vehicle) {
 
         int startingPrice = 0;
 
@@ -141,6 +141,7 @@ public class EvaluatorController {
 
             showResult();
         }
+        return finalPrice;
     }
 
     public void setPriceOnScreen(String evaluatedPrice) {

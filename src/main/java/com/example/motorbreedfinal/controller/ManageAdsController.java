@@ -85,7 +85,9 @@ public class ManageAdsController {
 
         CustomizeProfileDAO customizeProfileDAO = new CustomizeProfileDAO();
         customizeProfileDAO.modifyAd(ad);
+    }
 
-
+    public AdBean getAdBean() {
+        return adBean;
     }
 }

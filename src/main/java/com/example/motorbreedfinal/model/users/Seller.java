@@ -2,10 +2,16 @@ package com.example.motorbreedfinal.model.users;
 
 import com.example.motorbreedfinal.model.Ad;
 
+
+
 import java.util.List;
 
 public class Seller extends Account {
     private List<Ad> adList;
+
+    public boolean addAdvertisement(Ad ad) {
+        return false;
+    }
 
     public List<Ad> getAdList() {
         return adList;
@@ -19,7 +25,6 @@ public class Seller extends Account {
     public String toString() {
         return "Seller{" +
                 "adList=" + adList +
-                ", ratingList=" +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
