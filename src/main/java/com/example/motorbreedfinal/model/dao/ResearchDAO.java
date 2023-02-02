@@ -154,11 +154,10 @@ public class ResearchDAO {
     }
 
     public void addFavourites(String idAd, String idBuyer) {
-        Statement stmt = null;
-        Connection conn = null;
-        try {
-            conn = Connector.getInstance().getConnection();
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+        try(Connection conn = Connector.getInstance().getConnection();
+        Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
+            ;
             ResultSet rs = Query.isAdFavorite(stmt, idAd, idBuyer);
             if(rs.next()){
                 Query.remoteFavorites(stmt, idAd, idBuyer);
@@ -168,35 +167,22 @@ public class ResearchDAO {
 
         } catch (SQLException se) {
             se.printStackTrace();
-        } finally {
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                //not handled
-            }
         }
     }
 
     public List<Ad> findSellerAds(String userId){
-        Statement stmt = null;
-        Connection conn = null;
+
         List<Ad> ads = new ArrayList<>();
 
-        try {
-            conn = Connector.getInstance().getConnection();
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        try (Connection conn = Connector.getInstance().getConnection();
+        Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);){
+
             ResultSet rs = Query.findSellerAds(stmt, userId);
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
         } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
-        } finally {
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                //not handled
-            }
         }
         return ads;
     }
