@@ -50,17 +50,14 @@ public class EvaluatorControllerG {
         this.horsePowerTF.setText(evaluatorBean.getHorsepower());
         this.mileageTF.setText(evaluatorBean.getMileage());
         this.prYearTF.setText(evaluatorBean.getProductionYear());
-        if(!evaluatorBean.getFinalPrice().contains("Price")) {
-            this.evaluationTF.setText(evaluatorBean.getFinalPrice());
-        }else {
-            this.evaluationTF.setText(evaluatorBean.getFinalPrice());
-        }
+
         if(evaluatorBean.getFinalPrice().equals("Price was not Evaluable")){
             usePriceButton.setDisable(true);
         }else{
             evaluatedPrice = evaluatorBean.getFinalPrice();
         }
 
+        this.evaluationTF.setText(evaluatorBean.getFinalPrice());
     }
 
     public void setEvaluatorController(EvaluatorController evaluatorController){
