@@ -70,7 +70,7 @@ public class AdvancedResearchBean extends ResearchBean{
         this.decorations = decorations;
     }
 
-    public void setData(String brand, String model, String fuelType, String productionYear, String startingHP, String maxHP, String transmission, String startingPrice, String maxPrice, String startMileage, String maxMileage, String decorations) {
+    public void setData(String brand, String model, String fuelType, String productionYear, String startingHP, String maxHP, String transmission) {
         this.brand = brand;
         this.model = model;
         this.fuelType = fuelType;
@@ -78,6 +78,9 @@ public class AdvancedResearchBean extends ResearchBean{
         this.startingHP = startingHP;
         this.maxHP = maxHP;
         this.transmission = transmission;
+    }
+
+    public void setInfos(String startingPrice, String maxPrice, String startMileage, String maxMileage, String decorations) {
         this.startingPrice = startingPrice;
         this.maxPrice = maxPrice;
         this.startingMileage = startMileage;

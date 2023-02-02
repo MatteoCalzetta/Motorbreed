@@ -199,8 +199,9 @@ public class BuyerHomepageControllerG2 {
 
                 AdvancedResearchBean advancedResearchBean = new AdvancedResearchBean();
                 advancedResearchBean.setData(brand, model, fuelType,
-                        productionYear, startingHP, maxHP, transmission,
-                        minPrice, maxPrice, minMileage, maxMileage, decorations);
+                        productionYear, startingHP, maxHP, transmission);
+
+                advancedResearchBean.setInfos(minPrice, maxPrice, minMileage, maxMileage, decorations);
 
                 if (advancedResearchBean.isDataValid()) {
                     searchCar(advancedResearchBean);

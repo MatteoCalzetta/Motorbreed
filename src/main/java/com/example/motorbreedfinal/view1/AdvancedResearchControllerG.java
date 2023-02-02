@@ -105,13 +105,18 @@ public class AdvancedResearchControllerG {
         buyerHomepageControllerG.setNameSurnameTF(buyer.getFirstName(), buyer.getLastName());
     }
 
+
+    void setInfos(){
+
+    }
     @FXML
     void searchCar(ActionEvent event){
         lblError.setVisible(false);
         AdvancedResearchBean advancedResearchBean = new AdvancedResearchBean();
         advancedResearchBean.setData(brandTextField.getText(), modelTextField.getText(), fuelTypeTextField.getText(),
-                productionYearTextField.getText(), startingHPLabel.getText(), maxHPLabel.getText(), transmissionTextField.getText(),
-                costFromTextField.getText(), costToTextField.getText(), mileageFromTextField.getText(), mileageToTextField.getText(),
+                productionYearTextField.getText(), startingHPLabel.getText(), maxHPLabel.getText(), transmissionTextField.getText());
+
+        advancedResearchBean.setInfos(costFromTextField.getText(), costToTextField.getText(), mileageFromTextField.getText(), mileageToTextField.getText(),
                 setDecorations());
 
         if(advancedResearchBean.isDataValid()){
