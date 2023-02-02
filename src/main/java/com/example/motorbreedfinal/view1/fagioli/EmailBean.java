@@ -40,13 +40,7 @@ public class EmailBean {
         this.password = password;
     }
 
-    public boolean validation() {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
-                "[a-zA-Z0-9_+&*-]+)*@" +
-                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                "A-Z]{2,7}$";
-
-        Pattern pat = Pattern.compile(emailRegex);
-        return (pat.matcher(fromEmail).matches());
+    public boolean validation(){
+        return (fromEmail.length()>6 && fromEmail.contains("@") && fromEmail.contains("."));
     }
 }
