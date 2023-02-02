@@ -82,9 +82,7 @@ public class CustomizeProfileDAO {
             conn= Connector.getInstance().getConnection();
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Query.updateAd(stmt,Integer.parseInt(ad.getCar().getIdCar()), ad.getSeller().getIdAccount(), ad.getCost(), ad.getIdAd(), ad.getLocation(), ad.getDescription(),ad.getImage(), ad.getNumberOfClicks(),
-                    ad.getCar().getBrand(), ad.isPriceCertificated(), ad.getCar().getModel(), ad.getInsertionDate(), ad.getCar().getMileage(), ad.getCar().getTransmission(),
-                    ad.getCar().getFuelType(), ad.getCar().getProductionYear(), ad.getCar().getImmatricolationYear(), ad.getCar().getHorsepower(), ad.getCar().getLicencePlate(),ad.getCar().isInsurance(), ad.getCar().getDecorations());
+            Query.updateAd(stmt,ad);
 
 
         } catch (SQLException e) {

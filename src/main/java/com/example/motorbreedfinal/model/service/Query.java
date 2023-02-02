@@ -1,5 +1,6 @@
 package com.example.motorbreedfinal.model.service;
 
+import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.Car;
 import javafx.scene.image.Image;
 
@@ -144,8 +145,8 @@ public class Query {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void insertAd(Statement stmt, int cost, String description, String location, String insertionDate, int carId, int sellerId, boolean priceCertification) throws  SQLException{
-        String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s')", cost, description, location, insertionDate, 0, Boolean.compare(priceCertification, true)+1, 0, carId, sellerId);
+    public static void insertAd(Statement stmt, Ad ad, int carId, int sellerId, boolean priceCertification) throws  SQLException{
+        String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s')", ad.getCost(), ad.getDescription(), ad.getLocation(), ad.getInsertionDate(), 0, Boolean.compare(priceCertification, true)+1, 0, carId, sellerId);
         stmt.executeUpdate(insertStatement);
 
     }
@@ -212,10 +213,10 @@ public class Query {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void updateAd(Statement stmt, int idCar, String idSeller, int cost, String idAd, String location, String description, Image image, int numberOfClicks, String brand, boolean priceCertificated, String model, String insertionDate, int mileage, String transmission, String fuelType, String productionYear, String immatricolationYear, int horsepower, String licencePlate, boolean insurance, String decorations) throws SQLException {
-        String updateStatement = String.format("UPDATE car SET licencePlate = '%s', transmission = '%s', insurance = '%s', immatricolationYear = '%s', brand = '%s', model = '%s', mileage = '%s', productionYear = '%s', horsePower = '%s', fuelType = '%s', decorations = '%s' WHERE idcar = '%s'", licencePlate, transmission, Boolean.compare(insurance, true)+1, immatricolationYear, brand, model, mileage, productionYear, horsepower, fuelType, decorations, idCar);
+    public static void updateAd(Statement stmt, Ad ad) throws SQLException {
+        String updateStatement = String.format("UPDATE car SET licencePlate = '%s', transmission = '%s', insurance = '%s', immatricolationYear = '%s', brand = '%s', model = '%s', mileage = '%s', productionYear = '%s', horsePower = '%s', fuelType = '%s', decorations = '%s' WHERE idcar = '%s'", ad.getCar().getLicencePlate(), ad.getCar().getTransmission(), Boolean.compare(ad.getCar().isInsurance(), true)+1, ad.getCar().getImmatricolationYear(), ad.getCar().getBrand(), ad.getCar().getModel(), ad.getCar().getMileage(), ad.getCar().getProductionYear(), ad.getCar().getHorsepower(), ad.getCar().getFuelType(),ad.getCar().getDecorations(), ad.getCar().getIdCar());
         stmt.executeUpdate(updateStatement);
-        updateStatement = String.format("UPDATE ad SET Cost = '%s', Description = '%s', Location = '%s', InsertionDate = '%s', numberofclicks = '%s', certification = '%s', image = '%s', sold = '%s', idcar = '%s', idseller = '%s' WHERE idAd = '%s'", cost, description, location, insertionDate, numberOfClicks, Boolean.compare(priceCertificated, true)+1, image, 0, idCar, idSeller,idAd);
+        updateStatement = String.format("UPDATE ad SET Cost = '%s', Description = '%s', Location = '%s', InsertionDate = '%s', numberofclicks = '%s', certification = '%s', image = '%s', sold = '%s', idcar = '%s', idseller = '%s' WHERE idAd = '%s'", ad.getCost(), ad.getDescription(), ad.getLocation(), ad.getInsertionDate(), ad.getNumberOfClicks(), Boolean.compare(ad.isPriceCertificated(), true)+1, ad.getImage(), 0, ad.getCar().getIdCar(), ad.getSeller().getIdAccount(),ad.getIdAd());
         stmt.executeUpdate(updateStatement);
     }
 
