@@ -16,7 +16,7 @@ import com.example.motorbreedfinal.view1.FxmlLoader;
 import java.io.InputStream;
 import java.sql.SQLException;
 
-public class InsertionController extends DecorateCar {
+public class InsertionController{
 
     private DescriptionpageControllerG descriptionControlllerG;
 

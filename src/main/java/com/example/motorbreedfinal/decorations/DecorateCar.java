@@ -8,7 +8,7 @@ public abstract class DecorateCar {
     private DecorateCar(){
     }
 
-    protected static Vehicle addDecorations(boolean[] decorationsArray, Car car) {
+    public static Vehicle addDecorations(boolean[] decorationsArray, Car car) {
         Vehicle vehicle = car;
 
         String decorations = "00000";
