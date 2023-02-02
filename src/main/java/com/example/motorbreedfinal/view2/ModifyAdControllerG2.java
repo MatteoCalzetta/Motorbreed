@@ -1,7 +1,6 @@
 package com.example.motorbreedfinal.view2;
 
 import com.example.motorbreedfinal.controller.ManageAdsController;
-import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;
@@ -156,7 +155,7 @@ public class ModifyAdControllerG2 {
 
     public void showNextAd() {
         this.index++;
-        if(this.index >= adBean.getAds().toArray().length| this.index == -1) {
+        if(this.index >= adBean.getAds().toArray().length || this.index == -1) {
             this.index = 0;
         }
         showAd(index);
@@ -171,7 +170,7 @@ public class ModifyAdControllerG2 {
     }
 
     private void modifyAd(){
-        AdBean adBean = new AdBean();
+        adBean = new AdBean();
 
         CarBean carBean = new CarBean();
 

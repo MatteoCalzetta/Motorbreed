@@ -5,7 +5,6 @@ import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.users.AccountObserver;
 import com.example.motorbreedfinal.model.users.AccountSubject;
 import com.example.motorbreedfinal.model.users.LoggedUser;
-import com.example.motorbreedfinal.view1.BuyerHomepageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.EmailBean;
@@ -157,7 +156,6 @@ public class ResultsPageControllerG2 implements AccountObserver {
     }
 
     public void initialize(){
-        System.out.println("inizialize è andato");
         AccountSubject.attach(this);
     }
 

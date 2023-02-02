@@ -1,7 +1,5 @@
 package com.example.motorbreedfinal.view2.utility;
 
-import com.example.motorbreedfinal.view2.utility.Printer;
-
 public class ErrorPrinter implements Printer {
 
     private static ErrorPrinter instance = null;

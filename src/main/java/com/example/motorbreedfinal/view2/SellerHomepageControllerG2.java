@@ -7,7 +7,6 @@ import com.example.motorbreedfinal.view2.utility.LinePrinter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.BufferOverflowException;
 
 public class SellerHomepageControllerG2 {
 
@@ -54,13 +53,14 @@ public class SellerHomepageControllerG2 {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             switch (reader.readLine()){
                 case "0":
-                    ManageMyAds();
-                    
+                    manageMyAds();
+                    break;
                 case "1":
-                    ModifyInfos();
-
+                    modifyInfos();
+                    break;
                 default:
                     myProfile();
+                    break;
             }
 
             
@@ -71,12 +71,12 @@ public class SellerHomepageControllerG2 {
         }
     }
 
-    private void ModifyInfos() {
+    private void modifyInfos() {
 
 
     }
 
-    private void ManageMyAds() {
+    private void manageMyAds() {
         ManageAdsController manageAdsController = new ManageAdsController();
         manageAdsController.retrieveMyAds();
 
