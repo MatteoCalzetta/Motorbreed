@@ -39,6 +39,7 @@ public class KeylessSystem extends VehicleDecorator {
         return preliminaryResults;
     }
 
+    @Override
     public String setDecorations() {
         String preliminaryDecorations = super.setDecorations();
         preliminaryDecorations = this.applyDecorations(preliminaryDecorations);

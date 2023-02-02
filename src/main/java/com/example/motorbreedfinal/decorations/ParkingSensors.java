@@ -14,9 +14,9 @@ public class ParkingSensors extends VehicleDecorator {
 
     }
 
-    public void setPrice(int Price) {
+    public void setPrice(int price) {
 
-        this.price = Price;
+        this.price = price;
     }
 
     public void setIndex(int index){

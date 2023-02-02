@@ -3,10 +3,7 @@ package com.example.motorbreedfinal.decorations;
 import com.example.motorbreedfinal.model.Car;
 import com.example.motorbreedfinal.model.Vehicle;
 
-public abstract class DecorateCar {
-
-    private DecorateCar(){
-    }
+public interface DecorateCar {
 
     public static Vehicle addDecorations(boolean[] decorationsArray, Car car) {
         Vehicle vehicle = car;
