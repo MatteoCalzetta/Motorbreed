@@ -86,12 +86,13 @@ public class DescriptionpageControllerG {
         File file = fc.showOpenDialog(null);
         if (file != null) {
             String imagePath = file.getAbsolutePath();
-            try {
-                inputStream = new FileInputStream(imagePath);
+            try (FileInputStream inputStream = new FileInputStream(imagePath)) {
                 Image cover = new Image(inputStream);
                 uploadImageView.setImage(cover);
             } catch (FileNotFoundException e) {
-                //towrite
+                // Handle the exception
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             } finally {
                 if (inputStream != null) {
                     try {
