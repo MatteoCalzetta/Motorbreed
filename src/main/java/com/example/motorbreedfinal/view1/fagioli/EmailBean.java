@@ -1,7 +1,5 @@
 package com.example.motorbreedfinal.view1.fagioli;
 
-import java.util.regex.Pattern;
-
 public class EmailBean {
     private String fromEmail;
     private String toEmail;

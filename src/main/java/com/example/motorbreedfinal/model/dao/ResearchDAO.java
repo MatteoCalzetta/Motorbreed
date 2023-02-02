@@ -95,13 +95,10 @@ public class ResearchDAO {
     }
 
     public Ad findAdById(String idAd, String idBuyer){
-        Statement stmt = null;
-        Connection conn = null;
+
         Ad ad = new Ad();
 
-        try {
-            conn = Connector.getInstance().getConnection();
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        try (Connection conn = Connector.getInstance().getConnection(); Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
             String insertStatement = String.format("INSERT into buyer_order (idBuyer, idAd) VALUES ('%s','%s')", idBuyer, idAd);
             stmt.executeUpdate(insertStatement);
             String updateStatement = String.format("UPDATE ad SET sold = '1' WHERE idAd = '%s'", idAd);
@@ -110,8 +107,6 @@ public class ResearchDAO {
             while (rs.next()) {
                 ad = extractAd(conn, rs);
             }
-
-            stmt.close();
         } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
         }
@@ -119,25 +114,18 @@ public class ResearchDAO {
     }
 
     public List<Ad> findBuyerOrders(String userId) {
-        Statement stmt = null;
-        Connection conn = null;
+
         List<Ad> ads = new ArrayList<>();
 
-        try {
-            conn = Connector.getInstance().getConnection();
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        try(Connection conn = Connector.getInstance().getConnection();
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
             ResultSet rs = Query.findBuyerOrders(stmt, userId);
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
+
         } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
-        } finally {
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                //not handled
-            }
         }
         return ads;
     }
