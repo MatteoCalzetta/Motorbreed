@@ -1,5 +1,6 @@
 package com.example.motorbreedfinal.model.service;
 
+import com.example.motorbreedfinal.model.Car;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class Query {
         return stmt.executeQuery(selectedStatement);
     }
 
-    public static ResultSet findAdsByAdvancedFilters(Statement stmt, String brand, String model, String fuelType, String productionYear, String startingHP, String maxHP, String transmission, String startingPrice, String maxPrice, String startingMileage, String maxMileage, String decorations) throws SQLException {
+    public static ResultSet findAdsByAdvancedFilters(Statement stmt, Car car, String maxHP, String startingPrice, String maxPrice, String maxMileage) throws SQLException {
         String selectedStatement = "SELECT * FROM ad WHERE sold = '0' ";
 
         if(!startingPrice.isEmpty()){
@@ -60,41 +61,41 @@ public class Query {
         }
         selectedStatement += " AND idcar IN (SELECT idcar FROM car WHERE true = true ";
 
-        if(!model.isEmpty()){
-            selectedStatement += " AND model = '" + model + "'";
+        if(!car.getModel().isEmpty()){
+            selectedStatement += " AND model = '" + car.getModel() + "'";
         }
 
-        if(!fuelType.isEmpty()){
-            selectedStatement += " AND fuelType = '" + fuelType + "'";
+        if(!car.getFuelType().isEmpty()){
+            selectedStatement += " AND fuelType = '" + car.getFuelType()+ "'";
         }
 
-        if(!productionYear.isEmpty()){
-            selectedStatement += " AND productionYear = '" + productionYear + "'";
+        if(!car.getProductionYear().isEmpty()){
+            selectedStatement += " AND productionYear = '" + car.getProductionYear() + "'";
         }
 
-        if(!startingHP.isEmpty()){
-            selectedStatement += " AND horsePower > '" + startingHP + "'";
+        if(!String.valueOf(car.getHorsepower()).isEmpty()){
+            selectedStatement += " AND horsePower > '" + car.getHorsepower() + "'";
         }
 
         if(!maxHP.isEmpty()){
             selectedStatement += " AND horsePower < '" + maxHP + "'";
         }
 
-        if(!transmission.isEmpty()){
-            selectedStatement += " AND transmission = '" + transmission + "'";
+        if(!car.getTransmission().isEmpty()){
+            selectedStatement += " AND transmission = '" + car.getTransmission() + "'";
         }
 
-        if(!brand.isEmpty()){
-            selectedStatement += " AND brand = '" + brand + "'";
+        if(!car.getBrand().isEmpty()){
+            selectedStatement += " AND brand = '" + car.getBrand() + "'";
         }
-        if(!startingMileage.isEmpty()){
-            selectedStatement += " AND mileage > " + startingMileage;
+        if(!String.valueOf(car.getMileage()).isEmpty()){
+            selectedStatement += " AND mileage > " + car.getMileage();
         }
         if(!maxMileage.isEmpty()){
             selectedStatement += " AND mileage < " + maxMileage;
         }
-        if(!decorations.isEmpty()){
-            selectedStatement += " AND decorations = '" + decorations + "'";
+        if(!car.getDecorations().isEmpty()){
+            selectedStatement += " AND decorations = '" + car.getDecorations() + "'";
         }
 
         selectedStatement += ")";

@@ -43,7 +43,7 @@ public class ResearchDAO {
         return ads;
     }
 
-    public List<Ad> findAdsByAdvancedFilter(Car car, String maxHP, String startingPrice, String maxPrice, String maxMileage ) throws FailedResearchException {
+    public List<Ad> findAdsByAdvancedFilter(Car car, String maxHP, String startingPrice, String maxPrice, String maxMileage) throws FailedResearchException {
         Statement stmt = null;
         Connection conn = null;
         List<Ad> ads = new ArrayList<>();
@@ -51,7 +51,7 @@ public class ResearchDAO {
         try {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Query.findAdsByAdvancedFilters(stmt, car.getBrand(), car.getModel(), car.getFuelType(), car.getProductionYear(), String.valueOf(car.getHorsepower()), maxHP, car.getTransmission(), startingPrice, maxPrice, String.valueOf(car.getMileage()), maxMileage, car.getDecorations());
+            ResultSet rs = Query.findAdsByAdvancedFilters(stmt, car, maxHP, startingPrice, maxPrice, maxMileage);
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
