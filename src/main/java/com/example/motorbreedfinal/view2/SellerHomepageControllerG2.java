@@ -2,6 +2,7 @@ package com.example.motorbreedfinal.view2;
 
 import com.example.motorbreedfinal.controller.ManageAdsController;
 import com.example.motorbreedfinal.model.users.LoggedUser;
+import com.example.motorbreedfinal.view2.utility.ErrorPrinter;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;
 
 import java.io.BufferedReader;
@@ -80,10 +81,17 @@ public class SellerHomepageControllerG2 {
         ManageAdsController manageAdsController = new ManageAdsController();
         manageAdsController.retrieveMyAds();
 
-        ModifyAdControllerG2 modifyAdControllerG2 = new ModifyAdControllerG2();
-        modifyAdControllerG2.setManageAdsController(manageAdsController);
-        modifyAdControllerG2.setBean(manageAdsController.getAdBean());
-        modifyAdControllerG2.showAd(0);
+        if(!LoggedUser.getInstance().getSeller().getAdList().isEmpty()){
+            ModifyAdControllerG2 modifyAdControllerG2 = new ModifyAdControllerG2();
+            modifyAdControllerG2.setManageAdsController(manageAdsController);
+            modifyAdControllerG2.setBean(manageAdsController.getAdBean());
+            modifyAdControllerG2.showAd(0);
+        } else{
+            toPrint = "No ads to show.";
+            ErrorPrinter.getInstance().print(toPrint);
+            myProfile();
+        }
+
 
     }
 

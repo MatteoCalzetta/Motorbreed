@@ -59,43 +59,23 @@ public class ModifyAdControllerG2 {
 
 
         toPrint = " CruiseControl : ";
-        if(adBean.getAds().get(index).getCar().getDecorations().charAt(0) == '1'){
-            toPrint = toPrint.concat(" true ");
-        }else {
-            toPrint = toPrint.concat(" false ");
-        }
+        toPrint = toPrint.concat(String.valueOf(adBean.getAds().get(index).getCar().getDecorations().charAt(0) == '1'));
+
 
         toPrint = toPrint.concat(" KeylessSystem ");
+        toPrint = toPrint.concat(String.valueOf(adBean.getAds().get(index).getCar().getDecorations().charAt(1) == '1'));
 
-        if(adBean.getAds().get(index).getCar().getDecorations().charAt(1) == '1'){
-            toPrint = toPrint.concat(" true ");
-        }else {
-            toPrint = toPrint.concat(" false ");
-        }
 
         toPrint = toPrint.concat(" HeatedSeats ");
-
-        if(adBean.getAds().get(index).getCar().getDecorations().charAt(2) == '1'){
-            toPrint = toPrint.concat(" true ");
-        }else {
-            toPrint = toPrint.concat(" false ");
-        }
+        toPrint = toPrint.concat(String.valueOf(adBean.getAds().get(index).getCar().getDecorations().charAt(2) == '1'));
 
         toPrint = toPrint.concat(" LedHeadlights ");
+        toPrint = toPrint.concat(String.valueOf(adBean.getAds().get(index).getCar().getDecorations().charAt(3) == '1'));
 
-        if(adBean.getAds().get(index).getCar().getDecorations().charAt(3) == '1'){
-            toPrint = toPrint.concat(" true ");
-        }else {
-            toPrint = toPrint.concat(" false ");
-        }
 
         toPrint = toPrint.concat(" ParkingSensors  ");
+        toPrint = toPrint.concat(String.valueOf(adBean.getAds().get(index).getCar().getDecorations().charAt(4) == '1'));
 
-        if(adBean.getAds().get(index).getCar().getDecorations().charAt(4) == '1'){
-            toPrint = toPrint.concat(" true ");
-        }else {
-            toPrint = toPrint.concat(" false ");
-        }
 
         LinePrinter.getInstance().print(toPrint);
 
@@ -140,12 +120,13 @@ public class ModifyAdControllerG2 {
             switch (reader.readLine()){
                 case "0":
                     showPreviousAd();
+                    break;
                 case "1":
                     showNextAd();
+                    break;
                 default:
                     modifyAd();
-
-
+                    break;
             }
         }catch(IOException e){
             navigateAds();
@@ -178,29 +159,16 @@ public class ModifyAdControllerG2 {
         LinePrinter.getInstance().print(toPrint);
 
         try {
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of brand";
-                LinePrinter.getInstance().print(toPrint);
 
-                carBean.setBrand(reader.readLine());
-            }else {
-                carBean.setBrand(myAdbean.getAds().get(index).getCar().getBrand());
-            }
-
+            carBean = extractBrand(carBean);
 
             toPrint = "Do you want to modify Model ? 1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of model";
-                LinePrinter.getInstance().print(toPrint);
+            carBean = extractModel(carBean);
 
-                carBean.setModel(reader.readLine());
-            }else {
-                carBean.setModel(myAdbean.getAds().get(index).getCar().getModel());
-            }
-
+            System.out.println(carBean.getModel() + carBean.getBrand());
 
             toPrint = "Do you want to modify Mileage? 1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
@@ -426,6 +394,30 @@ public class ModifyAdControllerG2 {
         }catch (IOException e){
             showAd(0);
         }
+    }
+
+    private CarBean extractModel(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of model";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setModel(reader.readLine());
+        }else {
+            carBean.setModel(myAdbean.getAds().get(index).getCar().getModel());
+        }
+        return carBean;
+    }
+
+    private CarBean extractBrand(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of brand";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setBrand(reader.readLine());
+        }else {
+            carBean.setBrand(myAdbean.getAds().get(index).getCar().getBrand());
+        }
+        return carBean;
     }
 }
 
