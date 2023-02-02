@@ -14,14 +14,13 @@ import java.sql.Statement;
 
 public class InsertionDAO {
 
-    public void insertAd(Ad ad, String idSeller, InputStream imageStream) throws FailedAdInsertionException {
+    public void insertAd(Ad ad, InputStream imageStream) throws FailedAdInsertionException {
         Statement stmt =null;
         Connection conn =null;
 
         try {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            //System.out.println("il car id prima di fare insert ad è " + ad.getCar().getIdCar());
             Query.insertAd(stmt, ad.getCost(), ad.getDescription(), ad.getLocation(), ad.getInsertionDate(), Integer.parseInt(ad.getCar().getIdCar()), Integer.parseInt(ad.getSeller().getIdAccount()), ad.isPriceCertificated());
 
             ResultSet rs = Query.findIdAd(stmt, ad.getCar().getLicencePlate());
@@ -34,8 +33,7 @@ public class InsertionDAO {
             throw new FailedAdInsertionException(e.getMessage());
         }
         try {
-            if (stmt != null)
-                stmt.close();
+            stmt.close();
         } catch (SQLException se2) {
             //TO-DO
         }
@@ -46,7 +44,6 @@ public class InsertionDAO {
     public void insertCar(Car car) throws FailedAdInsertionException, SQLException {
         Statement stmt =null;
         Connection conn =null;
-        ResultSet rs;
 
         try {
             conn = Connector.getInstance().getConnection();
@@ -58,8 +55,7 @@ public class InsertionDAO {
             throw new FailedAdInsertionException(e.getMessage());
         }
         try {
-            if (stmt != null)
-                stmt.close();
+            stmt.close();
         } catch (SQLException se2) {
             //TO-DO
         }
@@ -77,7 +73,6 @@ public class InsertionDAO {
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
             idCar = rs.getInt("MAX(idcar)") + 1;
-            //rs.close();
         } catch(SQLException s){
             s.printStackTrace();
         }

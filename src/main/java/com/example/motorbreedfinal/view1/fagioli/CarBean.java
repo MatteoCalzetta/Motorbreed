@@ -3,7 +3,6 @@ package com.example.motorbreedfinal.view1.fagioli;
 import java.time.LocalDateTime;
 
 public class CarBean {
-
     private boolean insurance;
     private String brand;
     private String model;

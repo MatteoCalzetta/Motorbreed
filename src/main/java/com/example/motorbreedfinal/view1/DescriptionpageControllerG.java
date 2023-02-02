@@ -88,7 +88,6 @@ public class DescriptionpageControllerG {
             String imagePath = file.getAbsolutePath();
             try {
                 inputStream = new FileInputStream(imagePath);
-                System.out.println(inputStream);
                 Image cover = new Image(inputStream);
                 uploadImageView.setImage(cover);
             } catch (FileNotFoundException e) {

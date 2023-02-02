@@ -202,15 +202,12 @@ public class Query {
 
                 imageStream.close();
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                //System.out.println(e.getMessage());
             } catch (IOException e) {
                 //not handled
             }
         }
     }
-
-
-
     public static ResultSet findIdAd(Statement stmt, String licencePlate) throws SQLException {
         String selectStatement = String.format("SELECT * FROM ad WHERE idCar IN (SELECT idCar FROM car WHERE licencePlate = '%s')", licencePlate);
         return stmt.executeQuery(selectStatement);

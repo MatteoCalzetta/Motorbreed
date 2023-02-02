@@ -34,7 +34,7 @@ public class RegisterDao {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //throw new RuntimeException(e);
             }
         }
     }

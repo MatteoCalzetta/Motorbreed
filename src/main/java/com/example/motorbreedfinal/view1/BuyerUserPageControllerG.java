@@ -1,7 +1,6 @@
 package com.example.motorbreedfinal.view1;
 
 import com.example.motorbreedfinal.controller.ResearchController;
-import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import javafx.event.ActionEvent;

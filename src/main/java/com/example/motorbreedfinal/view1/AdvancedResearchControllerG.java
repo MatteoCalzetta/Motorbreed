@@ -93,7 +93,6 @@ public class AdvancedResearchControllerG {
 
     @FXML
     private TextField transmissionTextField;
-    private String decorations;
 
     @FXML
     void setHomepage(ActionEvent event) {
@@ -127,12 +126,11 @@ public class AdvancedResearchControllerG {
     }
 
     private String setDecorations(){
-        String decorations = translate((insuranceCheckBox.isSelected())) + translate(keylessSystemCheckBox.isSelected()) + translate(heatedSeatsCheckBox.isSelected()) +
+        return translate((insuranceCheckBox.isSelected())) + translate(keylessSystemCheckBox.isSelected()) + translate(heatedSeatsCheckBox.isSelected()) +
                 translate(parkingSensorsCheckBox.isSelected()) + translate(ledHeadlightsCheckBox.isSelected());
-        return decorations;
     }
 
-    public String translate(Boolean condition){
+    public String translate(boolean condition){
         String translate;
         if(condition){
             translate = "1";

@@ -92,7 +92,7 @@ public class InsertionController extends DecorateCar {
             this.descriptionControlllerG.showFailedInsertion();
         }
         try{
-            insertionDAO.insertAd(ad, ad.getSeller().getIdAccount(), imageStream);
+            insertionDAO.insertAd(ad, imageStream);
         } catch (FailedAdInsertionException e) {
             this.descriptionControlllerG.showFailedInsertion();
         }
