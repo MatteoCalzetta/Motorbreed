@@ -23,9 +23,14 @@ public class  FxmlLoader extends Application {
         stage.setTitle("MotorBreed");
         stage.setResizable(false);
         stage.setScene(scene);
-        stage1 = stage;
+        setScene(stage);
         stage.show();
     }
+
+    private static void setScene(Stage stage) {
+        stage1 = stage;
+    }
+
     public static FXMLLoader setPage(String fileName) {
 
         URL fileUrl = FxmlLoader.class.getResource(fileName + ".fxml");
