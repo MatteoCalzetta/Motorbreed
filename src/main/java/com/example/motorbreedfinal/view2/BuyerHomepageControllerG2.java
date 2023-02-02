@@ -202,11 +202,7 @@ public class BuyerHomepageControllerG2 {
                         minPrice, maxPrice, minMileage, maxMileage, decorations);
 
                 if (advancedResearchBean.isDataValid()) {
-                    try {
-                        research(advancedResearchBean);
-                    } catch (FailedResearchException e) {
-                        //TODO CREARE LABEL ERRORE IN SCENE E SETTARLA
-                    }
+                    searchCar(advancedResearchBean);
                 }
             }
         } catch(IOException io){
@@ -215,8 +211,15 @@ public class BuyerHomepageControllerG2 {
         }
     }
 
+    private static void searchCar(AdvancedResearchBean advancedResearchBean) {
+        try {
+            research(advancedResearchBean);
+        } catch (FailedResearchException e) {
+            //TODO CREARE LABEL ERRORE IN SCENE E SETTARLA
+        }
+    }
+
     private String getDecorations(String toPrint, BufferedReader reader, String decorations) throws IOException {
-        toPrint = toPrint;
         LinePrinter.getInstance().print(toPrint);
         if (reader.readLine().equals("0")) {
             decorations += "1";
@@ -227,7 +230,6 @@ public class BuyerHomepageControllerG2 {
     }
 
     private String getValue(String toPrint, BufferedReader reader, String toPrint1, String model) throws IOException {
-        toPrint = toPrint;
         LinePrinter.getInstance().print(toPrint);
         if (reader.readLine().equals("0")) {
             toPrint = toPrint1;

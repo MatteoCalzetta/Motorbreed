@@ -26,7 +26,7 @@ public class LoginBean {
 
     public boolean validation(){
         Pattern rfc2822 = Pattern.compile(
-                "^[a-z0-9!#$%&'*+/=?^_`{|}-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
+                "^[a-z0-9!#$%&'*+/=?^`{|}-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
 
         return rfc2822.matcher(email).matches();
     }
