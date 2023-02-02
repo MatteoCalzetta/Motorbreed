@@ -233,24 +233,18 @@ public class ModifyAdControllerG2 {
 
 
             if (reader.readLine().equals("1")) {
-
                 LinePrinter.getInstance().print(choice);
-
                 decorations = decorations.concat(reader.readLine());
             }
             else {
                 decorations = decorations.concat(String.valueOf(myAdbean.getAds().get(index).getCar().getDecorations().charAt(1)));
             }
 
-
             toPrint = "Do you want to modify HeatedSeats Optional?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
-
             if (reader.readLine().equals("1")) {
-
                 LinePrinter.getInstance().print(choice);
-
                 decorations = decorations.concat(reader.readLine());
             }else {
                 decorations = decorations.concat(String.valueOf(myAdbean.getAds().get(index).getCar().getDecorations().charAt(2)));
@@ -288,28 +282,13 @@ public class ModifyAdControllerG2 {
             toPrint = "Do you want to modify Description ?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
-
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new description";
-                LinePrinter.getInstance().print(toPrint);
-
-                adBean.setDescription(reader.readLine());
-            }else {
-                adBean.setDescription(myAdbean.getAds().get(index).getDescription());
-            }
+            adBean = extractDescription();
 
             toPrint = "Do you want to modify Location?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new location";
-                LinePrinter.getInstance().print(toPrint);
-
-                adBean.setLocation(reader.readLine());
-            }else {
-                adBean.setLocation(myAdbean.getAds().get(index).getLocation());
-            }
+            adBean = extractLocation();
 
             toPrint = "Do you want to modify Price?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
@@ -345,6 +324,30 @@ public class ModifyAdControllerG2 {
         }catch (IOException e){
             showAd(0);
         }
+    }
+
+    private AdBean extractLocation() throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new location";
+            LinePrinter.getInstance().print(toPrint);
+
+            adBean.setLocation(reader.readLine());
+        }else {
+            adBean.setLocation(myAdbean.getAds().get(index).getLocation());
+        }
+        return adBean;
+    }
+
+    private AdBean extractDescription() throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new description";
+            LinePrinter.getInstance().print(toPrint);
+
+            adBean.setDescription(reader.readLine());
+        }else {
+            adBean.setDescription(myAdbean.getAds().get(index).getDescription());
+        }
+        return adBean;
     }
 
     private CarBean extractFuelType(CarBean carBean) throws IOException {
