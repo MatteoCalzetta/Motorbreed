@@ -27,7 +27,7 @@ public class CarDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e); //auto generata è da fare
+                //not handled
             }
         }
         return car;

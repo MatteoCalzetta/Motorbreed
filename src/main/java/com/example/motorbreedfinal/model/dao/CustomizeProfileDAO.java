@@ -23,8 +23,7 @@ public class CustomizeProfileDAO {
             Query.updateFirstname(stmt3, newFirstName, email);
 
         try {
-            if (stmt3 != null)
-                stmt3.close();
+            stmt3.close();
         } catch (SQLException se2) {
             //TO-DO
         }
@@ -42,8 +41,7 @@ public class CustomizeProfileDAO {
         Query.updateLastname(stmt3, newLastname, email);
 
         try {
-            if (stmt3 != null)
-                stmt3.close();
+            stmt3.close();
         } catch (SQLException se2) {
             //TO-DO
         }

@@ -113,8 +113,7 @@ public class ResearchDAO {
             se.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                stmt.close();
             } catch (SQLException e) {
                 //not handled
             }
@@ -138,8 +137,7 @@ public class ResearchDAO {
             se.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                stmt.close();
             } catch (SQLException e) {
                 //not handled
             }
@@ -187,8 +185,7 @@ public class ResearchDAO {
             se.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                stmt.close();
             } catch (SQLException e) {
                 //not handled
             }
@@ -211,8 +208,7 @@ public class ResearchDAO {
             se.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                stmt.close();
             } catch (SQLException e) {
                 //not handled
             }
