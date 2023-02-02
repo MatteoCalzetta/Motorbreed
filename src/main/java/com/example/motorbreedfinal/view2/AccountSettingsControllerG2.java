@@ -81,8 +81,14 @@ public class AccountSettingsControllerG2 implements AccountObserver {
                     }
                     break;
                 default:
-                    BuyerHomepageControllerG2 buyerHomepageControllerG2 = new BuyerHomepageControllerG2();
-                    buyerHomepageControllerG2.myProfile();
+                    if(LoggedUser.getInstance().getRole().equals("Buyer")){
+                        BuyerHomepageControllerG2 buyerHomepageControllerG2 = new BuyerHomepageControllerG2();
+                        buyerHomepageControllerG2.myProfile();
+                    } else{
+                        SellerHomepageControllerG2 sellerHomepageControllerG2 = new SellerHomepageControllerG2();
+                        sellerHomepageControllerG2.myProfile();
+                    }
+
             }
         } catch (IOException | FailedProfileCustomizationException e){
             //erore

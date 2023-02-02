@@ -46,7 +46,7 @@ public class SellerHomepageControllerG2 {
         insertionpageControllerG2.insertCar();
     }
 
-    private void myProfile(){
+    public void myProfile(){
         toPrint = "Press 0 to Manage your ads, 1 to Manage and modify your infos";
         LinePrinter.getInstance().print(toPrint);
 
