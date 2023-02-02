@@ -164,7 +164,7 @@ public class DescriptionpageControllerG {
     }
 
     public void setProposedPrice(DescriptionpageBean descriptionpageBean){
-        this.proposedPriceTF.setText(descriptionpageBean.getEvaluatedPrice()+"€");
+        this.proposedPriceTF.setText(descriptionpageBean.getEvaluatedPrice());
     }
 
     public void showFailedInsertion() {

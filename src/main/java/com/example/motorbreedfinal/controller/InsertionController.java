@@ -11,7 +11,7 @@ import com.example.motorbreedfinal.view1.DescriptionpageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
 import com.example.motorbreedfinal.view1.fagioli.DescriptionpageBean;
-import com.example.motorbreedfinal.view1.FxmlLoader;
+
 
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -19,8 +19,6 @@ import java.sql.SQLException;
 public class InsertionController{
 
     private DescriptionpageControllerG descriptionControlllerG;
-
-    private DescriptionpageBean descriptionpageBean;
 
     EvaluatorController evaluatorController = new EvaluatorController();
 
@@ -68,7 +66,7 @@ public class InsertionController{
     }
 
     public void setPriceOnScreen(String evaluatedPrice) {
-        descriptionpageBean = new DescriptionpageBean();
+        DescriptionpageBean descriptionpageBean =  new DescriptionpageBean();
         descriptionpageBean.setEvaluatedPrice(evaluatedPrice);
         descriptionControlllerG.setProposedPrice(descriptionpageBean);
     }

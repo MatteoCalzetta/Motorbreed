@@ -89,10 +89,7 @@ public class EvaluatorBean {
         if(finalPrice == 0) {
             this.finalPrice = "Price was not Evaluable";
         }else {
-            //TODO
-            //this.finalPrice = finalPrice + "€";
-
-            this.finalPrice = String.valueOf(finalPrice);
+            this.finalPrice = finalPrice + "€";
         }
 
     }

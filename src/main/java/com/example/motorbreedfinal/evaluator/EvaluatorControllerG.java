@@ -51,7 +51,7 @@ public class EvaluatorControllerG {
         this.mileageTF.setText(evaluatorBean.getMileage());
         this.prYearTF.setText(evaluatorBean.getProductionYear());
         if(!evaluatorBean.getFinalPrice().contains("Price")) {
-            this.evaluationTF.setText(evaluatorBean.getFinalPrice() + "€");
+            this.evaluationTF.setText(evaluatorBean.getFinalPrice());
         }else {
             this.evaluationTF.setText(evaluatorBean.getFinalPrice());
         }
