@@ -5,6 +5,9 @@ import com.example.motorbreedfinal.model.Vehicle;
 
 public abstract class DecorateCar {
 
+    private DecorateCar(){
+    }
+
     protected static Vehicle addDecorations(boolean[] decorationsArray, Car car) {
         Vehicle vehicle = car;
 

@@ -3,7 +3,7 @@ package com.example.motorbreedfinal.decorations;
 import com.example.motorbreedfinal.model.Vehicle;
 
 public class HeatedSeats extends VehicleDecorator {
-    private int Price;
+    private int price;
 
     private int index;
 
@@ -14,8 +14,8 @@ public class HeatedSeats extends VehicleDecorator {
 
     }
 
-    public void setPrice(int Price) {
-        this.Price = Price;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public void setIndex(int index){
@@ -25,7 +25,7 @@ public class HeatedSeats extends VehicleDecorator {
 
     protected int applyPrice(int input) {
 
-        int output = this.Price + input;
+        int output = this.price + input;
         return output;
     }
 

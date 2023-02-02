@@ -6,7 +6,7 @@ public class CruiseControl extends VehicleDecorator {
 
     private int index;
 
-    private int Price;
+    private int price;
 
     public CruiseControl(Vehicle vehicle) {
         super(vehicle);
@@ -14,8 +14,9 @@ public class CruiseControl extends VehicleDecorator {
         this.setIndex(0);
     }
 
-    public void setPrice(int Price) {
-        this.Price = Price;
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public void setIndex(int index){
@@ -25,7 +26,7 @@ public class CruiseControl extends VehicleDecorator {
 
     protected int applyPrice(int input) {
 
-        int output = this.Price + input;
+        int output = this.price + input;
         return output;
     }
 
