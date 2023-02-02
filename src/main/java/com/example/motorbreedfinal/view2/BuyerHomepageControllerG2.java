@@ -186,45 +186,15 @@ public class BuyerHomepageControllerG2 {
 
                 transmission = getValue(" 0 to insert transmission, anything to skip: ", reader, "Transmission: ", transmission);
 
-                toPrint = " 0 if car has cruise control, 1 if doesn't have";
-                LinePrinter.getInstance().print(toPrint);
-                if(reader.readLine().equals("0")) {
-                    decorations += "1";
-                } else {
-                        decorations += "0";
-                }
+                decorations = getDecorations(" 0 if car has cruise control, 1 if doesn't have", reader, decorations);
 
-                toPrint = " 0 if car has keyless system, 1 if doesn't have";
-                LinePrinter.getInstance().print(toPrint);
-                if(reader.readLine().equals("0")) {
-                    decorations += "1";
-                } else {
-                    decorations += "0";
-                }
+                decorations = getDecorations(" 0 if car has keyless system, 1 if doesn't have", reader, decorations);
 
-                toPrint = " 0 if car has heated seats, 1 if doesn't have";
-                LinePrinter.getInstance().print(toPrint);
-                if(reader.readLine().equals("0")) {
-                    decorations += "1";
-                } else {
-                    decorations += "0";
-                }
+                decorations = getDecorations(" 0 if car has heated seats, 1 if doesn't have", reader, decorations);
 
-                toPrint = " 0 if car has led headlights, 1 if doesn't have";
-                LinePrinter.getInstance().print(toPrint);
-                if(reader.readLine().equals("0")) {
-                    decorations += "1";
-                } else {
-                    decorations += "0";
-                }
+                decorations = getDecorations(" 0 if car has led headlights, 1 if doesn't have", reader, decorations);
 
-                toPrint = " 0 if car has parking sensors, 1 if doesn't have";
-                LinePrinter.getInstance().print(toPrint);
-                if(reader.readLine().equals("0")) {
-                    decorations += "1";
-                } else {
-                    decorations += "0";
-                }
+                decorations = getDecorations(" 0 if car has parking sensors, 1 if doesn't have", reader, decorations);
 
                 AdvancedResearchBean advancedResearchBean = new AdvancedResearchBean();
                 advancedResearchBean.setData(brand, model, fuelType,
@@ -243,6 +213,17 @@ public class BuyerHomepageControllerG2 {
                 toPrint = "Something went wrong. closing app";
                 ErrorPrinter.getInstance().print(toPrint);
         }
+    }
+
+    private String getDecorations(String toPrint, BufferedReader reader, String decorations) throws IOException {
+        toPrint = toPrint;
+        LinePrinter.getInstance().print(toPrint);
+        if (reader.readLine().equals("0")) {
+            decorations += "1";
+        } else {
+            decorations += "0";
+        }
+        return decorations;
     }
 
     private String getValue(String toPrint, BufferedReader reader, String toPrint1, String model) throws IOException {
