@@ -26,14 +26,12 @@ public class CruiseControl extends VehicleDecorator {
 
     protected int applyPrice(int input) {
 
-        int output = this.price + input;
-        return output;
+        return this.price + input;
     }
 
     private String applyDecorations(String preliminaryDecorations) {
-        String outputString = preliminaryDecorations.substring(0, index) + '1'
+        return preliminaryDecorations.substring(0, index) + '1'
                 + preliminaryDecorations.substring(index + 1);
-        return outputString;
     }
 
     @Override
