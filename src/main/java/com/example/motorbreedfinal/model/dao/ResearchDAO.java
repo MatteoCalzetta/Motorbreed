@@ -110,14 +110,10 @@ public class ResearchDAO {
             while (rs.next()) {
                 ad = extractAd(conn, rs);
             }
+
+            stmt.close();
         } catch (SQLException | FailedResearchException se) {
             se.printStackTrace();
-        } finally {
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                //not handled
-            }
         }
         return ad;
     }
