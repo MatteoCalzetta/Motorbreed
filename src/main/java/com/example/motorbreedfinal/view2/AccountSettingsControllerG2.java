@@ -33,7 +33,6 @@ public class AccountSettingsControllerG2 implements AccountObserver {
         }
         changeCredentials();
 
-
     }
 
     private void printCredentials() {

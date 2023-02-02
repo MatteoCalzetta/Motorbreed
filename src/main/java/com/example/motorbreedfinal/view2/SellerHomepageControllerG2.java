@@ -73,8 +73,8 @@ public class SellerHomepageControllerG2 {
     }
 
     private void modifyInfos() {
-
-
+        AccountSettingsControllerG2 accountSettingsControllerG2 = new AccountSettingsControllerG2();
+        accountSettingsControllerG2.initialize();
     }
 
     private void manageMyAds() {
