@@ -25,7 +25,6 @@ public class RegistrationBean extends LoginBean{
     public void setConfirmationPassword(String confirmationPassword) { this.confirmationPassword = confirmationPassword; }
 
     public boolean checkPasswords(){
-        // scrivere controllo su password;
-        return true;
+        return password.equals(confirmationPassword);
     }
 }

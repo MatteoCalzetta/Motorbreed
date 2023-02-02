@@ -2,7 +2,6 @@ package com.example.motorbreedfinal.view2;
 
 import com.example.motorbreedfinal.controller.InsertionController;
 import com.example.motorbreedfinal.model.users.LoggedUser;
-import com.example.motorbreedfinal.view1.SellerHomepageControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;

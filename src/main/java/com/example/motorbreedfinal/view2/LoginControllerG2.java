@@ -35,7 +35,7 @@ public class LoginControllerG2 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(loginBean.Validation()){
+        if(loginBean.validation()){
             try {
                 AccountHomepageBean accountHomepageBean = loginController.login(loginBean);
                 LinePrinter.getInstance().clearConsole();
@@ -101,7 +101,7 @@ public class LoginControllerG2 {
         } catch (IOException e) {
             //towrite
         }
-        if(registrationBean.Validation() && registrationBean.checkPasswords()){
+        if(registrationBean.validation() && registrationBean.checkPasswords()){
             try{
                 RegistrationController registrationController = new RegistrationController();
                 registrationController.registration(registrationBean);

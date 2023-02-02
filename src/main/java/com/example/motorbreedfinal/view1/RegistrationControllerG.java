@@ -93,7 +93,7 @@ public class RegistrationControllerG {
         registrationBean.setLastName(tfSurname.getText());
         registrationBean.setRole(lblRole.getText());
 
-        if(registrationBean.Validation() && registrationBean.checkPasswords()){
+        if(registrationBean.validation() && registrationBean.checkPasswords()){
             try{
                 RegistrationController registrationController = new RegistrationController();
                 registrationController.registration(registrationBean);

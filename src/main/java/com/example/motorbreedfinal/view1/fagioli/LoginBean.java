@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 
 public class LoginBean {
 
-    private String email;
-    private String password;
+    protected String email;
+    protected String password;
 
     public String getEmail() {
         return email;
@@ -23,12 +23,10 @@ public class LoginBean {
         this.password = password;
     }
 
-    public LoginBean(){
-    }
 
-    public boolean Validation(){
+    public boolean validation(){
         Pattern rfc2822 = Pattern.compile(
-                "^[a-z0-9!#$%&'*+/=?^_`{|}-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
+                "^[a-z0-9!#$%&'*+/=?^_`{|}-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
 
         return rfc2822.matcher(email).matches();
     }

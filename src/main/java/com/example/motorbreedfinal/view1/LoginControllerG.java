@@ -54,7 +54,7 @@ public class LoginControllerG {
         loginBean.setEmail(tfEmail.getText());
         loginBean.setPassword(pfPassword.getText());
 
-        if(loginBean.Validation()){
+        if(loginBean.validation()){
 
             try {
                 accountHomepageBean = loginController.login(loginBean);

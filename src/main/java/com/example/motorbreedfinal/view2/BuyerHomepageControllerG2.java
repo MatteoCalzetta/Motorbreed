@@ -82,7 +82,11 @@ public class BuyerHomepageControllerG2 {
     }
 
     private void searchAd() throws IOException {
-        String brand = "", minPrice = "", maxPrice = "", minMileage = "", maxMileage = "";
+        String brand = "";
+        String minPrice = "";
+        String maxPrice = "";
+        String minMileage = "";
+        String maxMileage = "";
         toPrint = "You can search car with base filters pressing 0, 1 with advanced filters: ";
         LinePrinter.getInstance().print(toPrint);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -106,14 +110,11 @@ public class BuyerHomepageControllerG2 {
                 if (reader.readLine().equals("0")) {
                     toPrint = "if you want a minimum mileage press 0, anything else to skip: ";
                     LinePrinter.getInstance().print(toPrint);
-                    switch (reader.readLine()) {
-                        case "0":
-                            toPrint = "insert minimum mileage: ";
-                            LinePrinter.getInstance().print(toPrint);
-                            minPrice = reader.readLine();
-                            break;
-                        default:
-                            break;
+                    if(reader.readLine().equals("0")) {
+                        toPrint = "insert minimum mileage: ";
+                        LinePrinter.getInstance().print(toPrint);
+                        minMileage = reader.readLine();
+                    }
                     }
                     toPrint = "if you want a maximum mileage press 0, anything else to skip: ";
                     LinePrinter.getInstance().print(toPrint);
@@ -122,11 +123,13 @@ public class BuyerHomepageControllerG2 {
                         LinePrinter.getInstance().print(toPrint);
                         maxMileage = reader.readLine();
                     }
-                }
+
             case "1":
                 advancedResearch();
+                break;
             default:
-                //no behavior
+                searchAd();
+                break;
         }
             searchCar(brand,minMileage,maxMileage,minPrice,maxPrice);
 
@@ -155,8 +158,18 @@ public class BuyerHomepageControllerG2 {
     }
 
     private void advancedResearch() throws IOException {
-        String brand = "", model = "", fuelType = "", productionYear = "", startingHP = "", maxHP = "", transmission = "",
-                minPrice = "", maxPrice = "", minMileage = "", maxMileage = "", decorations = "";
+        String brand = "";
+        String model = "";
+        String fuelType = "";
+        String productionYear = "";
+        String startingHP = "";
+        String maxHP = "";
+        String transmission = "";
+        String minPrice = "";
+        String maxPrice = "";
+        String minMileage = "";
+        String maxMileage = "";
+        String decorations = "";
 
         toPrint = "This is the advanced research.";
         LinePrinter.getInstance().print(toPrint);
@@ -259,57 +272,42 @@ public class BuyerHomepageControllerG2 {
 
                 toPrint = " 0 if car has cruise control, 1 if doesn't have";
                 LinePrinter.getInstance().print(toPrint);
-                switch (reader.readLine()) {
-                    case "0":
-                        decorations += "1";
-                        break;
-                    default:
+                if(reader.readLine().equals("0")) {
+                    decorations += "1";
+                } else {
                         decorations += "0";
-                        break;
                 }
 
                 toPrint = " 0 if car has keyless system, 1 if doesn't have";
                 LinePrinter.getInstance().print(toPrint);
-                switch (reader.readLine()) {
-                    case "0":
-                        decorations += "1";
-                        break;
-                    default:
-                        decorations += "0";
-                        break;
+                if(reader.readLine().equals("0")) {
+                    decorations += "1";
+                } else {
+                    decorations += "0";
                 }
 
                 toPrint = " 0 if car has heated seats, 1 if doesn't have";
                 LinePrinter.getInstance().print(toPrint);
-                switch (reader.readLine()) {
-                    case "0":
-                        decorations += "1";
-                        break;
-                    default:
-                        decorations += "0";
-                        break;
+                if(reader.readLine().equals("0")) {
+                    decorations += "1";
+                } else {
+                    decorations += "0";
                 }
 
                 toPrint = " 0 if car has led headlights, 1 if doesn't have";
                 LinePrinter.getInstance().print(toPrint);
-                switch (reader.readLine()) {
-                    case "0":
-                        decorations += "1";
-                        break;
-                    default:
-                        decorations += "0";
-                        break;
+                if(reader.readLine().equals("0")) {
+                    decorations += "1";
+                } else {
+                    decorations += "0";
                 }
 
                 toPrint = " 0 if car has parking sensors, 1 if doesn't have";
                 LinePrinter.getInstance().print(toPrint);
-                switch (reader.readLine()) {
-                    case "0":
-                        decorations += "1";
-                        break;
-                    default:
-                        decorations += "0";
-                        break;
+                if(reader.readLine().equals("0")) {
+                    decorations += "1";
+                } else {
+                    decorations += "0";
                 }
 
                 AdvancedResearchBean advancedResearchBean = new AdvancedResearchBean();
@@ -319,13 +317,7 @@ public class BuyerHomepageControllerG2 {
 
                 if (advancedResearchBean.isDataValid()) {
                     try {
-                        AdBean adBean = ResearchController.getInstance().advancedResearch(advancedResearchBean);
-                        if (!adBean.getAds().isEmpty()) {
-                            ResultsPageControllerG2 resultsPageControllerG2 = new ResultsPageControllerG2();
-                            resultsPageControllerG2.setAds(adBean);
-                        } else {
-                            //TODO CREARE LABEL ERRORE DI PRIMA
-                        }
+                        research(advancedResearchBean);
                     } catch (FailedResearchException e) {
                         //TODO CREARE LABEL ERRORE IN SCENE E SETTARLA
                     }
@@ -337,6 +329,15 @@ public class BuyerHomepageControllerG2 {
         }
     }
 
+    private static void research(AdvancedResearchBean advancedResearchBean) throws FailedResearchException {
+        AdBean adBean = ResearchController.getInstance().advancedResearch(advancedResearchBean);
+        if (!adBean.getAds().isEmpty()) {
+            ResultsPageControllerG2 resultsPageControllerG2 = new ResultsPageControllerG2();
+            resultsPageControllerG2.setAds(adBean);
+        } else {
+            //TODO CREARE LABEL ERRORE DI PRIMA
+        }
+    }
 
 
     private void searchCar(String brand, String minMileage, String maxMileage, String minPrice, String maxPrice) {
