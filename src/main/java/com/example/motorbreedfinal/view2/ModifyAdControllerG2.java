@@ -174,103 +174,54 @@ public class ModifyAdControllerG2 {
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of mileage";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setMileage(Integer.parseInt(reader.readLine()));
-            }else {
-                carBean.setMileage(myAdbean.getAds().get(index).getCar().getMileage());
-            }
+            carBean = extractMileage(carBean);
 
             toPrint = "Do you want to modify insurance? 1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of insurance(true/false)";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setInsurance(Boolean.parseBoolean(reader.readLine()));
-            }else {
-                carBean.setInsurance(myAdbean.getAds().get(index).getCar().isInsurance());
-            }
+            carBean = extractInsurance(carBean);
 
             toPrint = "Do you want to modify transmission? 1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of transmission";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setTransmission(reader.readLine());
-            }else {
-                carBean.setTransmission(myAdbean.getAds().get(index).getCar().getTransmission());
-            }
+            carBean = extractTransmission(carBean);
 
             toPrint = "Do you want to modify production Year ?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of production Year";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setProductionYear(reader.readLine());
-            }else {
-                carBean.setProductionYear(myAdbean.getAds().get(index).getCar().getProductionYear());
-            }
+            carBean = extractProductionYear(carBean);
 
             toPrint = "Do you want to modify matriculation Year ?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of matriculation Year";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setImmatricolationYear(reader.readLine());
-            }else {
-                carBean.setImmatricolationDate(myAdbean.getAds().get(index).getCar().getImmatricolationYear());
-            }
+            carBean = extractMatriculationYear(carBean);
 
             toPrint = "Do you want to modify horsepower?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of horsepower";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setHorsepower(Integer.parseInt(reader.readLine()));
-            }else {
-                carBean.setHorsepower(myAdbean.getAds().get(index).getCar().getHorsepower());
-            }
+            carBean = extractHP(carBean);
 
             toPrint = "Do you want to modify fuel type?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
-            if (reader.readLine().equals("1")) {
-                toPrint = "Insert the new value of fuel type";
-                LinePrinter.getInstance().print(toPrint);
-
-                carBean.setFuelType(reader.readLine());
-
-            }else {
-                carBean.setFuelType(myAdbean.getAds().get(index).getCar().getFuelType());
-            }
+            carBean = extractFuelType(carBean);
 
             String decorations = "";
+            String choice = "Insert 1 for yes, 0 for no";
 
             toPrint = "Do you want to modify CruiseControl Optional?  1 for yes, anything otherwise";
             LinePrinter.getInstance().print(toPrint);
 
 
             if (reader.readLine().equals("1")) {
-                toPrint = "Insert 1 for yes, 0 for no";
-                LinePrinter.getInstance().print(toPrint);
+
+                LinePrinter.getInstance().print(choice);
 
                 decorations = decorations.concat(reader.readLine());
             }else {
@@ -282,8 +233,8 @@ public class ModifyAdControllerG2 {
 
 
             if (reader.readLine().equals("1")) {
-                toPrint = "Insert 1 for yes, 0 for no";
-                LinePrinter.getInstance().print(toPrint);
+
+                LinePrinter.getInstance().print(choice);
 
                 decorations = decorations.concat(reader.readLine());
             }
@@ -297,8 +248,8 @@ public class ModifyAdControllerG2 {
 
 
             if (reader.readLine().equals("1")) {
-                toPrint = "Insert 1 for yes, 0 for no";
-                LinePrinter.getInstance().print(toPrint);
+
+                LinePrinter.getInstance().print(choice);
 
                 decorations = decorations.concat(reader.readLine());
             }else {
@@ -311,8 +262,8 @@ public class ModifyAdControllerG2 {
 
 
             if (reader.readLine().equals("1")) {
-                toPrint = "Insert 1 for yes, 0 for no";
-                LinePrinter.getInstance().print(toPrint);
+
+                LinePrinter.getInstance().print(choice);
 
                 decorations = decorations.concat(reader.readLine());
             }else {
@@ -325,8 +276,8 @@ public class ModifyAdControllerG2 {
 
 
             if (reader.readLine().equals("1")) {
-                toPrint = "Insert 1 for yes, 0 for no";
-                LinePrinter.getInstance().print(toPrint);
+
+                LinePrinter.getInstance().print(choice);
 
                 decorations = decorations.concat(reader.readLine());
             }else {
@@ -394,6 +345,91 @@ public class ModifyAdControllerG2 {
         }catch (IOException e){
             showAd(0);
         }
+    }
+
+    private CarBean extractFuelType(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of fuel type";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setFuelType(reader.readLine());
+
+        }else {
+            carBean.setFuelType(myAdbean.getAds().get(index).getCar().getFuelType());
+        }
+        return carBean;
+    }
+
+    private CarBean extractHP(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of horsepower";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setHorsepower(Integer.parseInt(reader.readLine()));
+        }else {
+            carBean.setHorsepower(myAdbean.getAds().get(index).getCar().getHorsepower());
+        }
+        return carBean;
+    }
+
+    private CarBean extractMatriculationYear(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of matriculation Year";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setImmatricolationYear(reader.readLine());
+        }else {
+            carBean.setImmatricolationDate(myAdbean.getAds().get(index).getCar().getImmatricolationYear());
+        }
+        return carBean;
+    }
+
+    private CarBean extractProductionYear(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of production Year";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setProductionYear(reader.readLine());
+        }else {
+            carBean.setProductionYear(myAdbean.getAds().get(index).getCar().getProductionYear());
+        }
+        return carBean;
+    }
+
+    private CarBean extractTransmission(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of transmission";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setTransmission(reader.readLine());
+        }else {
+            carBean.setTransmission(myAdbean.getAds().get(index).getCar().getTransmission());
+        }
+        return carBean;
+    }
+
+    private CarBean extractInsurance(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of insurance(true/false)";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setInsurance(Boolean.parseBoolean(reader.readLine()));
+        }else {
+            carBean.setInsurance(myAdbean.getAds().get(index).getCar().isInsurance());
+        }
+        return carBean;
+    }
+
+    private CarBean extractMileage(CarBean carBean) throws IOException {
+        if (reader.readLine().equals("1")) {
+            toPrint = "Insert the new value of mileage";
+            LinePrinter.getInstance().print(toPrint);
+
+            carBean.setMileage(Integer.parseInt(reader.readLine()));
+        }else {
+            carBean.setMileage(myAdbean.getAds().get(index).getCar().getMileage());
+        }
+        return carBean;
     }
 
     private CarBean extractModel(CarBean carBean) throws IOException {
