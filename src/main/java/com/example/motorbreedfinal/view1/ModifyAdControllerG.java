@@ -212,48 +212,30 @@ public class ModifyAdControllerG {
 
         adBean.setIdAd(String.valueOf(idAd));
 
-        if(!this.locationTF.getText().isEmpty()) {
-            adBean.setLocation(this.locationTF.getText());
-        }else {
-            adBean.setLocation("");
-        }
+        adBean = extractLocation(adBean);
+
         adBean.setCost(Integer.parseInt(this.priceTF.getText().substring(0, this.priceTF.getText().length()-2)));
+
         if(Integer.parseInt(this.priceTF.getText().substring(0, this.priceTF.getText().length()-2)) != previousPrice){
             adBean.setPriceCertification(false);
         }
-        if(!descriptionTF.getText().isEmpty()){
-            adBean.setDescription(this.descriptionTF.getText());
-        }else {
-            adBean.setDescription("");
-        }
+
+        adBean = extractDescription(adBean);
 
         CarBean carBean = new CarBean();
+
         carBean.setInsurance(insuranceCheckBox.isSelected());
-        if(!brandTF.getText().isEmpty()) {
-            carBean.setBrand(brandTF.getText());
-        }else {
-            carBean.setBrand("");
-        }
-        if(!modelTF.getText().isEmpty()){
-            carBean.setModel(modelTF.getText());
-        }else {
-            carBean.setModel("");
-        }
-        if(!this.matriculationYearTF.getText().isEmpty()){
-            carBean.setImmatricolationYear(this.matriculationYearTF.getText());
-        }else {
-            carBean.setImmatricolationYear("");
-        }
-        if (!this.mileageTF.getText().isEmpty()){
-            carBean.setMileage(Integer.parseInt(this.mileageTF.getText().substring(0, this.mileageTF.getText().length()-3)));
-        }else {
-            carBean.setMileage(0);
-        }
-        if (!this.hpTF.getText().isEmpty()){
-            carBean.setHorsepower(Integer.parseInt(this.hpTF.getText().substring(0, this.hpTF.getText().length()-3)));
-        }else {
-            carBean.setHorsepower(0);
-        }
+
+        carBean = extractBrand(carBean);
+
+        carBean = extractModel(carBean);
+
+        carBean = extractImmatricolationYear(carBean);
+
+        carBean = extractMileage(carBean);
+
+        carBean = extractHP(carBean);
+
         if(!this.transmissionTF.getText().isEmpty()){
             carBean.setTransmission(this.transmissionTF.getText());
         }else{
@@ -304,6 +286,69 @@ public class ModifyAdControllerG {
         FXMLLoader fxmlLoader = FxmlLoader.setPage("SellerHomepage");
         SellerHomepageControllerG sellerHomepageControllerG = fxmlLoader.getController();
         sellerHomepageControllerG.setNameSurnameTF(LoggedUser.getInstance().getSeller().getFirstName(), (LoggedUser.getInstance().getSeller().getLastName()));
+    }
+
+    private CarBean extractHP(CarBean carBean) {
+        if (!this.hpTF.getText().isEmpty()){
+            carBean.setHorsepower(Integer.parseInt(this.hpTF.getText().substring(0, this.hpTF.getText().length()-3)));
+        }else {
+            carBean.setHorsepower(0);
+        }
+        return carBean;
+    }
+
+    private CarBean extractMileage(CarBean carBean) {
+        if (!this.mileageTF.getText().isEmpty()){
+            carBean.setMileage(Integer.parseInt(this.mileageTF.getText().substring(0, this.mileageTF.getText().length()-3)));
+        }else {
+            carBean.setMileage(0);
+        }
+        return carBean;
+    }
+
+    private CarBean extractImmatricolationYear(CarBean carBean) {
+        if(!this.matriculationYearTF.getText().isEmpty()){
+            carBean.setImmatricolationYear(this.matriculationYearTF.getText());
+        }else {
+            carBean.setImmatricolationYear("");
+        }
+        return carBean;
+    }
+
+    private CarBean extractModel(CarBean carBean) {
+        if(!modelTF.getText().isEmpty()){
+            carBean.setModel(modelTF.getText());
+        }else {
+            carBean.setModel("");
+        }
+        return carBean;
+    }
+
+    private CarBean extractBrand(CarBean carBean) {
+        if(!brandTF.getText().isEmpty()) {
+            carBean.setBrand(brandTF.getText());
+        }else {
+            carBean.setBrand("");
+        }
+        return carBean;
+    }
+
+    private AdBean extractDescription(AdBean adBean) {
+        if(!descriptionTF.getText().isEmpty()){
+            adBean.setDescription(this.descriptionTF.getText());
+        }else {
+            adBean.setDescription("");
+        }
+        return adBean;
+    }
+
+    private AdBean extractLocation(AdBean adBean) {
+        if(!this.locationTF.getText().isEmpty()) {
+            adBean.setLocation(this.locationTF.getText());
+        }else {
+            adBean.setLocation("");
+        }
+        return adBean;
     }
 
     @FXML

@@ -8,7 +8,6 @@ import com.example.motorbreedfinal.view1.fagioli.AdvancedResearchBean;
 import com.example.motorbreedfinal.view1.fagioli.ResearchBean;
 import com.example.motorbreedfinal.view2.utility.ErrorPrinter;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;
-import com.mysql.cj.x.protobuf.Mysqlx;
 
 import java.io.BufferedReader;
 import java.io.IOException;
