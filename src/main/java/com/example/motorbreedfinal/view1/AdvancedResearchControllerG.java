@@ -105,10 +105,6 @@ public class AdvancedResearchControllerG {
         buyerHomepageControllerG.setNameSurnameTF(buyer.getFirstName(), buyer.getLastName());
     }
 
-
-    void setInfos(){
-
-    }
     @FXML
     void searchCar(ActionEvent event){
         lblError.setVisible(false);
