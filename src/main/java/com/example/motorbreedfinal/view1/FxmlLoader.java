@@ -12,16 +12,18 @@ import java.net.URL;
 
 public class  FxmlLoader extends Application {
 
-    private static Stage stage;
+    private static Stage stage1;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        Stage stage;
         FXMLLoader fxmlloader = new FXMLLoader(FxmlLoader.class.getResource("Homepage.fxml"));
         Scene scene = new Scene(fxmlloader.load(), 1280, 720);
         stage = primaryStage;
         stage.setTitle("MotorBreed");
         stage.setResizable(false);
         stage.setScene(scene);
+        stage1 = stage;
         stage.show();
     }
     public static FXMLLoader setPage(String fileName) {
@@ -32,7 +34,7 @@ public class  FxmlLoader extends Application {
         try{
             Parent root = loader.load();
             Scene scene = new Scene(root, 1280, 720);
-            stage.setScene(scene);
+            stage1.setScene(scene);
             return loader;
         } catch(IOException e){
             //to handle
