@@ -8,8 +8,6 @@ import com.example.motorbreedfinal.view1.fagioli.AdvancedResearchBean;
 import com.example.motorbreedfinal.view1.fagioli.ResearchBean;
 import com.example.motorbreedfinal.view2.utility.ErrorPrinter;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;
-import javafx.event.ActionEvent;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -73,7 +71,11 @@ public class BuyerHomepageControllerG2 {
                 case "2":
                     AccountSettingsControllerG2 accountSettingsControllerG2 = new AccountSettingsControllerG2();
                     accountSettingsControllerG2.initialize();
+                    break;
+                default:
+                    myProfile();
             }
+
         } catch (IOException e){
             //qualcosa è andato stuorrt
         }
@@ -96,20 +98,8 @@ public class BuyerHomepageControllerG2 {
                 toPrint = "wanna filter for price? 0 yes, anything no";
                 LinePrinter.getInstance().print(toPrint);
                 if (reader.readLine().equals("0")) {
-                    toPrint = "if you want a minimum price press 0, anything else to skip: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    if (reader.readLine().equals("0")) {
-                        toPrint = "insert minimum price: ";
-                        LinePrinter.getInstance().print(toPrint);
-                        minPrice = reader.readLine();
-                    }
-                    toPrint = "if you want a maximum price press 0, anything else to skip: ";
-                    LinePrinter.getInstance().print(toPrint);
-                    if (reader.readLine().equals("0")) {
-                        toPrint = "insert maximum price: ";
-                        LinePrinter.getInstance().print(toPrint);
-                        maxPrice = reader.readLine();
-                    }
+                    minPrice = getMinPrice(minPrice, reader);
+                    maxPrice = getMaxPrice("if you want a maximum price press 0, anything else to skip: ", reader, "insert maximum price: ", maxPrice);
                 }
                 toPrint = "wanna filter for mileage? 0 yes, anything no";
                 LinePrinter.getInstance().print(toPrint);
@@ -138,10 +128,32 @@ public class BuyerHomepageControllerG2 {
             default:
                 //no behavior
         }
-            searchCar(brand,minMileage,maxMileage,minPrice,minPrice);
+            searchCar(brand,minMileage,maxMileage,minPrice,maxPrice);
 
 
     }
+
+    private String getMaxPrice(String toPrint, BufferedReader reader, String toPrint1, String maxPrice) throws IOException {
+        LinePrinter.getInstance().print(toPrint);
+        if (reader.readLine().equals("0")) {
+            toPrint = toPrint1;
+            LinePrinter.getInstance().print(toPrint);
+            maxPrice = reader.readLine();
+        }
+        return maxPrice;
+    }
+
+    private String getMinPrice(String minPrice, BufferedReader reader) throws IOException {
+        toPrint = "if you want a minimum price press 0, anything else to skip: ";
+        LinePrinter.getInstance().print(toPrint);
+        if (reader.readLine().equals("0")) {
+            toPrint = "insert minimum price: ";
+            LinePrinter.getInstance().print(toPrint);
+            minPrice = reader.readLine();
+        }
+        return minPrice;
+    }
+
     private void advancedResearch() throws IOException {
         String brand = "", model = "", fuelType = "", productionYear = "", startingHP = "", maxHP = "", transmission = "",
                 minPrice = "", maxPrice = "", minMileage = "", maxMileage = "", decorations = "";
