@@ -18,8 +18,6 @@ public class EvaluatorController {
 
     private Vehicle myVehicle;
 
-    private EvaluatorBean evaluatorBean;
-
     InsertionController insertionController;
 
 
@@ -28,7 +26,7 @@ public class EvaluatorController {
         evaluatorControllerG = evaluatorBoundary.startEvaluator();
         evaluatorControllerG.setEvaluatorController(this);
 
-        evaluatorBean = new EvaluatorBean(myVehicle.getBrand(), myVehicle.getFuelType(), myVehicle.getModel(), String.valueOf(myVehicle.getHorsepower()), String.valueOf(myVehicle.getMileage()), myVehicle.getProductionYear(), finalPrice);
+        EvaluatorBean evaluatorBean = new EvaluatorBean(myVehicle.getBrand(), myVehicle.getFuelType(), myVehicle.getModel(), String.valueOf(myVehicle.getHorsepower()), String.valueOf(myVehicle.getMileage()), myVehicle.getProductionYear(), finalPrice);
 
         evaluatorControllerG.setData(evaluatorBean);
 
@@ -38,13 +36,13 @@ public class EvaluatorController {
 
         int startingPrice = 0;
 
-        ArrayList<String> brands = new ArrayList<String>();
+        ArrayList<String> brands = new ArrayList<>();
         brands.add("Fiat");
         brands.add("Mercedes");
         brands.add("BMW");
         brands.add("Alfa Romeo");
 
-        ArrayList<String> models = new ArrayList<String>();
+        ArrayList<String> models = new ArrayList<>();
         models.add("Panda");
         models.add("Punto");
         models.add("C class");
@@ -96,6 +94,13 @@ public class EvaluatorController {
                             startingPrice += 35000;
                         }
                     }
+
+                    default -> {
+                        finalPrice = 0;
+                        myVehicle = vehicle;
+                        showResult();
+                        return finalPrice;
+                    }
                 }
 
 
@@ -103,7 +108,7 @@ public class EvaluatorController {
                     startingPrice -= (int) (startingPrice * 0.000003* vehicle.getMileage());
                 }
 
-                if (!(Integer.parseInt(date) - Integer.parseInt(vehicle.getProductionYear()) == 0)) {
+                if (Integer.parseInt(date) - Integer.parseInt(vehicle.getProductionYear())!= 0) {
                     startingPrice = startingPrice - 250 * (Integer.parseInt(date) - Integer.parseInt(vehicle.getProductionYear()));
                     if(startingPrice < 0){
                         startingPrice = 0;
@@ -122,14 +127,8 @@ public class EvaluatorController {
 
                 finalPrice = startingPrice + vehicle.getCarAdditionalPrice();
 
-                myVehicle = vehicle;
-
-                showResult();
-
             }else {
                 finalPrice = 0;
-                myVehicle=vehicle;
-                showResult();
             }
 
 
@@ -137,10 +136,9 @@ public class EvaluatorController {
 
             finalPrice = 0;
 
-            myVehicle = vehicle;
-
-            showResult();
         }
+        myVehicle = vehicle;
+        showResult();
         return finalPrice;
     }
 
