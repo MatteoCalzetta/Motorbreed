@@ -157,7 +157,7 @@ public class ResearchDAO {
 
         try(Connection conn = Connector.getInstance().getConnection();
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
-            ;
+
             ResultSet rs = Query.isAdFavorite(stmt, idAd, idBuyer);
             if(rs.next()){
                 Query.remoteFavorites(stmt, idAd, idBuyer);
