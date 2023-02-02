@@ -116,6 +116,7 @@
             </Label>
             <TextField fx:id="startingHPLabel" layoutX="565.0" layoutY="336.0" prefHeight="27.0" prefWidth="100.0" promptText="from" style="-fx-border-color: #028eff;" />
             <TextField fx:id="maxHPLabel" layoutX="683.0" layoutY="336.0" prefHeight="27.0" prefWidth="100.0" promptText="to" style="-fx-border-color: #028eff;" />
+            <Label fx:id="lblError" layoutX="850.0" layoutY="626.0" prefHeight="26.0" prefWidth="227.0" text="Error occurred during research" textFill="RED" />
             </children>
         </AnchorPane>
     </children>

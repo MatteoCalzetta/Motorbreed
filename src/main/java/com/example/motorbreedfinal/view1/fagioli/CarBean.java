@@ -85,10 +85,6 @@ public class CarBean {
         this.licencePlate = licencePlate;
     }
 
-    public String getImmatricolationDate() {
-        return immatricolationYear;
-    }
-
     public void setImmatricolationDate(String immatricolationDate) {
         this.immatricolationYear = immatricolationDate;
     }

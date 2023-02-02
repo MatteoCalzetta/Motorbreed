@@ -1,7 +1,5 @@
 package com.example.motorbreedfinal.view1.fagioli;
 
-import java.util.regex.Pattern;
-
 public class LoginBean {
 
     protected String email;

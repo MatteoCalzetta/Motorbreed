@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 import javax.security.auth.login.FailedLoginException;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginControllerG {

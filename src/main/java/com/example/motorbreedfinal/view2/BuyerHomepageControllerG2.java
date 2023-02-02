@@ -8,6 +8,8 @@ import com.example.motorbreedfinal.view1.fagioli.AdvancedResearchBean;
 import com.example.motorbreedfinal.view1.fagioli.ResearchBean;
 import com.example.motorbreedfinal.view2.utility.ErrorPrinter;
 import com.example.motorbreedfinal.view2.utility.LinePrinter;
+import com.mysql.cj.x.protobuf.Mysqlx;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -215,7 +217,7 @@ public class BuyerHomepageControllerG2 {
         try {
             research(advancedResearchBean);
         } catch (FailedResearchException e) {
-            //TODO CREARE LABEL ERRORE IN SCENE E SETTARLA
+            ErrorPrinter.getInstance().print(e.getMessage());
         }
     }
 
@@ -245,7 +247,7 @@ public class BuyerHomepageControllerG2 {
             ResultsPageControllerG2 resultsPageControllerG2 = new ResultsPageControllerG2();
             resultsPageControllerG2.setAds(adBean);
         } else {
-            //TODO CREARE LABEL ERRORE DI PRIMA
+            ErrorPrinter.getInstance().print("No ads retrieved");
         }
     }
 

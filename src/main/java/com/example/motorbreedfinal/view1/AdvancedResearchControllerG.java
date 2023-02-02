@@ -95,6 +95,9 @@ public class AdvancedResearchControllerG {
     private TextField transmissionTextField;
 
     @FXML
+    private Label lblError;
+
+    @FXML
     void setHomepage(ActionEvent event) {
         Buyer buyer = LoggedUser.getInstance().getBuyer();
         FXMLLoader loader = FxmlLoader.setPage("BuyerHomepage");
@@ -104,6 +107,7 @@ public class AdvancedResearchControllerG {
 
     @FXML
     void searchCar(ActionEvent event){
+        lblError.setVisible(false);
         AdvancedResearchBean advancedResearchBean = new AdvancedResearchBean();
         advancedResearchBean.setData(brandTextField.getText(), modelTextField.getText(), fuelTypeTextField.getText(),
                 productionYearTextField.getText(), startingHPLabel.getText(), maxHPLabel.getText(), transmissionTextField.getText(),
@@ -116,10 +120,12 @@ public class AdvancedResearchControllerG {
                 if(!adBean.getAds().isEmpty()){
                     setResultsPage(adBean);
                 } else {
-                    //TODO CREARE LABEL ERRORE DI PRIMA
+                    lblError.setText("No ads found");
+                    lblError.setVisible(true);
                 }
             } catch (FailedResearchException e) {
-                //TODO CREARE LABEL ERRORE IN SCENE E SETTARLA
+                lblError.setText(e.getMessage());
+                lblError.setVisible(true);
             }
         }
 
