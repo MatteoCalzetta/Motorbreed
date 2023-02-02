@@ -30,8 +30,7 @@ public class ParkingSensors extends VehicleDecorator {
 
     private String applyParkingSensors(String preliminaryDecorations) {
         return preliminaryDecorations.substring(0, index) + '1'
-                + preliminaryDecorations.substring(inde
-                x + 1);
+                + preliminaryDecorations.substring(index + 1);
     }
 
     @Override
