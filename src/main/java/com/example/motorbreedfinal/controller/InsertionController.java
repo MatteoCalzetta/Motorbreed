@@ -47,12 +47,13 @@ public class InsertionController{
         ad.getCar().setInsurance(carBean.isInsurance());
 
         vehicle.setStatus(ad.getCar());
-
     }
 
     public int startEvaluation() {
         evaluatorController = new EvaluatorController();
         int evaluatedPrice = evaluatorController.calculatePrice(vehicle);
+        evaluatorController.showResult();
+
 
         evaluatorController.setInsertionController(this); // EvaluatorController in seguito deve chiamare InsertionController
 

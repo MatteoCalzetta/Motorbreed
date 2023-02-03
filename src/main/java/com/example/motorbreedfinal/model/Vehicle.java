@@ -6,6 +6,7 @@ public abstract class Vehicle {
     protected String brand;
 
     protected String model;
+
     protected int mileage;
     protected String productionYear;
 

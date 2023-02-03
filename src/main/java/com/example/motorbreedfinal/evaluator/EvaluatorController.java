@@ -151,7 +151,6 @@ public class EvaluatorController {
 
         }
         myVehicle = vehicle;
-        showResult();
         return finalPrice;
     }
 

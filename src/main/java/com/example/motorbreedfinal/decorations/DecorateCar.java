@@ -5,7 +5,7 @@ import com.example.motorbreedfinal.model.Vehicle;
 
 public interface DecorateCar {
 
-    public static Vehicle addDecorations(boolean[] decorationsArray, Car car) {
+    static Vehicle addDecorations(boolean[] decorationsArray, Car car) {
         Vehicle vehicle = car;
 
         String decorations = "00000";
