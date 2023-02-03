@@ -17,40 +17,19 @@ import javafx.scene.control.TextField;
 public class AdvancedResearchControllerG {
 
     @FXML
-    private Button autosell;
-
-    @FXML
-    private Label brandLabel;
-
-    @FXML
     private TextField brandTextField;
-
-    @FXML
-    private Button confirmButton;
 
     @FXML
     private TextField costFromTextField;
 
     @FXML
-    private Label costLabel;
-
-    @FXML
-    private Label costLabel1;
-
-    @FXML
     private TextField costToTextField;
-
-    @FXML
-    private Label fuelTypeLabel;
 
     @FXML
     private TextField fuelTypeTextField;
 
     @FXML
     private CheckBox heatedSeatsCheckBox;
-
-    @FXML
-    private Label horserPowerLabel;
 
     @FXML
     private TextField startingHPLabel;
@@ -74,22 +53,13 @@ public class AdvancedResearchControllerG {
     private TextField mileageToTextField;
 
     @FXML
-    private Label modelLabel;
-
-    @FXML
     private TextField modelTextField;
 
     @FXML
     private CheckBox parkingSensorsCheckBox;
 
     @FXML
-    private Label productionYearLabel;
-
-    @FXML
     private TextField productionYearTextField;
-
-    @FXML
-    private Label transmissionLabel;
 
     @FXML
     private TextField transmissionTextField;
