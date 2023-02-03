@@ -31,6 +31,16 @@ public class ResultsPageControllerG2 implements AccountObserver {
         }
     }
 
+    private String createDecorations(boolean bool, String toPrint){
+        if(bool){
+            toPrint += "✔,";
+        }else {
+            toPrint += "x,";
+        }
+
+        return toPrint;
+    }
+
     private void displayAd() throws IOException {
         if(this.index >= ads.toArray().length || this.index == -1) {
             this.index = 0;
@@ -49,35 +59,26 @@ public class ResultsPageControllerG2 implements AccountObserver {
         toPrint += ", production year = " +ad.getCar().getProductionYear();
         toPrint += ", transmission " + ad.getCar().getTransmission();
         toPrint += ", heated seats: ";
-        if(ad.getCar().getDecorations().charAt(0) == '1'){
-            toPrint += "✔,";
-        } else{
-            toPrint += "x,";
-        }
+
+        toPrint = createDecorations(ad.getCar().getDecorations().charAt(0) == '1', toPrint);
+
         toPrint += " parking sensors: ";
-        if(ad.getCar().getDecorations().charAt(1) == '1'){
-            toPrint += "✔,";
-        } else{
-            toPrint += "x,";
-        }
-        toPrint += " led: ";
-        if(ad.getCar().getDecorations().charAt(2) == '1'){
-            toPrint += "✔,";
-        } else{
-            toPrint += "x,";
-        }
+
+        toPrint = createDecorations(ad.getCar().getDecorations().charAt(1) == '1', toPrint);
+
+        toPrint += " led headlights: ";
+
+        toPrint = createDecorations(ad.getCar().getDecorations().charAt(2) == '1', toPrint);
+
         toPrint += " cruise control: ";
-        if(ad.getCar().getDecorations().charAt(3) == '1'){
-            toPrint += "✔,";
-        } else{
-            toPrint += "x,";
-        }
+
+        toPrint = createDecorations(ad.getCar().getDecorations().charAt(3) == '1', toPrint);
+
         toPrint += " heated seats: ";
-        if(ad.getCar().getDecorations().charAt(4) == '1'){
-            toPrint += "✔,";
-        } else{
-            toPrint += "x,";
-        }
+
+        toPrint = createDecorations(ad.getCar().getDecorations().charAt(4) == '1', toPrint);
+
+
         LinePrinter.getInstance().print(toPrint);
         toPrint = "\nPress 0 to show ad description, 1 to contact seller via email, 2 to buy car, 3 for next ad, 4 for previous ad: ";
         LinePrinter.getInstance().print(toPrint);
