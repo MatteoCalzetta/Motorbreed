@@ -1,6 +1,8 @@
 package com.example.motorbreedfinal.view2;
 
 import com.example.motorbreedfinal.controller.InsertionController;
+import com.example.motorbreedfinal.decorations.CruiseControl;
+import com.example.motorbreedfinal.decorations.HeatedSeats;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
@@ -149,28 +151,23 @@ public class InsertionpageControllerG2 {
 
             boolean[] decorationsArray = new boolean[5];
 
-            toPrint = "Does your car have CruiseControl optional ? 0 for no, 1 for yes...";
-            LinePrinter.getInstance().print(toPrint);
+            askDecoration("CruiseControl");
 
             decorationsArray[0] = (Boolean.parseBoolean(reader.readLine()));
 
-            toPrint = "Does your car have KeylessSystem optional ? 0 for no, 1 for yes...";
-            LinePrinter.getInstance().print(toPrint);
+            askDecoration("KeylessSystem");
 
             decorationsArray[1] = (Boolean.parseBoolean(reader.readLine()));
 
-            toPrint = "Does your car have HeatedSeats optional ? 0 for no, 1 for yes...";
-            LinePrinter.getInstance().print(toPrint);
+            askDecoration("HeatedSeats");
 
             decorationsArray[2] = (Boolean.parseBoolean(reader.readLine()));
 
-            toPrint = "Does your car have LedHeadlights optional ? 0 for no, 1 for yes...";
-            LinePrinter.getInstance().print(toPrint);
+            askDecoration("LedHeadlights");
 
             decorationsArray[3] = (Boolean.parseBoolean(reader.readLine()));
 
-            toPrint = "Does your car have ParkingSensors optional ? 0 for no, 1 for yes...";
-            LinePrinter.getInstance().print(toPrint);
+            askDecoration("ParkingSensors");
 
             decorationsArray[4] = (Boolean.parseBoolean(reader.readLine()));
 
@@ -181,8 +178,11 @@ public class InsertionpageControllerG2 {
             LinePrinter.getInstance().print("Insertion failed . . . repeating steps");
             insertCar();
         }
-
-
         return carBean;
+    }
+
+    private void askDecoration(String decoration){
+        String toPrint = "Does your car have "+ decoration + "optional ? 0 for no, 1 for yes...";
+        LinePrinter.getInstance().print(toPrint);
     }
 }
