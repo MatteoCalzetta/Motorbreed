@@ -5,7 +5,7 @@ import com.example.motorbreedfinal.controller.LoginController;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.view1.fagioli.AccountBean;
 import com.example.motorbreedfinal.view1.fagioli.LoginBean;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import javax.security.auth.login.FailedLoginException;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestCustomizeProfileController {
 
-    @Test
+    @org.junit.jupiter.api.Test
     void testChangeFirstName(){
         String newFirstName = "Username";
         String actualFirstName = "Matteo";

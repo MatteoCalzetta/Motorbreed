@@ -45,7 +45,7 @@ public class RegisterFileSystemDao {
                 writer.write("id:" + occurrences);
                 writer.newLine();
                 writer.write("//");
-                writer.close();
+
             }else {
                 throw new FailedRegistrationException("email already registered");
             }
