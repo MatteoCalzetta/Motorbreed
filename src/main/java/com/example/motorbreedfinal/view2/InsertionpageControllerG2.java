@@ -182,7 +182,7 @@ public class InsertionpageControllerG2 {
     }
 
     private void askDecoration(String decoration){
-        String toPrint = "Does your car have "+ decoration + "optional ? 0 for no, 1 for yes...";
+        String toPrint = "Does your car have "+ decoration + " optional ? 0 for no, 1 for yes...";
         LinePrinter.getInstance().print(toPrint);
     }
 }

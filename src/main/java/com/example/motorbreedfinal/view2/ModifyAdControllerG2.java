@@ -150,62 +150,60 @@ public class ModifyAdControllerG2 {
         showAd(index);
     }
 
+
+    private void askChanges(String change){
+        String toPrint = "Do you want to modify "+ change + " ? 1 for yes, anything otherwise";
+        LinePrinter.getInstance().print(toPrint);
+    }
+
+
     private void modifyAd(){
         adBean = new AdBean();
 
         CarBean carBean = new CarBean();
 
-        toPrint = "Do you want to modify Brand ? 1 for yes, anything otherwise";
-        LinePrinter.getInstance().print(toPrint);
+        askChanges("Brand");
 
         try {
 
             carBean = extractBrand(carBean);
 
-            toPrint = "Do you want to modify Model ? 1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Model");
 
 
             carBean = extractModel(carBean);
 
-            toPrint = "Do you want to modify Mileage? 1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Mileage");
 
 
             carBean = extractMileage(carBean);
 
-            toPrint = "Do you want to modify insurance? 1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Insurance");
 
 
             carBean = extractInsurance(carBean);
 
-            toPrint = "Do you want to modify transmission? 1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Transmission");
 
 
             carBean = extractTransmission(carBean);
 
-            toPrint = "Do you want to modify production Year ?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Production Year");
 
 
             carBean = extractProductionYear(carBean);
 
-            toPrint = "Do you want to modify matriculation Year ?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Matriculation Year");
 
 
             carBean = extractMatriculationYear(carBean);
 
-            toPrint = "Do you want to modify horsepower?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Horsepower");
 
 
             carBean = extractHP(carBean);
 
-            toPrint = "Do you want to modify fuel type?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Fuel Type");
 
 
             carBean = extractFuelType(carBean);
@@ -213,8 +211,7 @@ public class ModifyAdControllerG2 {
             String decorations = "";
             String choice = "Insert 1 for yes, 0 for no";
 
-            toPrint = "Do you want to modify CruiseControl Optional?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("CruiseControl optional");
 
 
             if (reader.readLine().equals("1")) {
@@ -226,8 +223,7 @@ public class ModifyAdControllerG2 {
                 decorations = decorations.concat(String.valueOf(myAdbean.getAds().get(index).getCar().getDecorations().charAt(0)));
             }
 
-            toPrint = "Do you want to modify KeylessSystem Optional?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("KeylessSystem optional");
 
 
             if (reader.readLine().equals("1")) {
@@ -238,8 +234,7 @@ public class ModifyAdControllerG2 {
                 decorations = decorations.concat(String.valueOf(myAdbean.getAds().get(index).getCar().getDecorations().charAt(1)));
             }
 
-            toPrint = "Do you want to modify HeatedSeats Optional?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("HeatedSeats optional");
 
             if (reader.readLine().equals("1")) {
                 LinePrinter.getInstance().print(choice);
@@ -249,8 +244,7 @@ public class ModifyAdControllerG2 {
             }
 
 
-            toPrint = "Do you want to modify LedHeadlights?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("LedHeadlights optional");
 
 
             if (reader.readLine().equals("1")) {
@@ -263,8 +257,7 @@ public class ModifyAdControllerG2 {
             }
 
 
-            toPrint = "Do you want to modify ParkingSensors?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("ParkingSensors optional");
 
 
             if (reader.readLine().equals("1")) {
@@ -277,19 +270,16 @@ public class ModifyAdControllerG2 {
             }
 
 
-            toPrint = "Do you want to modify Description ?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Description");
 
             adBean = extractDescription();
 
-            toPrint = "Do you want to modify Location?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Location");
 
 
             adBean = extractLocation();
 
-            toPrint = "Do you want to modify Price?  1 for yes, anything otherwise";
-            LinePrinter.getInstance().print(toPrint);
+            askChanges("Price");
 
 
             if (reader.readLine().equals("1")) {
