@@ -27,7 +27,9 @@ public class LoginController {
 
         String role;
 
-        if(os.contains("Windows")){
+        final String SO = "Windows";
+
+        if(os.contains(SO)){
 
             LoginFileSystemDao loginDao = new LoginFileSystemDao();
 
@@ -52,7 +54,7 @@ public class LoginController {
             LoggedUser.getInstance().setAccount(seller);
             LoggedUser.getInstance().setRole(role);
 
-            if(os.contains("Windows")){
+            if(os.contains(SO)){
                 AccountFileSystemDao accountFileSystemDao = new AccountFileSystemDao();
                 accountFileSystemDao.setAccount(seller, loginBean.getEmail());
             }else {
@@ -69,7 +71,7 @@ public class LoginController {
             LoggedUser.getInstance().setAccount(buyer);
             LoggedUser.getInstance().setRole(role);
 
-            if(os.contains("Windows")){
+            if(os.contains("SO")){
                 AccountFileSystemDao accountFileSystemDao = new AccountFileSystemDao();
                 accountFileSystemDao.setAccount(buyer, loginBean.getEmail());
             }else {

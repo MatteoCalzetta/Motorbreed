@@ -1,10 +1,10 @@
 package com.example.motorbreedfinal.model.dao;
 
 import com.example.motorbreedfinal.model.exceptions.FailedRegistrationException;
-import com.mysql.cj.util.StringUtils;
+
 
 import java.io.BufferedWriter;
-import java.io.File;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -53,7 +53,6 @@ public class RegisterFileSystemDao {
 
             }catch (IOException e){
                 //unhandled;
-                System.out.println(e.getMessage());
             }
         }
 

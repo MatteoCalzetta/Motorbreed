@@ -5,8 +5,6 @@ import com.example.motorbreedfinal.model.dao.RegisterFileSystemDao;
 import com.example.motorbreedfinal.model.exceptions.FailedRegistrationException;
 import com.example.motorbreedfinal.view1.fagioli.RegistrationBean;
 
-import java.io.IOException;
-
 public class RegistrationController {
 
     public void registration(RegistrationBean registrationBean) throws FailedRegistrationException{

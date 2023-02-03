@@ -1,6 +1,5 @@
 package com.example.motorbreedfinal.model.dao;
 
-import com.example.motorbreedfinal.model.exceptions.FailedLoginException;
 import com.example.motorbreedfinal.model.users.Account;
 
 import java.io.BufferedReader;
