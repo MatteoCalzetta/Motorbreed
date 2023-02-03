@@ -21,14 +21,13 @@ public class RegisterFileSystemDao {
 
     public void registerNewAccount(String firstName, String lastName, String email, String password, String role) throws FailedRegistrationException{
 
-        try{
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Luigi\\Desktop\\Users.txt", true))){
             String content  = Files.readString(Path.of("C:\\Users\\Luigi\\Desktop\\Users.txt"));
 
             int occurrences = countOccurrences(content, "id");
             occurrences = occurrences + 1;
 
             if(!content.contains(email)) {
-                BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Luigi\\Desktop\\Users.txt", true));
                 if (occurrences != 1) {
                     writer.newLine();
                 }
@@ -52,7 +51,7 @@ public class RegisterFileSystemDao {
             }
 
             }catch (IOException e){
-                //unhandled;
+                //unhandled
             }
         }
 

@@ -6,8 +6,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
-
 public class AccountFileSystemDao {
 
     public void setAccount(Account account, String email) {
@@ -17,15 +15,14 @@ public class AccountFileSystemDao {
         File file = new File(url);
         String str;
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
 
             while ((str = br.readLine())!= null){
 
                 if(str.equals(email)){
                     account.setEmail(email);
-                    br.readLine();
-                    br.readLine();
+                    str = br.readLine();
+                    str = br.readLine();
                     account.setFirstName(br.readLine());
                     account.setLastName(br.readLine());
                     account.setIdAccount(br.readLine());

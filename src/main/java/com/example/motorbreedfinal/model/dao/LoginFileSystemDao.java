@@ -14,8 +14,7 @@ public class LoginFileSystemDao {
 
         String role;
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
 
             while ((str = br.readLine())!= null){
                 if(str.equals(email)){
