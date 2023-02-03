@@ -108,21 +108,21 @@ public class InsertpageControllerG {
 
     private CarBean createCarBean(){
         CarBean carBean = new CarBean();
-        carBean.setBrand(brandTextField.getText());
-        carBean.setModel(modelTextField.getText());
+        carBean.setCarBeanBrand(brandTextField.getText());
+        carBean.setCarBeanModel(modelTextField.getText());
 
         if(!(mileageTextField.getText().isEmpty())){
-            carBean.setMileage(Integer.parseInt(mileageTextField.getText()));
+            carBean.setCarBeanMileage(Integer.parseInt(mileageTextField.getText()));
         }
         if(!(horsepowerTextField.getText().isEmpty())){
-            carBean.setHorsepower(Integer.parseInt(horsepowerTextField.getText()));
+            carBean.setBeanHorsepower(Integer.parseInt(horsepowerTextField.getText()));
         }
 
-        carBean.setFuelType(fuelTypeTextField.getText());
+        carBean.setBeanFuelType(fuelTypeTextField.getText());
         carBean.setLicencePlate(licencePlateTextField.getText());
         carBean.setTransmission(transmissionTextField.getText());
         carBean.setImmatricolationDate(immatricolationDateTextField.getText());
-        carBean.setProductionYear(productionYearTextField.getText());
+        carBean.setBeanProductionYear(productionYearTextField.getText());
         carBean.setInsurance(insuranceCheckBox.isSelected());
 
         decorationsArray[0] = cruiseControlCheckBox.isSelected();

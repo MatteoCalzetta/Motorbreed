@@ -73,15 +73,15 @@ public class ManageAdsController {
         ad.getCar().setIdCar(String.valueOf(idCar));
         ad.getCar().setImmatricolationYear(carBean.getImmatricolationYear());
         ad.getCar().setTransmission(carBean.getTransmission());
-        ad.getCar().setMileage(carBean.getMileage());
-        ad.getCar().setHorsepower(carBean.getHorsepower());
-        ad.getCar().setProductionYear(carBean.getProductionYear());
+        ad.getCar().setMileage(carBean.getCarBeanMileage());
+        ad.getCar().setHorsepower(carBean.getBeanHorsepower());
+        ad.getCar().setProductionYear(carBean.getBeanProductionYear());
         ad.getCar().setDecorations(decorations);
-        ad.getCar().setBrand(carBean.getBrand());
-        ad.getCar().setModel(carBean.getModel());
+        ad.getCar().setBrand(carBean.getCarBeanBrand());
+        ad.getCar().setModel(carBean.getCarBeanModel());
         ad.getCar().setLicencePlate(carBean.getLicencePlate());
         ad.getCar().setIdCar(String.valueOf(idCar));
-        ad.getCar().setFuelType(carBean.getFuelType());
+        ad.getCar().setFuelType(carBean.getBeanFuelType());
 
         CustomizeProfileDAO customizeProfileDAO = new CustomizeProfileDAO();
         customizeProfileDAO.modifyAd(ad);

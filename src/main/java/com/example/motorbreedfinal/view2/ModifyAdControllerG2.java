@@ -353,10 +353,10 @@ public class ModifyAdControllerG2 {
             toPrint = "Insert the new value of fuel type";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setFuelType(reader.readLine());
+            carBean.setBeanFuelType(reader.readLine());
 
         }else {
-            carBean.setFuelType(myAdbean.getAds().get(index).getCar().getFuelType());
+            carBean.setBeanFuelType(myAdbean.getAds().get(index).getCar().getFuelType());
         }
         return carBean;
     }
@@ -366,9 +366,9 @@ public class ModifyAdControllerG2 {
             toPrint = "Insert the new value of horsepower";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setHorsepower(Integer.parseInt(reader.readLine()));
+            carBean.setBeanHorsepower(Integer.parseInt(reader.readLine()));
         }else {
-            carBean.setHorsepower(myAdbean.getAds().get(index).getCar().getHorsepower());
+            carBean.setBeanHorsepower(myAdbean.getAds().get(index).getCar().getHorsepower());
         }
         return carBean;
     }
@@ -390,9 +390,9 @@ public class ModifyAdControllerG2 {
             toPrint = "Insert the new value of production Year";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setProductionYear(reader.readLine());
+            carBean.setBeanProductionYear(reader.readLine());
         }else {
-            carBean.setProductionYear(myAdbean.getAds().get(index).getCar().getProductionYear());
+            carBean.setBeanProductionYear(myAdbean.getAds().get(index).getCar().getProductionYear());
         }
         return carBean;
     }
@@ -426,9 +426,9 @@ public class ModifyAdControllerG2 {
             toPrint = "Insert the new value of mileage";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setMileage(Integer.parseInt(reader.readLine()));
+            carBean.setCarBeanMileage(Integer.parseInt(reader.readLine()));
         }else {
-            carBean.setMileage(myAdbean.getAds().get(index).getCar().getMileage());
+            carBean.setCarBeanMileage(myAdbean.getAds().get(index).getCar().getMileage());
         }
         return carBean;
     }
@@ -438,9 +438,9 @@ public class ModifyAdControllerG2 {
             toPrint = "Insert the new value of model";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setModel(reader.readLine());
+            carBean.setCarBeanModel(reader.readLine());
         }else {
-            carBean.setModel(myAdbean.getAds().get(index).getCar().getModel());
+            carBean.setCarBeanModel(myAdbean.getAds().get(index).getCar().getModel());
         }
         return carBean;
     }
@@ -450,9 +450,9 @@ public class ModifyAdControllerG2 {
             toPrint = "Insert the new value of brand";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setBrand(reader.readLine());
+            carBean.setCarBeanBrand(reader.readLine());
         }else {
-            carBean.setBrand(myAdbean.getAds().get(index).getCar().getBrand());
+            carBean.setCarBeanBrand(myAdbean.getAds().get(index).getCar().getBrand());
         }
         return carBean;
     }

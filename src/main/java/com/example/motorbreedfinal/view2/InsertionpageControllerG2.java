@@ -100,27 +100,27 @@ public class InsertionpageControllerG2 {
 
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            carBean.setBrand(reader.readLine());
+            carBean.setCarBeanBrand(reader.readLine());
 
             toPrint = "Insert model...";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setModel(reader.readLine());
+            carBean.setCarBeanModel(reader.readLine());
 
             toPrint = "Insert mileage...";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setMileage(Integer.parseInt(reader.readLine()));
+            carBean.setCarBeanMileage(Integer.parseInt(reader.readLine()));
 
             toPrint = "Insert production Year...";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setProductionYear(reader.readLine());
+            carBean.setBeanProductionYear(reader.readLine());
 
             toPrint = "Insert horsepower...";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setHorsepower(Integer.parseInt(reader.readLine()));
+            carBean.setBeanHorsepower(Integer.parseInt(reader.readLine()));
 
             toPrint = "Insert transmission...";
             LinePrinter.getInstance().print(toPrint);
@@ -130,7 +130,7 @@ public class InsertionpageControllerG2 {
             toPrint = "Insert fuel type...";
             LinePrinter.getInstance().print(toPrint);
 
-            carBean.setFuelType(reader.readLine());
+            carBean.setBeanFuelType(reader.readLine());
 
             toPrint = "Insert licence plate...";
             LinePrinter.getInstance().print(toPrint);

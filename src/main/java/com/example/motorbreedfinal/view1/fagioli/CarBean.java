@@ -21,51 +21,51 @@ public class CarBean {
         this.insurance = insurance;
     }
 
-    public String getBrand() {
+    public String getCarBeanBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setCarBeanBrand(String brand) {
         this.brand = brand;
     }
 
-    public String getModel() {
+    public String getCarBeanModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setCarBeanModel(String model) {
         this.model = model;
     }
 
-    public int getMileage() {
+    public int getCarBeanMileage() {
         return mileage;
     }
 
-    public void setMileage(int value) {
+    public void setCarBeanMileage(int value) {
         mileage =value;
     }
 
-    public String getProductionYear() {
+    public String getBeanProductionYear() {
         return productionYear;
     }
 
-    public void setProductionYear(String productionYear) {
+    public void setBeanProductionYear(String productionYear) {
         this.productionYear = productionYear;
     }
 
-    public int getHorsepower() {
+    public int getBeanHorsepower() {
         return horsepower;
     }
 
-    public void setHorsepower(int horsepower) {
+    public void setBeanHorsepower(int horsepower) {
         this.horsepower = horsepower;
     }
 
-    public String getFuelType() {
+    public String getBeanFuelType() {
         return fuelType;
     }
 
-    public void setFuelType(String fuelType) {
+    public void setBeanFuelType(String fuelType) {
         this.fuelType = fuelType;
     }
 

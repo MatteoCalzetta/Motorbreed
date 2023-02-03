@@ -280,17 +280,17 @@ public class ModifyAdControllerG {
 
     private void extractFuelType(CarBean carBean) {
         if(!this.fuelTF.getText().isEmpty()){
-            carBean.setFuelType(this.fuelTF.getText());
+            carBean.setBeanFuelType(this.fuelTF.getText());
         }else{
-            carBean.setFuelType("");
+            carBean.setBeanFuelType("");
         }
     }
 
     private void extractProductionYear(CarBean carBean) {
         if(!this.pYearTF.getText().isEmpty()){
-            carBean.setProductionYear(this.pYearTF.getText());
+            carBean.setBeanProductionYear(this.pYearTF.getText());
         }else {
-            carBean.setProductionYear("");
+            carBean.setBeanProductionYear("");
         }
     }
 
@@ -304,17 +304,17 @@ public class ModifyAdControllerG {
 
     private void extractHP(CarBean carBean) {
         if (!this.hpTF.getText().isEmpty()){
-            carBean.setHorsepower(Integer.parseInt(this.hpTF.getText().substring(0, this.hpTF.getText().length()-3)));
+            carBean.setBeanHorsepower(Integer.parseInt(this.hpTF.getText().substring(0, this.hpTF.getText().length()-3)));
         }else {
-            carBean.setHorsepower(0);
+            carBean.setBeanHorsepower(0);
         }
     }
 
     private void extractMileage(CarBean carBean) {
         if (!this.mileageTF.getText().isEmpty()){
-            carBean.setMileage(Integer.parseInt(this.mileageTF.getText().substring(0, this.mileageTF.getText().length()-3)));
+            carBean.setCarBeanMileage(Integer.parseInt(this.mileageTF.getText().substring(0, this.mileageTF.getText().length()-3)));
         }else {
-            carBean.setMileage(0);
+            carBean.setCarBeanMileage(0);
         }
     }
 
@@ -328,17 +328,17 @@ public class ModifyAdControllerG {
 
     private void extractModel(CarBean carBean) {
         if(!modelTF.getText().isEmpty()){
-            carBean.setModel(modelTF.getText());
+            carBean.setCarBeanModel(modelTF.getText());
         }else {
-            carBean.setModel("");
+            carBean.setCarBeanModel("");
         }
     }
 
     private void extractBrand(CarBean carBean) {
         if(!brandTF.getText().isEmpty()) {
-            carBean.setBrand(brandTF.getText());
+            carBean.setCarBeanBrand(brandTF.getText());
         }else {
-            carBean.setBrand("");
+            carBean.setCarBeanBrand("");
         }
     }
 

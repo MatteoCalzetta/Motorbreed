@@ -34,12 +34,12 @@ public class InsertionController{
 
         vehicle = DecorateCar.addDecorations(carBean.getDecorationsArray(), ad.getCar());
 
-        ad.getCar().setBrand(carBean.getBrand());
-        ad.getCar().setModel(carBean.getModel());
-        ad.getCar().setFuelType(carBean.getFuelType());
-        ad.getCar().setHorsepower(carBean.getHorsepower());
-        ad.getCar().setMileage(carBean.getMileage());
-        ad.getCar().setProductionYear(carBean.getProductionYear());
+        ad.getCar().setBrand(carBean.getCarBeanBrand());
+        ad.getCar().setModel(carBean.getCarBeanModel());
+        ad.getCar().setFuelType(carBean.getBeanFuelType());
+        ad.getCar().setHorsepower(carBean.getBeanHorsepower());
+        ad.getCar().setMileage(carBean.getCarBeanMileage());
+        ad.getCar().setProductionYear(carBean.getBeanProductionYear());
         ad.getCar().setImmatricolationYear(carBean.getImmatricolationYear());
         ad.getCar().setLicencePlate(carBean.getLicencePlate());
         ad.getCar().setTransmission(carBean.getTransmission());
