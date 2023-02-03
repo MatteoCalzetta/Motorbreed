@@ -1,8 +1,6 @@
 package com.example.motorbreedfinal.controller;
 
-import com.example.motorbreedfinal.model.dao.LoginDao;
-import com.example.motorbreedfinal.model.dao.AccountDao;
-import com.example.motorbreedfinal.model.dao.ResearchDAO;
+import com.example.motorbreedfinal.model.dao.*;
 import com.example.motorbreedfinal.model.users.Account;
 import com.example.motorbreedfinal.model.users.Buyer;
 import com.example.motorbreedfinal.model.users.LoggedUser;
@@ -23,11 +21,26 @@ public class LoginController {
 
         Buyer buyer;
 
-        LoginDao loginDao = new LoginDao(); // creazione loginDao per trovare role
-
         ResearchDAO researchDAO = new ResearchDAO();
 
-        String role = loginDao.checkCredentials(loginBean.getEmail(), loginBean.getPassword());
+        String os = System.getProperty("os.name");
+
+        String role;
+
+        if(os.contains("Windows")){
+
+            LoginFileSystemDao loginDao = new LoginFileSystemDao();
+
+            role = loginDao.checkCredentials(loginBean.getEmail(), loginBean.getPassword());
+
+        }else {
+
+            LoginDao loginDao = new LoginDao(); // creazione loginDao per trovare role
+
+             role = loginDao.checkCredentials(loginBean.getEmail(), loginBean.getPassword());
+
+        }
+
 
         UserFactory myFactory;
 
@@ -38,8 +51,15 @@ public class LoginController {
             seller = (Seller) myFactory.createAccount();
             LoggedUser.getInstance().setAccount(seller);
             LoggedUser.getInstance().setRole(role);
-            AccountDao accountDao = myFactory.createDAO();
-            accountDao.setAccount(seller, loginBean.getEmail());
+
+            if(os.contains("Windows")){
+                AccountFileSystemDao accountFileSystemDao = new AccountFileSystemDao();
+                accountFileSystemDao.setAccount(seller, loginBean.getEmail());
+            }else {
+                AccountDao accountDao = myFactory.createDAO();
+                accountDao.setAccount(seller, loginBean.getEmail());
+            }
+
             LoggedUser.getInstance().setSeller(seller);
             account = seller;
 
@@ -48,8 +68,16 @@ public class LoginController {
             buyer = (Buyer) myFactory.createAccount();
             LoggedUser.getInstance().setAccount(buyer);
             LoggedUser.getInstance().setRole(role);
-            AccountDao accountDao = myFactory.createDAO();
-            accountDao.setAccount(buyer, loginBean.getEmail());
+
+            if(os.contains("Windows")){
+                AccountFileSystemDao accountFileSystemDao = new AccountFileSystemDao();
+                accountFileSystemDao.setAccount(buyer, loginBean.getEmail());
+            }else {
+                AccountDao accountDao = myFactory.createDAO();
+                accountDao.setAccount(buyer, loginBean.getEmail());
+            }
+
+
             LoggedUser.getInstance().setBuyer(buyer);
             buyer.setFavourites(researchDAO.findFavoriteAds(LoggedUser.getInstance().getAccount().getIdAccount()));
             buyer.setOrders(researchDAO.findBuyerOrders(LoggedUser.getInstance().getAccount().getIdAccount()));

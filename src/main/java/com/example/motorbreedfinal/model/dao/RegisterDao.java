@@ -26,7 +26,6 @@ public class RegisterDao {
             }
         }
         catch (SQLException se) {
-
             throw new FailedRegistrationException(se.getMessage());
         }
         finally {
