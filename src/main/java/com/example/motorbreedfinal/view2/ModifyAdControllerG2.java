@@ -152,7 +152,7 @@ public class ModifyAdControllerG2 {
 
 
     private void askChanges(String change){
-        String toPrint = "Do you want to modify "+ change + " ? 1 for yes, anything otherwise";
+        toPrint = "Do you want to modify "+ change + " ? 1 for yes, anything otherwise";
         LinePrinter.getInstance().print(toPrint);
     }
 
