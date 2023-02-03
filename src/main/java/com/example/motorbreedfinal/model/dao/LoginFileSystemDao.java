@@ -1,16 +1,15 @@
 package com.example.motorbreedfinal.model.dao;
 
-import javafx.scene.control.TableRow;
-
 import javax.security.auth.login.FailedLoginException;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
+
 
 public class LoginFileSystemDao {
 
     public String checkCredentials(String email, String password) throws FailedLoginException {
-        File file = new File("C:\\Users\\Luigi\\Desktop\\Users.txt");
+        String url = "C:\\Users\\Luigi\\Desktop\\Users.txt";
+
+        File file = new File(url);
         String str;
 
         String role;

@@ -6,12 +6,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 
 public class AccountFileSystemDao {
 
     public void setAccount(Account account, String email) {
 
-        File file = new File("C:\\Users\\Luigi\\Desktop\\Users.txt");
+        String url = "C:\\Users\\Luigi\\Desktop\\Users.txt";
+
+        File file = new File(url);
         String str;
 
         try {
