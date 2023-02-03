@@ -1,8 +1,6 @@
 package com.example.motorbreedfinal.view2;
 
 import com.example.motorbreedfinal.controller.InsertionController;
-import com.example.motorbreedfinal.decorations.CruiseControl;
-import com.example.motorbreedfinal.decorations.HeatedSeats;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
@@ -182,7 +180,7 @@ public class InsertionpageControllerG2 {
     }
 
     private void askDecoration(String decoration){
-        String toPrint = "Does your car have "+ decoration + " optional ? 0 for no, 1 for yes...";
+        toPrint = "Does your car have "+ decoration + " optional ? 0 for no, 1 for yes...";
         LinePrinter.getInstance().print(toPrint);
     }
 }
