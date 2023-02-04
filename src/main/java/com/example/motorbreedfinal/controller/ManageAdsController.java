@@ -15,9 +15,9 @@ public class ManageAdsController {
 
     Seller seller;
 
-    AdBean adBean;
+    private AdBean adBean;
 
-    int index = 0;
+    private int index = 0;
 
     public void setModifyAdControllerG(ModifyAdControllerG modifyAdControllerG){
         this.modifyAdControllerG = modifyAdControllerG;
