@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /** @author : Matteo Calzetta matricola 0273429
  */
 
-public class TestRegistrationController {
+class TestRegistrationController {
 
     @org.junit.jupiter.api.Test
     void testRegistrationExistingEmail(){

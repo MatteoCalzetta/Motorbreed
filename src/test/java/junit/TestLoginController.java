@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /** @author : Matteo Calzetta matricola 0273429
  */
 
-public class TestLoginController {
+class TestLoginController {
 
     @org.junit.jupiter.api.Test
     void testLogin(){
