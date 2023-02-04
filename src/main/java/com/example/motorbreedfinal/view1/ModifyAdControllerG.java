@@ -192,8 +192,6 @@ public class ModifyAdControllerG {
         if(adBean.getAds().get(index).getCar().getDecorations().charAt(4) == '1') {
             this.parkingSensorsBox.setSelected(true);
         }
-
-        this.imageView.setImage(adBean.getAds().get(index).getImage());
     }
 
 

@@ -104,7 +104,7 @@ public class AdBean {
     }
 
     public boolean validation() {
-        return (cost > 0 && imageStream != null);
+        return (cost > 0);
     }
 
     public void setNumberOfClicks(int numberClicks) {

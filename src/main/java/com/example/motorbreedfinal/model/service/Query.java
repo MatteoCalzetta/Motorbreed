@@ -147,7 +147,6 @@ public class Query {
     public static void insertAd(Statement stmt, Ad ad, int carId, int sellerId, boolean priceCertification) throws  SQLException{
         String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s')", ad.getAdCost(), ad.getAdDescription(), ad.getAdLocation(), ad.getInsertionDate(), 0, Boolean.compare(priceCertification, true)+1, 0, carId, sellerId);
         stmt.executeUpdate(insertStatement);
-
     }
 
     public static ResultSet getCarId(Statement stmt) throws SQLException {
@@ -192,21 +191,6 @@ public class Query {
         stmt.executeUpdate(updateStatement);
     }
 
-    public static void insertImage(Connection conn, InputStream imageStream, int idAd) throws SQLException {
-        try (PreparedStatement pstmt = conn.prepareStatement("UPDATE ad SET image = ? WHERE idAd = ?")) {
-            try {
-
-                pstmt.setBlob(1, imageStream);
-                pstmt.setInt(2, idAd);
-
-                pstmt.execute();
-
-                imageStream.close();
-            } catch (SQLException | IOException e) {
-                //not handled
-            }
-        }
-    }
     public static ResultSet findIdAd(Statement stmt, String licencePlate) throws SQLException {
         String selectStatement = String.format("SELECT * FROM ad WHERE idCar IN (SELECT idCar FROM car WHERE licencePlate = '%s')", licencePlate);
         return stmt.executeQuery(selectStatement);
@@ -215,7 +199,7 @@ public class Query {
     public static void updateAd(Statement stmt, Ad ad) throws SQLException {
         String updateStatement = String.format("UPDATE car SET licencePlate = '%s', transmission = '%s', insurance = '%s', immatricolationYear = '%s', brand = '%s', model = '%s', mileage = '%s', productionYear = '%s', horsePower = '%s', fuelType = '%s', decorations = '%s' WHERE idcar = '%s'", ad.getCar().getLicencePlate(), ad.getCar().getTransmission(), Boolean.compare(ad.getCar().isInsurance(), true)+1, ad.getCar().getImmatricolationYear(), ad.getCar().getBrand(), ad.getCar().getModel(), ad.getCar().getMileage(), ad.getCar().getProductionYear(), ad.getCar().getHorsepower(), ad.getCar().getFuelType(),ad.getCar().getDecorations(), ad.getCar().getIdCar());
         stmt.executeUpdate(updateStatement);
-        updateStatement = String.format("UPDATE ad SET Cost = '%s', Description = '%s', Location = '%s', InsertionDate = '%s', numberofclicks = '%s', certification = '%s', image = '%s', sold = '%s', idcar = '%s', idseller = '%s' WHERE idAd = '%s'", ad.getAdCost(), ad.getAdDescription(), ad.getAdLocation(), ad.getInsertionDate(), ad.getNumberOfClicks(), Boolean.compare(ad.isPriceCertificated(), true)+1, ad.getImage(), 0, ad.getCar().getIdCar(), ad.getSeller().getIdAccount(),ad.getIdAd());
+        updateStatement = String.format("UPDATE ad SET Cost = '%s', Description = '%s', Location = '%s', InsertionDate = '%s', numberofclicks = '%s', certification = '%s', sold = '%s', idcar = '%s', idseller = '%s' WHERE idAd = '%s'", ad.getAdCost(), ad.getAdDescription(), ad.getAdLocation(), ad.getInsertionDate(), ad.getNumberOfClicks(), Boolean.compare(ad.isPriceCertificated(), true)+1, 0, ad.getCar().getIdCar(), ad.getSeller().getIdAccount(),ad.getIdAd());
         stmt.executeUpdate(updateStatement);
     }
 

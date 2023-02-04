@@ -13,17 +13,8 @@ public class Ad {
     private int numberOfClicks;
     private Car car;
     private Seller seller;
-    private Image image;
     private boolean priceCertification;
 
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-    }
 
     public String getIdAd() {
         return idAd;
@@ -112,6 +103,7 @@ public class Ad {
                 ", numberOfClicks=" + numberOfClicks +
                 ", car=" + car +
                 ", seller=" + seller +
+                ", priceCertification=" + priceCertification +
                 '}';
     }
 }

@@ -6,7 +6,6 @@ import com.example.motorbreedfinal.model.service.Connector;
 import com.example.motorbreedfinal.model.service.Query;
 import com.example.motorbreedfinal.model.exceptions.FailedAdInsertionException;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,20 +13,18 @@ import java.sql.Statement;
 
 public class InsertionDAO {
 
-    public void insertAd(Ad ad, InputStream imageStream) throws FailedAdInsertionException {
+    public void insertAd(Ad ad) throws FailedAdInsertionException {
         Statement stmt =null;
         Connection conn =null;
 
         try {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+            System.out.println(ad.toString());
             Query.insertAd(stmt, ad, Integer.parseInt(ad.getCar().getIdCar()), Integer.parseInt(ad.getSeller().getIdAccount()), ad.isPriceCertificated());
 
-            ResultSet rs = Query.findIdAd(stmt, ad.getCar().getLicencePlate());
-            rs.next();
-            int idAd = rs.getInt(1);
 
-            Query.insertImage(conn, imageStream, idAd);
 
         }catch (SQLException e){
             throw new FailedAdInsertionException(e.getMessage());

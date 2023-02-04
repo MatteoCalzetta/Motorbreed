@@ -138,16 +138,6 @@ public class ResearchDAO {
         ad.setInsertionDate(rs.getString(5));
         ad.setNumberOfClicks(rs.getInt(6));
         ad.setPriceCertification(rs.getInt(7) == 1);
-
-        Blob bl = rs.getBlob(8);
-
-        if(bl != null) {
-            InputStream inputStream = bl.getBinaryStream();
-
-            Image image = new Image(inputStream);
-
-            ad.setImage(image);
-        }
         ad.setCar(carDAO.findCarById(conn, rs.getString(10)));
         ad.setSeller(sellerDao.findSellerById(conn,rs.getString(11)));
         return ad;

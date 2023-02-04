@@ -105,6 +105,8 @@ public class DescriptionpageControllerG {
     @FXML
     void insertAd(ActionEvent event) {
 
+        System.out.println("dentro insert ad");
+
         AdBean adBean;
 
         Date in = new Date();
@@ -112,13 +114,12 @@ public class DescriptionpageControllerG {
         Date out = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
 
         try {
+
             if (sellerPriceTF.getText().isEmpty() && !proposedPriceTF.getText().isEmpty()) {
                 adBean = new AdBean(out, descriptionTF.getText()
                         , adLocationTF.getText(), Integer.parseInt(proposedPriceTF.getText().substring(0, proposedPriceTF.getText().length()-1)), true, inputStream);
-
                 if(adBean.validation()){
                     insertionController.insertAd(adBean);
-
                     FxmlLoader.setPage("SellerHomepage");
                 }
             } else if (!sellerPriceTF.getText().isEmpty() && proposedPriceTF.getText().isEmpty()) {

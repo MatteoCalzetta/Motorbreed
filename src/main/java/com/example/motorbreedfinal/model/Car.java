@@ -72,14 +72,6 @@ public class Car extends Vehicle{
                 ", transmission='" + transmission + '\'' +
                 ", insurance=" + insurance +
                 ", immatricolationYear='" + immatricolationYear + '\'' +
-                ", decorations='" + decorations + '\'' +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", Mileage=" + mileage +
-                ", productionYear='" + productionYear + '\'' +
-                ", horsepower=" + horsepower +
-                ", fuelType='" + fuelType + '\'' +
-                ", additionalPrice=" + additionalPrice +
                 '}';
     }
 }

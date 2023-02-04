@@ -80,18 +80,20 @@ public class InsertionController{
         ad.setInsertionDate(adBean.getInsertionDate().toString());
         ad.setNumberOfClicks(0);
         ad.setPriceCertification(adBean.isPriceCertification());
-        this.imageStream = adBean.getImageStream();
 
         InsertionDAO insertionDAO = new InsertionDAO();
 
         try {
             ad.getCar().setIdCar(String.valueOf(insertionDAO.getCarId()));
+            System.out.println(ad.getCar().getIdCar());
             insertionDAO.insertCar(ad.getCar());
         }catch (FailedAdInsertionException | SQLException e){
             this.descriptionControlllerG.showFailedInsertion();
         }
         try{
-            insertionDAO.insertAd(ad, imageStream);
+            System.out.println("insert prima");
+            insertionDAO.insertAd(ad);
+            System.out.println("insert eseguito");
         } catch (FailedAdInsertionException e) {
             this.descriptionControlllerG.showFailedInsertion();
         }
