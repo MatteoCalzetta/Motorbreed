@@ -21,7 +21,7 @@ public class InsertionDAO {
             conn = Connector.getInstance().getConnection();
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            System.out.println(ad.toString());
+
             Query.insertAd(stmt, ad, Integer.parseInt(ad.getCar().getIdCar()), Integer.parseInt(ad.getSeller().getIdAccount()), ad.isPriceCertificated());
 
 

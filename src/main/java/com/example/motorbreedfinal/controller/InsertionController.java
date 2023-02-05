@@ -85,15 +85,15 @@ public class InsertionController{
 
         try {
             ad.getCar().setIdCar(String.valueOf(insertionDAO.getCarId()));
-            System.out.println(ad.getCar().getIdCar());
+
             insertionDAO.insertCar(ad.getCar());
         }catch (FailedAdInsertionException | SQLException e){
             this.descriptionControlllerG.showFailedInsertion();
         }
         try{
-            System.out.println("insert prima");
+
             insertionDAO.insertAd(ad);
-            System.out.println("insert eseguito");
+
         } catch (FailedAdInsertionException e) {
             this.descriptionControlllerG.showFailedInsertion();
         }

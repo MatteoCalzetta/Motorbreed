@@ -3,8 +3,6 @@ package com.example.motorbreedfinal.model.service;
 import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.Car;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 
 public class Query {

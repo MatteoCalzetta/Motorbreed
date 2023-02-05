@@ -4,7 +4,6 @@ import com.example.motorbreedfinal.controller.ManageAdsController;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.users.Seller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** @author : Luigi Talamo matricola 0272522
@@ -17,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     certification flag set to "1"
  */
 
-public class TestRetrieveMyAds {
+class TestRetrieveMyAds {
 
     @org.junit.jupiter.api.Test
     void test(){

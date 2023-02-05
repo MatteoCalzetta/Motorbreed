@@ -20,7 +20,7 @@ public class CustomizeProfileDAO {
 
         conn3= Connector.getInstance().getConnection();
         stmt3 = conn3.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Query.updateFirstname(stmt3, newFirstName, email);
+        Query.updateFirstname(stmt3, newFirstName, email);
 
         try {
             stmt3.close();
@@ -81,7 +81,7 @@ public class CustomizeProfileDAO {
         try {
             conn= Connector.getInstance().getConnection();
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            stmt = conn.createStatement();
             Query.updateAd(stmt,ad);
 
 

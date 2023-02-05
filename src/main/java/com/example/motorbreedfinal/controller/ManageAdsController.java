@@ -3,7 +3,6 @@ package com.example.motorbreedfinal.controller;
 import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.dao.CustomizeProfileDAO;
 import com.example.motorbreedfinal.model.dao.ResearchDAO;
-import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.users.Seller;
 import com.example.motorbreedfinal.view1.ModifyAdControllerG;

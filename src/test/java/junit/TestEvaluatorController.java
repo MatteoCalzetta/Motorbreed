@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
     Price coincides with the expected one. The test is set up to be successful.
 */
 
-public class TestEvaluatorController {
+class TestEvaluatorController {
 
     @org.junit.jupiter.api.Test
     void testFinalPrice(){

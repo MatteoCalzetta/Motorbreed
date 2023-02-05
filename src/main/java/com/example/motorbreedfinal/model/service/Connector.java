@@ -18,7 +18,7 @@ public class Connector {
         }catch(SQLException e){
             conn = DriverManager.getConnection(DB_URL, USER1, CredentialContainer.getPass1());
         }
-        System.out.println(conn.isClosed());
+
     }
 
     public static Connector getInstance() throws SQLException {
@@ -34,11 +34,7 @@ public class Connector {
     }
 
     public Connection getConnection(){
-        try {
-            System.out.println(conn.isClosed());
-        } catch (SQLException e) {
-            //diocane
-        }
+
         return conn;
     }
 

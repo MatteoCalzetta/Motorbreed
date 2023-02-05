@@ -105,8 +105,6 @@ public class DescriptionpageControllerG {
     @FXML
     void insertAd(ActionEvent event) {
 
-        System.out.println("dentro insert ad");
-
         AdBean adBean;
 
         Date in = new Date();

@@ -18,10 +18,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
    The test is set up to be successful.
 */
 
-public class TestDecorations {
+class TestDecorations {
 
     @org.junit.jupiter.api.Test
-    public void getAdditionalCost(){
+    void getAdditionalCost(){
         Car car = new Car();
 
         Vehicle decoratedVehicle;
@@ -30,7 +30,7 @@ public class TestDecorations {
 
         decoratedVehicle = DecorateCar.addDecorations(decoration, car);
 
-        assertEquals(decoratedVehicle.setAdditionalPrice(), 5800);
+        assertEquals(5800, decoratedVehicle.setAdditionalPrice());
     }
 
 }

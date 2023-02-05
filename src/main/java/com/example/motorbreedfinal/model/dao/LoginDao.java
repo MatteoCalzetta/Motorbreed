@@ -35,11 +35,9 @@ public class LoginDao {
 
         stmt.close();
 
-        System.out.println("checkCredentials -- " + conn.isClosed());
 
 
         return role;
     }
-
 
 }

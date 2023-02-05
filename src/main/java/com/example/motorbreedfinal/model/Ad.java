@@ -1,7 +1,6 @@
 package com.example.motorbreedfinal.model;
 
 import com.example.motorbreedfinal.model.users.Seller;
-import javafx.scene.image.Image;
 
 
 public class Ad {
