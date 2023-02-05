@@ -7,7 +7,6 @@ import com.example.motorbreedfinal.model.service.Query;
 import com.example.motorbreedfinal.model.exceptions.FailedAdInsertionException;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 
 public class InsertionDAO {
 
