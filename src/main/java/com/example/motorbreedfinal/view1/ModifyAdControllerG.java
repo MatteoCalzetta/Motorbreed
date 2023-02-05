@@ -80,6 +80,8 @@ public class ModifyAdControllerG {
     @FXML
     private CheckBox parkingSensorsBox;
 
+
+
     @FXML
     private Button previousButton;
 
@@ -379,6 +381,8 @@ public class ModifyAdControllerG {
         this.confirmButton.setVisible(true);
 
         this.descriptionTF.setEditable(true);
+
+        this.insuranceCheckBox.setDisable(false);
     }
 
     void undoChanges(){
@@ -409,6 +413,7 @@ public class ModifyAdControllerG {
         this.confirmButton.setVisible(false);
 
         this.descriptionTF.setEditable(false);
+        this.insuranceCheckBox.setDisable(true);
     }
 
     @FXML
