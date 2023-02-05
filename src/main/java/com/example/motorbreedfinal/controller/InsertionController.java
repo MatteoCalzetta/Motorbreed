@@ -14,7 +14,6 @@ import com.example.motorbreedfinal.view1.fagioli.DescriptionpageBean;
 
 
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.sql.SQLException;
 
 public class InsertionController{

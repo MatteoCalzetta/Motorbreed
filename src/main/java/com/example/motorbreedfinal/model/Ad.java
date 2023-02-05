@@ -2,7 +2,6 @@ package com.example.motorbreedfinal.model;
 
 import com.example.motorbreedfinal.model.users.Seller;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 
 

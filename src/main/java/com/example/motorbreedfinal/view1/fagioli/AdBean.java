@@ -2,8 +2,6 @@ package com.example.motorbreedfinal.view1.fagioli;
 
 import com.example.motorbreedfinal.model.Ad;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
