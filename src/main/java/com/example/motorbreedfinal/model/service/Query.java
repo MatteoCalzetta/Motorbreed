@@ -103,7 +103,7 @@ public class Query {
     }
 
     public static ResultSet findSellerAds(Statement stmt, String userId) throws SQLException {
-        String selectStatement = "SELECT * FROM ad WHERE sold = '0' AND idseller = "+ userId;
+        String selectStatement = String.format("SELECT * FROM ad WHERE sold = '0' AND idseller = '%s'", userId);
         return stmt.executeQuery(selectStatement);
     }
 

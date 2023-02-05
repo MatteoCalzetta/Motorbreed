@@ -165,7 +165,7 @@ public class ResearchDAO {
         List<Ad> ads = new ArrayList<>();
 
         try (Connection conn = Connector.getInstance().getConnection();
-        Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);){
+        Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){
 
             ResultSet rs = Query.findSellerAds(stmt, userId);
             while (rs.next()) {

@@ -299,8 +299,8 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Button fx:id="changePicButton" layoutX="708.0" layoutY="185.0" mnemonicParsing="false" onAction="#changePic" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Change Image" />
-            <Button fx:id="deleteAdButton" disable="true" layoutX="968.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteAd" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Delete Ad" visible="false" />
+            <Button fx:id="changePicButton" layoutX="708.0" layoutY="185.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Change Image" />
+            <Button fx:id="deleteAdButton" disable="true" layoutX="968.0" layoutY="20.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Delete Ad" visible="false" />
             <Pane fx:id="descPane" disable="true" layoutX="456.0" layoutY="167.0" prefHeight="389.0" prefWidth="394.0" style="-fx-background-color: black; -fx-border-color: #028eff;" visible="false">
                <children>
                   <Label layoutX="8.0" layoutY="4.0" style="-fx-text-fill: white;" text="Car description:">

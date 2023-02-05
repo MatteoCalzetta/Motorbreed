@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Rectangle?>
@@ -78,7 +79,7 @@
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="analizeAdsButton" layoutX="231.0" layoutY="631.0" mnemonicParsing="false" onAction="#analizeAds" prefHeight="61.0" prefWidth="232.0" style="-fx-background-color: white; -fx-border-color: #028eff;" text="Analyze my ads">
+            <Button fx:id="analizeAdsButton" layoutX="231.0" layoutY="631.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="232.0" style="-fx-background-color: white; -fx-border-color: #028eff;" text="Analyze my ads">
                <font>
                   <Font size="25.0" />
                </font>
@@ -113,6 +114,16 @@
                   <Image url="@../Icons_and_pics/528817.png" />
                </image>
             </ImageView>
+            <Pane fx:id="errorPane" disable="true" layoutX="473.0" layoutY="298.0" prefHeight="73.0" prefWidth="334.0" style="-fx-background-color: white; -fx-border-color: #028eff;" visible="false">
+               <children>
+                  <Label fx:id="errorPaneLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="23.0" text="This seller has 0 ads">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="errorButton" layoutX="294.0" layoutY="24.0" mnemonicParsing="false" onAction="#closeErrorPane" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="X" />
+               </children>
+            </Pane>
             </children>
         </AnchorPane>
     </children>

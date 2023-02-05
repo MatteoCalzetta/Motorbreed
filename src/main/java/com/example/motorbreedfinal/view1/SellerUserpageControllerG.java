@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 public class SellerUserpageControllerG {
     @FXML
@@ -13,6 +14,12 @@ public class SellerUserpageControllerG {
 
     @FXML
     private Label labelLoggedUser;
+
+    @FXML
+    private Pane errorPane;
+
+    @FXML
+    private Label errorPaneLabel;
 
     @FXML
     private Button modifyProfileButton;
@@ -34,8 +41,19 @@ public class SellerUserpageControllerG {
 
         fxmlLoader = FxmlLoader.setPage("ModifyAdPage");
         manageAdsController.setModifyAdControllerG(fxmlLoader.getController());
-        manageAdsController.showAd(0);
+        try {
+            manageAdsController.showAd(0);
+        }catch (Exception e){
+            errorPaneLabel.setText("This Seller does not have any ad");
+            errorPane.setDisable(false);
+            errorPane.setVisible(true);
+        }
+    }
 
+    @FXML
+    void closeErrorPane(ActionEvent event) {
+        errorPane.setDisable(true);
+        errorPane.setVisible(false);
     }
 
     @FXML

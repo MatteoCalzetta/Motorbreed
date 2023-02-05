@@ -25,7 +25,7 @@ public class AccountFileSystemDao {
                     str = br.readLine();
                     account.setFirstName(br.readLine());
                     account.setLastName(br.readLine());
-                    account.setIdAccount(br.readLine());
+                    account.setIdAccount(br.readLine().substring(3));
                 }
             }
 

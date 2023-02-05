@@ -29,7 +29,6 @@ public class SellerHomepageControllerG {
         FxmlLoader.setPage("SellerUserPage");
     }
 
-
     @FXML
     void insertAd(ActionEvent event) {
         FxmlLoader.setPage("InsertPage");
