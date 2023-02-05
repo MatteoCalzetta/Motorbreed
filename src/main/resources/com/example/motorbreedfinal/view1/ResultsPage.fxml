@@ -36,12 +36,7 @@
             </Label>
             <Button layoutX="192.0" layoutY="667.0" mnemonicParsing="false" onAction="#previousAd" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Previous" />
             <Button layoutX="999.0" layoutY="667.0" mnemonicParsing="false" onAction="#nextAd" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Next" />
-            <ImageView fitHeight="195.0" fitWidth="355.0" layoutX="325.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons_and_pics/fiat-panda-front.jpg" />
-               </image>
-            </ImageView>
-            <Label fx:id="lblFavourites" layoutX="761.0" layoutY="27.0" onMouseClicked="#addFavorites" text="Save">
+                <Label fx:id="lblFavourites" layoutX="761.0" layoutY="27.0" onMouseClicked="#addFavorites" text="Save">
                <font>
                   <Font size="18.0" />
                </font>

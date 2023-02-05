@@ -17,11 +17,12 @@ public class Connector {
             conn = DriverManager.getConnection(DB_URL, USER, CredentialContainer.getPass());
         }catch(SQLException e){
             conn = DriverManager.getConnection(DB_URL, USER1, CredentialContainer.getPass1());
-            //e.printStackTrace(); togliere il commento nella versione finale
         }
+        System.out.println(conn.isClosed());
     }
 
     public static Connector getInstance() throws SQLException {
+
         if(instance == null){
             try {
                 instance = new Connector();
@@ -33,6 +34,11 @@ public class Connector {
     }
 
     public Connection getConnection(){
+        try {
+            System.out.println(conn.isClosed());
+        } catch (SQLException e) {
+            //diocane
+        }
         return conn;
     }
 

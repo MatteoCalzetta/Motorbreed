@@ -17,7 +17,6 @@ public class LoginDao {
         String role = null;
 
         conn = Connector.getInstance().getConnection();
-
         stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = Query.checkSignedUserByEmail(stmt, email);
 
@@ -35,6 +34,8 @@ public class LoginDao {
         }
 
         stmt.close();
+
+        System.out.println("checkCredentials -- " + conn.isClosed());
 
 
         return role;

@@ -5,9 +5,7 @@ import com.example.motorbreedfinal.model.Car;
 import com.example.motorbreedfinal.model.service.Connector;
 import com.example.motorbreedfinal.model.service.Query;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
-import javafx.scene.image.Image;
 
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +27,7 @@ public class ResearchDAO {
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
             }
-        } catch (SQLException se) {
+        } catch (Exception se) {
             se.printStackTrace();
             throw new FailedResearchException("An error during research occurred, wrong filters or no car corresponding to what you are searching for.");
         } finally {
@@ -117,8 +115,9 @@ public class ResearchDAO {
 
         List<Ad> ads = new ArrayList<>();
 
-        try(Connection conn = Connector.getInstance().getConnection();
-            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
+        try {
+            Connection conn = Connector.getInstance().getConnection();
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Query.findBuyerOrders(stmt, userId);
             while (rs.next()) {
                 ads.add(extractAd(conn, rs));
