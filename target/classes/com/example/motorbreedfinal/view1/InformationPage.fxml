@@ -45,7 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-            <TextField fx:id="tfEmail" editable="false" focusTraversable="false" layoutX="203.0" layoutY="347.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
+            <TextField fx:id="tfEmail" editable="false" focusTraversable="false" layoutX="203.0" layoutY="347.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -53,7 +53,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="tfFirstname" editable="false" focusTraversable="false" layoutX="203.0" layoutY="173.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
+            <TextField fx:id="tfFirstname" editable="false" focusTraversable="false" layoutX="203.0" layoutY="173.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -71,7 +71,7 @@
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <TextField fx:id="tfLastname" editable="false" focusTraversable="false" layoutX="645.0" layoutY="173.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
+            <TextField fx:id="tfLastname" editable="false" focusTraversable="false" layoutX="645.0" layoutY="173.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -140,17 +140,17 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <PasswordField fx:id="pfNewPassword" focusTraversable="false" layoutX="645.0" layoutY="347.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+            <PasswordField fx:id="pfNewPassword" focusTraversable="false" layoutX="645.0" layoutY="347.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
                <font>
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <PasswordField fx:id="pfPassword" editable="false" focusTraversable="false" layoutX="203.0" layoutY="479.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" promptText="Password is hidden for security reasons." style="-fx-background-color: white; -fx-border-color: black;">
+            <PasswordField fx:id="pfPassword" editable="false" focusTraversable="false" layoutX="203.0" layoutY="479.0" prefHeight="41.0" prefWidth="359.0" promptText="Password is hidden for security reasons." style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <PasswordField fx:id="pfConfirmNewPassword" focusTraversable="false" layoutX="645.0" layoutY="479.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+            <PasswordField fx:id="pfConfirmNewPassword" focusTraversable="false" layoutX="645.0" layoutY="479.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
                <font>
                   <Font size="18.0" />
                </font>
@@ -177,10 +177,10 @@
             </ImageView>
             <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="299.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons_and_pics/password%20(1).png" />
+                  <Image url="@../Icons_and_pics/password (1).png" />
                </image>
             </ImageView>
-            <TextField fx:id="tfNewFirstname" focusTraversable="false" layoutX="203.0" layoutY="222.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+            <TextField fx:id="tfNewFirstname" focusTraversable="false" layoutX="203.0" layoutY="222.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -188,7 +188,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="tfNewLastname" focusTraversable="false" layoutX="645.0" layoutY="222.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+            <TextField fx:id="tfNewLastname" focusTraversable="false" layoutX="645.0" layoutY="222.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -196,7 +196,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="tfNewEmail" focusTraversable="false" layoutX="203.0" layoutY="396.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+            <TextField fx:id="tfNewEmail" focusTraversable="false" layoutX="203.0" layoutY="396.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -204,7 +204,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="tfNewPassword" focusTraversable="false" layoutX="203.0" layoutY="527.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+            <TextField fx:id="tfNewPassword" focusTraversable="false" layoutX="203.0" layoutY="527.0" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
