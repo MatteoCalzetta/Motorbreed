@@ -3,6 +3,7 @@ package com.example.motorbreedfinal.model.service;
 import com.example.motorbreedfinal.model.Ad;
 import com.example.motorbreedfinal.model.Car;
 
+import java.io.FileInputStream;
 import java.sql.*;
 
 public class Query {
@@ -142,7 +143,7 @@ public class Query {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void insertAd(Statement stmt, Ad ad, int carId, int sellerId, boolean priceCertification) throws  SQLException{
+    public static void insertAd(Statement stmt, Ad ad, int carId, int sellerId, boolean priceCertification/*, FileInputStream imageStream*/) throws  SQLException{
         String insertStatement = String.format("INSERT INTO ad (Cost, Description, Location, InsertionDate, numberofclicks, certification, sold, idcar, idseller) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s')", ad.getAdCost(), ad.getAdDescription(), ad.getAdLocation(), ad.getInsertionDate(), 0, Boolean.compare(priceCertification, true)+1, 0, carId, sellerId);
         stmt.executeUpdate(insertStatement);
     }

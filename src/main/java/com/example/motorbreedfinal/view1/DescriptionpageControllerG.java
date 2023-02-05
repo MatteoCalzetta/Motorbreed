@@ -85,7 +85,10 @@ public class DescriptionpageControllerG {
         File file = fc.showOpenDialog(null);
         if (file != null) {
             String imagePath = file.getAbsolutePath();
-            try (FileInputStream inputStream1 = new FileInputStream(imagePath)) {
+            try (InputStream inputStream1 = new FileInputStream(imagePath)) {
+
+                inputStream = inputStream1;
+
                 Image cover = new Image(inputStream1);
                 uploadImageView.setImage(cover);
             } catch (IOException e) {

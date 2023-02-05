@@ -2,6 +2,9 @@ package com.example.motorbreedfinal.model;
 
 import com.example.motorbreedfinal.model.users.Seller;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 
 public class Ad {
     private String idAd;
@@ -13,6 +16,8 @@ public class Ad {
     private Car car;
     private Seller seller;
     private boolean priceCertification;
+
+    private InputStream imageStream;
 
 
     public String getIdAd() {
@@ -85,6 +90,14 @@ public class Ad {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    public InputStream getImageStream() {
+        return imageStream;
+    }
+
+    public void setImageStream(InputStream imageStream) {
+        this.imageStream = imageStream;
     }
 
     public Ad(){

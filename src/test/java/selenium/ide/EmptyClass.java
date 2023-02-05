@@ -1,4 +1,5 @@
 package selenium.ide;
 
-public class EmptyClass {
+public class EmptyClass{
+
 }

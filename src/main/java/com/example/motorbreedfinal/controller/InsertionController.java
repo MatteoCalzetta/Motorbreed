@@ -13,6 +13,7 @@ import com.example.motorbreedfinal.view1.fagioli.CarBean;
 import com.example.motorbreedfinal.view1.fagioli.DescriptionpageBean;
 
 
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.SQLException;
 
@@ -26,7 +27,7 @@ public class InsertionController{
 
     Vehicle vehicle;
 
-    InputStream imageStream;
+    FileInputStream imageStream;
 
     public void insertCar(CarBean carBean) {
 
@@ -80,6 +81,7 @@ public class InsertionController{
         ad.setInsertionDate(adBean.getInsertionDate().toString());
         ad.setNumberOfClicks(0);
         ad.setPriceCertification(adBean.isPriceCertification());
+        ad.setImageStream(adBean.getImageStream());
 
         InsertionDAO insertionDAO = new InsertionDAO();
 
