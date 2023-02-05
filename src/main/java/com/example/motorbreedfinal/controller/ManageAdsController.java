@@ -9,6 +9,8 @@ import com.example.motorbreedfinal.view1.ModifyAdControllerG;
 import com.example.motorbreedfinal.view1.fagioli.AdBean;
 import com.example.motorbreedfinal.view1.fagioli.CarBean;
 
+import java.sql.SQLException;
+
 public class ManageAdsController {
 
     ResearchDAO researchDAO;
@@ -31,7 +33,11 @@ public class ManageAdsController {
 
         seller = LoggedUser.getInstance().getSeller();
 
-        seller.setAdList(researchDAO.findSellerAds(seller.getIdAccount()));
+        try {
+            seller.setAdList(researchDAO.findSellerAds(seller.getIdAccount()));
+        } catch (SQLException e) {
+            //unhandled
+        }
 
         adBean = new AdBean();
         adBean.setAds(seller.getAdList());

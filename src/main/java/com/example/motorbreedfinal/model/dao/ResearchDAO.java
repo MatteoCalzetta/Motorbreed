@@ -92,11 +92,11 @@ public class ResearchDAO {
         return ads;
     }
 
-    public Ad findAdById(String idAd, String idBuyer){
+    public Ad findAdById(String idAd, String idBuyer) throws SQLException {
 
         Ad ad = new Ad();
-
-        try (Connection conn = Connector.getInstance().getConnection(); Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
+        Connection conn = Connector.getInstance().getConnection();
+        try ( Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
             String insertStatement = String.format("INSERT into buyer_order (idBuyer, idAd) VALUES ('%s','%s')", idBuyer, idAd);
             stmt.executeUpdate(insertStatement);
             String updateStatement = String.format("UPDATE ad SET sold = '1' WHERE idAd = '%s'", idAd);
@@ -142,9 +142,9 @@ public class ResearchDAO {
         return ad;
     }
 
-    public void addFavourites(String idAd, String idBuyer) {
-
-        try(Connection conn = Connector.getInstance().getConnection();
+    public void addFavourites(String idAd, String idBuyer) throws SQLException {
+        Connection conn = Connector.getInstance().getConnection();
+        try(
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
 
             ResultSet rs = Query.isAdFavorite(stmt, idAd, idBuyer);
@@ -159,11 +159,11 @@ public class ResearchDAO {
         }
     }
 
-    public List<Ad> findSellerAds(String userId){
+    public List<Ad> findSellerAds(String userId) throws SQLException {
 
         List<Ad> ads = new ArrayList<>();
-
-        try (Connection conn = Connector.getInstance().getConnection();
+        Connection conn = Connector.getInstance().getConnection();
+        try (
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){
 
             ResultSet rs = Query.findSellerAds(stmt, userId);

@@ -16,8 +16,6 @@ public class CustomizeProfileDAO {
         Statement stmt3=null;
         Connection conn3=null;
 
-
-
         conn3= Connector.getInstance().getConnection();
         stmt3 = conn3.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
         Query.updateFirstname(stmt3, newFirstName, email);

@@ -8,6 +8,8 @@ import com.example.motorbreedfinal.model.dao.ResearchDAO;
 import com.example.motorbreedfinal.model.users.LoggedUser;
 import com.example.motorbreedfinal.model.exceptions.FailedResearchException;
 import com.example.motorbreedfinal.view1.fagioli.*;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public class ResearchController {
@@ -56,7 +58,11 @@ public class ResearchController {
         return adBean;
     }
     public void addFavorites(FavouritesBean favouritesBean, AdBean adBean) {
-        researchDAO.addFavourites(favouritesBean.getIdAd(),favouritesBean.getIdBuyer());
+        try {
+            researchDAO.addFavourites(favouritesBean.getIdAd(),favouritesBean.getIdBuyer());
+        } catch (SQLException e) {
+            //unhandled
+        }
         LoggedUser.getInstance().getBuyer().addToFavourites((Ad) adBean.getAds());
     }
 
@@ -71,7 +77,12 @@ public class ResearchController {
     }
 
     public void paymentIsValid(String idAd) {
-        Ad ad = researchDAO.findAdById(idAd, LoggedUser.getInstance().getBuyer().getIdAccount());
+        Ad ad = null;
+        try {
+            ad = researchDAO.findAdById(idAd, LoggedUser.getInstance().getBuyer().getIdAccount());
+        } catch (SQLException e) {
+            //unhandled
+        }
         LoggedUser.getInstance().getBuyer().addToOrders(ad);
     }
 
