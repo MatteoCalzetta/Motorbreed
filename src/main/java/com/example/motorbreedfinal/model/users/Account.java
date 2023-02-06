@@ -2,6 +2,7 @@ package com.example.motorbreedfinal.model.users;
 
 public abstract class Account extends AccountSubject{
     protected String firstName;
+
     protected String lastName;
     protected String username;
     protected String idAccount;
@@ -17,9 +18,7 @@ public abstract class Account extends AccountSubject{
         this.lastName = lastName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+
 
     public void setIdAccount(String idAccount) {
         this.idAccount = idAccount;
@@ -37,9 +36,7 @@ public abstract class Account extends AccountSubject{
         return lastName;
     }
 
-    public String getUsername() {
-        return username;
-    }
+
 
     public String getIdAccount() {
         return idAccount;
