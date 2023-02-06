@@ -85,7 +85,6 @@ public class ResearchController {
         }
         LoggedUser.getInstance().getBuyer().addToOrders(ad);
     }
-
     public List<Ad> getBuyerOrders() {
         return researchDAO.findBuyerOrders(LoggedUser.getInstance().getBuyer().getIdAccount());
     }

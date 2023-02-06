@@ -141,7 +141,6 @@ public class ResearchDAO {
         ad.setSeller(sellerDao.findSellerById(conn,rs.getString(11)));
         return ad;
     }
-
     public void addFavourites(String idAd, String idBuyer) throws SQLException {
         Connection conn = Connector.getInstance().getConnection();
         try(
@@ -158,7 +157,6 @@ public class ResearchDAO {
             se.printStackTrace();
         }
     }
-
     public List<Ad> findSellerAds(String userId) throws SQLException {
 
         List<Ad> ads = new ArrayList<>();

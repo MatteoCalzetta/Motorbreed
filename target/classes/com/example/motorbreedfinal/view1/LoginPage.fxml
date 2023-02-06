@@ -35,7 +35,7 @@
                 </ImageView>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="639.0" layoutX="171.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="346.0" layoutX="328.0" layoutY="163.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white;" width="608.0" />
-                <ImageView fx:id="btnGoogle" fitHeight="85.0" fitWidth="85.0" layoutX="494.0" layoutY="198.0" preserveRatio="true">
+                <ImageView fx:id="btnGoogle" fitHeight="85.0" fitWidth="85.0" layoutX="494.0" layoutY="198.0" onDragDetected="#googleLogin" preserveRatio="true">
                     <image>
                         <Image url="@../Icons_and_pics/Googlelogo.png" />
                     </image>
@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </ImageView>
-                <ImageView fx:id="btnFacebook" fitHeight="85.0" fitWidth="88.0" layoutX="670.0" layoutY="198.0" preserveRatio="true">
+                <ImageView fx:id="btnFacebook" fitHeight="85.0" fitWidth="88.0" layoutX="670.0" layoutY="198.0" onDragDetected="#facebookLogin" preserveRatio="true">
                     <image>
                         <Image url="@../Icons_and_pics/Facebooklogo.png" />
                     </image>

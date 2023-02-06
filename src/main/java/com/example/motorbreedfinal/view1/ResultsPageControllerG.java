@@ -142,7 +142,7 @@ public class ResultsPageControllerG implements AccountObserver {
     int index = 0;
 
     public void displayAd() {
-        if(this.index >= ads.toArray().length || this.index == -1) {
+        if (this.index >= ads.toArray().length || this.index == -1) {
             this.index = 0;
         }
         Ad ad = ads.get(this.index);
@@ -158,7 +158,7 @@ public class ResultsPageControllerG implements AccountObserver {
         lblTransmission.setText(ad.getCar().getTransmission());
         lblProductionDate.setText(ad.getCar().getProductionYear());
         lblFuel.setText(ad.getCar().getFuelType());
-        lblIndex.setText(index+1 + " of " + ads.size());
+        lblIndex.setText(index + 1 + " of " + ads.size());
 
         cbHeatedSeats.setSelected(ad.getCar().getDecorations().charAt(0) == '1');
         cbParkingSensors.setSelected(ad.getCar().getDecorations().charAt(1) == '1');
@@ -212,7 +212,6 @@ public class ResultsPageControllerG implements AccountObserver {
         adBean.setSeller(ads.get(this.index).getSeller().getFirstName() + ads.get(this.index).getSeller().getLastName());
         ResearchController.getInstance().payment(accountBean, adBean);
     }
-
     @FXML
     void closeDescription(ActionEvent event) {
         paneDescription.setVisible(false);

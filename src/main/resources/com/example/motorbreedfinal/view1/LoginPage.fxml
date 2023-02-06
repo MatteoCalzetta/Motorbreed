@@ -35,30 +35,14 @@
                 </ImageView>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="639.0" layoutX="171.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="346.0" layoutX="328.0" layoutY="163.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white;" width="608.0" />
-                <ImageView fx:id="btnGoogle" fitHeight="85.0" fitWidth="85.0" layoutX="494.0" layoutY="198.0" preserveRatio="true">
-                    <image>
-                        <Image url="@../Icons_and_pics/Googlelogo.png" />
-                    </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-                </ImageView>
-                <ImageView fx:id="btnFacebook" fitHeight="85.0" fitWidth="88.0" layoutX="670.0" layoutY="198.0" preserveRatio="true">
-                    <image>
-                        <Image url="@../Icons_and_pics/Facebooklogo.png" />
-                    </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-                </ImageView>
-                <TextField fx:id="tfEmail" focusTraversable="false" layoutX="375.0" layoutY="382.0" onKeyTyped="#enableLogin" prefHeight="51.0" prefWidth="250.0" promptText="Enter your email" style="-fx-border-color: #028eff;">
+                <TextField fx:id="tfEmail" focusTraversable="false" layoutX="375.0" layoutY="312.0" onKeyTyped="#enableLogin" prefHeight="51.0" prefWidth="250.0" promptText="Enter your email" style="-fx-border-color: #028eff;">
                     <font>
                         <Font name="System Italic" size="14.0" />
                     </font>
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></TextField>
-            <PasswordField fx:id="pfPassword" focusTraversable="false" layoutX="654.0" layoutY="382.0" onKeyTyped="#enableLogin" prefHeight="51.0" prefWidth="250.0" promptText="Enter your password" style="-fx-border-color: #028eff;">
+            <PasswordField fx:id="pfPassword" focusTraversable="false" layoutX="654.0" layoutY="312.0" onKeyTyped="#enableLogin" prefHeight="51.0" prefWidth="250.0" promptText="Enter your password" style="-fx-border-color: #028eff;">
                <font>
                   <Font name="System Italic" size="14.0" />
                </font>
@@ -71,7 +55,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button fx:id="btnLogin" contentDisplay="CENTER" disable="true" layoutX="597.0" layoutY="452.0" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="85.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Login" textAlignment="CENTER">
+                <Button fx:id="btnLogin" contentDisplay="CENTER" disable="true" layoutX="597.0" layoutY="382.0" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="85.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Login" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -87,17 +71,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Label layoutX="499.0" layoutY="302.0" text="Or continue with your credentials">
+                <Label layoutX="526.0" layoutY="189.0" text="Continue with your credentials">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label layoutX="375.0" layoutY="349.0" text="Email">
+                <Label layoutX="375.0" layoutY="279.0" text="Email">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label layoutX="654.0" layoutY="349.0" text="Password">
+                <Label layoutX="654.0" layoutY="279.0" text="Password">
                     <font>
                         <Font size="18.0" />
                     </font>
