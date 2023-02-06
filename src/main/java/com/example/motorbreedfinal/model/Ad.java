@@ -15,7 +15,6 @@ public class Ad {
     private Car car;
     private Seller seller;
     private boolean priceCertification;
-
     private InputStream imageStream;
 
 
