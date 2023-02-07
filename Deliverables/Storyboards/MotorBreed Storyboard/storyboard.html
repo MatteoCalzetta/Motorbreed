@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>MotorBreed Storyboard</title>
+		<link rel="stylesheet" href="button_skins.css">
+        <script>
+            window.onload = function(){
+                var img = document.getElementById('image');
+                img.setAttribute("src", "login_page.png");
+                img.setAttribute("alt", "login_page");
+            }
+            function changeImage(src){
+                var img = document.getElementById('image');
+                    img.setAttribute("src", src);
+                    img.setAttribute("alt", src.substring(0, src.lastIndexOf(".")));
+            }
+        </script>
+    </head>
+    <body>
+        <img id="image" width="1280" height="720">
+        <div style="display: flex; width:1280px; height:50px; justify-content: space-evenly;">
+			<button id="login" style="--clr:#39FF14" onclick="changeImage('login_page.png')"><span>Go to Login</span><i></i></button>
+			<button id="homepage" style="--clr:#FF44CC" onclick="changeImage('Homepage-1.png')"><span>Go to Homepage</span><i></i></button>
+			<button id="ricerca_avanzata" style="--clr:#0FF0FC" onclick="changeImage('ricerca_avanzata_page.png')"><span>Go to Advanced Search</span><i></i></button>
+			<button id="risultati_ricerca" style="--clr:#8A2BE2" onclick="changeImage('risultati_ricerca_page.png')"><span>Go to Search Results</span><i></i></button>
+        </div>
+    </body>
+</html>
