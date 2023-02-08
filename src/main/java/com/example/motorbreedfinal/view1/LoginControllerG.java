@@ -106,6 +106,6 @@ public class LoginControllerG {
         lblWrongFormat.setVisible(false);
         btnLogin.setDisable(pfPassword.getText().length() <= 5 || tfEmail.getText().length() <= 5);
     }
-    
+
 
 }
