@@ -31,6 +31,7 @@ public class LoginFileSystemDao {
             throw new FailedLoginException("Email not registered!");
 
         }catch (IOException e){
+
             throw new FailedLoginException("Failed Login");
         }
     }

@@ -71,7 +71,7 @@ public class LoginController {
             LoggedUser.getInstance().setAccount(buyer);
             LoggedUser.getInstance().setRole(role);
 
-            if(os.contains("SO")){
+            if(os.contains(SO)){
                 AccountFileSystemDao accountFileSystemDao = new AccountFileSystemDao();
                 accountFileSystemDao.setAccount(buyer, loginBean.getEmail());
             }else {

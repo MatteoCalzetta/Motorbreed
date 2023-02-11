@@ -74,42 +74,22 @@
                         <Font size="24.0" />
                     </font>
                 </Label>
-            <Button fx:id="myAdsButton" layoutX="231.0" layoutY="514.0" mnemonicParsing="false" onAction="#openMyAds" prefHeight="61.0" prefWidth="232.0" style="-fx-border-color: #028eff; -fx-background-color: White;" text="Manage my ads">
+            <Button fx:id="myAdsButton" layoutX="231.0" layoutY="572.0" mnemonicParsing="false" onAction="#openMyAds" prefHeight="61.0" prefWidth="232.0" style="-fx-border-color: #028eff; -fx-background-color: White;" text="Manage my ads">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="analizeAdsButton" layoutX="231.0" layoutY="631.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="232.0" style="-fx-background-color: white; -fx-border-color: #028eff;" text="Analyze my ads">
+            <Button fx:id="modifyProfileButton" layoutX="813.0" layoutY="572.0" mnemonicParsing="false" onAction="#setCustomizeProfile" prefHeight="61.0" prefWidth="232.0" style="-fx-border-color: #028eff; -fx-background-color: White;" text="Modify Profile">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="modifyProfileButton" layoutX="813.0" layoutY="514.0" mnemonicParsing="false" onAction="#setCustomizeProfile" prefHeight="61.0" prefWidth="232.0" style="-fx-border-color: #028eff; -fx-background-color: White;" text="Modify Profile">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <Button fx:id="readReviewsButton" layoutX="813.0" layoutY="631.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="232.0" style="-fx-border-color: #028eff; -fx-background-color: White;" text="Read reviews">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="477.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons_and_pics/AnalyticsIcon.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="477.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="477.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons_and_pics/download-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="73.0" fitWidth="73.0" layoutX="719.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons_and_pics/651191.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="73.0" fitWidth="73.0" layoutX="721.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="73.0" fitWidth="73.0" layoutX="721.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons_and_pics/528817.png" />
                </image>
