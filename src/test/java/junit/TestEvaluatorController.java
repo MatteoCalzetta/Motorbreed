@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class TestEvaluatorController {
 
     @org.junit.jupiter.api.Test
-    void testFinalPrice(){
+    void testCalculatePrice(){
         Vehicle car = new Car();
         car.setBrand("Fiat");
         car.setModel("Panda");
