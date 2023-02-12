@@ -37,7 +37,7 @@
             <Button fx:id="nextButton" layoutX="999.0" layoutY="667.0" mnemonicParsing="false" onAction="#nextAd" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #028eff; -fx-text-fill: white;" text="Next" />
             <ImageView fx:id="imageView" fitHeight="195.0" fitWidth="355.0" layoutX="325.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons_and_pics/2023-dodge-challenger-black-ghost.jpg" />
+                  <Image url="@../../../../../Fiat_Panda_1.2_8V_Lounge_(III)_–_Frontansicht_(1),_25._Februar_2012,_Düsseldorf.jpg" />
                </image>
             </ImageView>
             <Label layoutX="589.0" layoutY="117.0">
@@ -238,7 +238,7 @@
                   <DropShadow />
                </effect>
             </Pane>
-            <Button fx:id="editButton" layoutX="708.0" layoutY="20.0" mnemonicParsing="false" onAction="#editAd" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Edit Advertisement" />
+            <Button fx:id="editButton" layoutX="708.0" layoutY="20.0" mnemonicParsing="false" onAction="#editAd" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Edit Advertisement" />
             <TextField fx:id="priceTF" editable="false" focusTraversable="false" layoutX="277.0" layoutY="245.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: white;" text="20.000€">
                <font>
                   <Font size="18.0" />
@@ -320,7 +320,7 @@
                </effect>
             </Pane>
             <Button fx:id="readDesc" layoutX="708.0" layoutY="103.0" mnemonicParsing="false" onAction="#readDesc" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-border-color: #028eff;" text="Read Description" />
-            <CheckBox fx:id="insuranceCheckBox" disable="true" layoutX="968.0" layoutY="187.0" mnemonicParsing="false" text="Insurance">
+            <CheckBox fx:id="insuranceCheckBox" disable="true" layoutX="708.0" layoutY="187.0" mnemonicParsing="false" text="Insurance">
                <font>
                   <Font size="18.0" />
                </font>

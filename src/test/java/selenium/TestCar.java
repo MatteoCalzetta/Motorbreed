@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /** @author : Matteo Calzetta matricola 0273429
  */
 
-public class TestCar {
+class TestCar {
 
     @Test
     void testGetProductionYear(){
