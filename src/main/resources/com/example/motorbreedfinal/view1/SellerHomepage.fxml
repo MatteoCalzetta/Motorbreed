@@ -88,7 +88,7 @@
                   <Image url="@../Icons_and_pics/370829-200-removebg-preview.png" />
                </image>
             </ImageView>
-            <TextField fx:id="nameSurnameTF" editable="false" focusTraversable="false" layoutX="202.0" layoutY="343.0" prefHeight="126.0" prefWidth="598.0" style="-fx-background-color: image; -fx-text-fill: white;" text="Welcome, Name Surname">
+            <TextField fx:id="nameSurnameTF" editable="false" focusTraversable="false" layoutX="202.0" layoutY="343.0" prefHeight="126.0" prefWidth="598.0" style="-fx-background-color: image; -fx-text-fill: white;" text="Welcome, Luigi Talamo">
                <font>
                   <Font name="System Italic" size="48.0" />
                </font>
