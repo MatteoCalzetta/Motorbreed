@@ -19,7 +19,7 @@ class TestCustomizeProfileController {
 
     @org.junit.jupiter.api.Test
     void testChangeFirstName(){
-        String newFirstName = "Username";
+        String newFirstName = "FailingTest";
         String actualFirstName = "Matteo";
         String changedUsername;
 
