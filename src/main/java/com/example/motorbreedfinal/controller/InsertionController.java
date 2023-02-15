@@ -81,7 +81,7 @@ public class InsertionController{
         ad.setNumberOfClicks(0);
         ad.setPriceCertification(adBean.isPriceCertification());
         ad.setImageStream(adBean.getImageStream());
-
+        int a;
         InsertionDAO insertionDAO = new InsertionDAO();
 
         try {
