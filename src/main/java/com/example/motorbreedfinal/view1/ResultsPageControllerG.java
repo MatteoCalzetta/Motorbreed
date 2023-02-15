@@ -244,7 +244,6 @@ public class ResultsPageControllerG implements AccountObserver {
         favouritesBean.setIdBuyer(LoggedUser.getInstance().getBuyer().getIdAccount());
         ResearchController.getInstance().addFavorites(favouritesBean, adBean);
     }
-
     @FXML
     void insertPassword(ActionEvent event){
         EmailBean emailBean = new EmailBean();

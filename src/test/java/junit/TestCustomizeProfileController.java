@@ -38,7 +38,7 @@ class TestCustomizeProfileController {
         AccountBean accountBean = new AccountBean();
         accountBean.setFirstName("Matteo");
         accountBean.setLastName("Calzetta");
-        accountBean.setEmail("matteocalzetta@students.uniroma2.eu");
+        accountBean.setEmail("matteo.calzetta@students.uniroma2.eu");
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
         customizeProfileController.changeFirstName(accountBean);
